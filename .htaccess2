@@ -1,0 +1,10 @@
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/css application/x-javascript application/javascript
+</IfModule>
+Options +FollowSymLinks
+RewriteEngine On
+# REDIRECT /folder/index.php to /folder/
+RewriteCond %{THE_REQUEST}
+   (on same line) ^[A-Z]{3,9}\ /([^/]+/)*index\.php\ HTTP/
+RewriteRule ^(([^/]+/)*)index\.php$
+   (on same line) http://scripture.sourceforge.net/$1 [R=301,L]

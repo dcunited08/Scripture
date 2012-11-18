@@ -1,0 +1,908 @@
+<html>
+<head>
+
+	<meta name="keywords" content="jqueryui graph, jqueryui diagram,jqueryui chart, jqueryui flowchart,javascript graph, javascript diagram,javascript chart, javascript flowchart,jquery graph, jquery diagram,jquery chart, jquery flowchart" />
+
+	<title> Demo 1 </title>
+
+	<link rel="stylesheet" href="library/themes/base/jquery.ui.all.css">
+	<script src="library/jquery-1.6.2.min.js"></script>
+	<script src="library/ui/minified/jquery.ui.core.min.js"></script>
+	<script src="library/ui/minified/jquery.ui.widget.min.js"></script>
+	<script src="library/ui/minified/jquery.ui.mouse.min.js"></script>
+	<script src="library/ui/minified/jquery.ui.draggable.min.js"></script>
+	<script src="library/ui/minified/jquery.ui.resizable.min.js"></script>
+	<script src="library/ui/minified/jquery.ui.droppable.min.js"></script>
+	<script src="library/ui/minified/jquery.ui.button.min.js"></script>
+
+	
+	
+	
+	<script src="scripts/wz_jsgraphics.js"></script>
+	
+
+	<script src="scripts/jgraphui.js"/></script>
+
+
+	<link rel="stylesheet" href="styles/diagram.css">
+
+	<link rel="stylesheet" href="styles/demos.css">
+
+	<style>
+
+	html, body {
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		height: 100%;
+		
+ 	}
+	
+
+
+
+	</style>
+	
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script language="javascript">
+
+
+$(document).ready(function() {
+
+var diagram = new Diagram(
+			{
+			'xPosition':20, 
+			'yPosition':30, 
+			'width':1000, 
+			'height':600,
+			'imagesPath': 'images/',
+			'connectionColor': '#AA0000',
+			onSave: function(data){
+				alert('from on save event \n' +data);
+
+			}
+			});
+
+
+
+diagram.addNode(new Node({
+			'nodeId': '1',
+			'nodeType':'NODE',
+			'nodeContent': 'Software Project',
+			'xPosition':394,
+			'yPosition':50,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':200,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+
+
+diagram.addNode(new Node({
+			'nodeId': '2',
+			'nodeType':'NODE',
+			'nodeContent': 'Project Management',
+			'xPosition':20,
+			'yPosition':150,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':200,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+
+
+diagram.addNode(new Node({
+			'nodeId': '3',
+			'nodeType':'NODE',
+			'nodeContent': 'Analysis and Design',
+			'xPosition':270,
+			'yPosition':150,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':200,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+
+diagram.addNode(new Node({
+			'nodeId': '4',
+			'nodeType':'NODE',
+			'nodeContent': 'Development',
+			'xPosition':520,
+			'yPosition':150,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':200,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+
+diagram.addNode(new Node({
+			'nodeId': '5',
+			'nodeType':'NODE',
+			'nodeContent': 'Testing',
+			'xPosition':770,
+			'yPosition':150,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':200,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+
+diagram.addNode(new Node({
+			'nodeId': '6',
+			'nodeType':'NODE',
+			'nodeContent': 'Project Charter',
+			'xPosition':50,
+			'yPosition':250,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':200,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+
+diagram.addNode(new Node({
+			'nodeId': '7',
+			'nodeType':'NODE',
+			'nodeContent': 'Project Plan',
+			'xPosition':50,
+			'yPosition':320,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':200,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+
+diagram.addNode(new Node({
+			'nodeId': '8',
+			'nodeType':'NODE',
+			'nodeContent': 'Project Schedule',
+			'xPosition':50,
+			'yPosition':390,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':100,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+
+diagram.addNode(new Node({
+			'nodeId': '9',
+			'nodeType':'NODE',
+			'nodeContent': 'Requirements',
+			'xPosition':290,
+			'yPosition':250,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':200,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+diagram.addNode(new Node({
+			'nodeId': '10',
+			'nodeType':'NODE',
+			'nodeContent': 'Design Document',
+			'xPosition':290,
+			'yPosition':320,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':200,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+diagram.addNode(new Node({
+			'nodeId': '11',
+			'nodeType':'NODE',
+			'nodeContent': 'Technical Analysis',
+			'xPosition':290,
+			'yPosition':390,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':200,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+diagram.addNode(new Node({
+			'nodeId': '12',
+			'nodeType':'NODE',
+			'nodeContent': 'Architecture Analysis',
+			'xPosition':290,
+			'yPosition':460,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':200,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+
+diagram.addNode(new Node({
+			'nodeId': '13',
+			'nodeType':'NODE',
+			'nodeContent': 'Training',
+			'xPosition':550,
+			'yPosition':250,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':200,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+diagram.addNode(new Node({
+			'nodeId': '14',
+			'nodeType':'NODE',
+			'nodeContent': 'Prepare Environment',
+			'xPosition':550,
+			'yPosition':320,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':200,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+
+diagram.addNode(new Node({
+			'nodeId': '15',
+			'nodeType':'Development',
+			'nodeContent': 'Prepare Environment',
+			'xPosition':550,
+			'yPosition':390,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':200,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+
+
+
+diagram.addNode(new Node({
+			'nodeId': '16',
+			'nodeType':'NODE',
+			'nodeContent': 'Test Plan',
+			'xPosition':800,
+			'yPosition':250,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':200,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+diagram.addNode(new Node({
+			'nodeId': '17',
+			'nodeType':'NODE',
+			'nodeContent': 'Manual Test',
+			'xPosition':800,
+			'yPosition':320,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':200,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+
+diagram.addNode(new Node({
+			'nodeId': '18',
+			'nodeType':'Development',
+			'nodeContent': 'Prepare test Script',
+			'xPosition':800,
+			'yPosition':390,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':200,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+diagram.addNode(new Node({
+			'nodeId': '19',
+			'nodeType':'Development',
+			'nodeContent': 'Maintain test Script',
+			'xPosition':890,
+			'yPosition':460,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':200,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+
+diagram.addNode(new Node({
+			'nodeId': '20',
+			'nodeType':'Development',
+			'nodeContent': 'Performance Test',
+			'xPosition':800,
+			'yPosition':530,
+			'width': '150',
+			'height' : '70',
+			'bgColor':'#FFFFFF',
+			'borderColor':'#AAAAAA',
+			'borderWidth':'1',
+			'fontColor':'#000000',
+			'fontSize':'',
+			'fontType':'',
+			'minHeight':50,
+			'maxHeight':200,
+			'minWidth':100,
+			'maxWidth':200,
+			'nPort':true,
+			'ePort':true,
+			'sPort':true,
+			'wPort':true,
+			'image':'',
+			'draggable':true,
+			'resizable':true,
+			'editable':true,
+			'selectable':true,
+			'deletable':true,
+			'nPortMakeConnection': true,
+			'ePortMakeConnection': true,
+			'sPortMakeConnection': true,
+			'wPortMakeConnection': true,
+			'nPortAcceptConnection': true,
+			'ePortAcceptConnection': true,
+			'sPortAcceptConnection': true,
+			'wPortAcceptConnection': true
+
+		}));
+
+diagram.addConnection(new Connection('1','s','2','n','#AA0000', '3'));
+diagram.addConnection(new Connection('1','s','3','n','#AA0000', '3'));
+diagram.addConnection(new Connection('1','s','4','n','#AA0000', '3'));
+diagram.addConnection(new Connection('1','s','5','n','#AA0000', '3'));
+diagram.addConnection(new Connection('2','w','6','w','#AA0000', '3'));
+diagram.addConnection(new Connection('2','w','7','w','#AA0000', '3'));
+diagram.addConnection(new Connection('2','w','8','w','#AA0000', '3'));
+diagram.addConnection(new Connection('3','w','9','w','#AA0000', '3'));
+diagram.addConnection(new Connection('3','w','10','w','#AA0000', '3'));
+diagram.addConnection(new Connection('3','w','11','w','#AA0000', '3'));
+diagram.addConnection(new Connection('3','w','12','w','#AA0000', '3'));
+diagram.addConnection(new Connection('4','w','13','w','#AA0000', '3'));
+diagram.addConnection(new Connection('4','w','14','w','#AA0000', '3'));
+diagram.addConnection(new Connection('4','w','15','w','#AA0000', '3'));
+diagram.addConnection(new Connection('5','w','16','w','#AA0000', '3'));
+diagram.addConnection(new Connection('5','w','17','w','#AA0000', '3'));
+diagram.addConnection(new Connection('5','w','18','w','#AA0000', '3'));
+diagram.addConnection(new Connection('18','s','19','w','#AA0000', '3'));
+diagram.addConnection(new Connection('5','w','20','w','#AA0000', '3'));
+
+
+});
+
+</script>
+
+
+
+</body>
+</html>

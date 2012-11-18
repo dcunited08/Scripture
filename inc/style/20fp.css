@@ -1,0 +1,22 @@
+zx{color:#0031D4;}
+       @font-face {font-family: "Proto-Semitic";src: local("Proto-Semitic");unicode-range: U+05D0-05EC;}
+       zxx{font-family:"Proto-Semitic";font-size:6ex;}
+       body{position:relative;background-color:#EBE1E1;font-size:110%;}
+       select.ss{width:10px;}a:link,a:visited{text-decoration:none;display:inline;border:1px solid#3B5233;background-color:#CCB787;font-weight:bold;color:#212016;padding:0px;padding-right:1px;padding-left:1px;}input,select,.tme,textarea{font-weight:bold;display:inline;background-color:#EBE1E1;color:#272B20;margin-left:2px;padding-right:1px;border:1px solid;padding-left:1px;}a:hover,input:hover,select:hover{background-color:#A6BD7E;}u{font-weight:bold;color:#1D241A;background-color: #7E8B95;}hr{border:1px solid #5E5A5A;}.go{background-color:#ADB3BA;text-decoration:none;}sup{color:#21301E;}div{background-color: #ADB3BA; 
+  border: solid 1px #3B5233; }
+.ui-menu { border:1px solid #999; background:#FFF; cursor:default; text-align:left; max-height:550px; overflow:auto; margin:-0px 0px 0px -0px; /* IE6 specific: */ _height:350px;  _margin:0; _overflow-x:hidden; }
+ul.autosuggest{position: absolute;list-style: none;margin: 0;padding: 0;}
+	ul.autosuggest li a:link,
+	ul.autosuggest li a:visited
+	{
+		display: block;
+		text-decoration: none;
+		background-color: #eee;
+	}
+
+	ul.autosuggest li a:hover,
+	ul.autosuggest li a:active
+	{
+		color: #fff;
+		background-color: #f30;
+	}

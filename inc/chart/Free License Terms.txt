@@ -1,0 +1,33 @@
+1. LIMITED LICENSE GRANT.
+
+JGRAPHUI grants to you Licensee for jGraphUI software, a non-exclusive, non-transferable, worldwide, royalty-free license to use this version of the jGraphUI software.
+
+The Licensee has the right to use the Software only in non-commercial (free) projects with many jgraphUI-developers . The Licensee may use the software on any website an unlimited number of times As long as a reference (link) to jGrapgUI appears on the screen. Under this license, a site means a location where all the web pages share a single fully qualified domain name. A site may include both intranet and extranet pages.
+
+The Licensee may not apply for free-of-charge support (consultations) on the product.
+
+Modifications to the software by the Licensee are not allowed. 
+a) Specific Restrictions
+
+The Licensee is not permitted to distribute the component(s) or its part(s) in any fashion which would promote, encourage, or allow reuse or redistribution of the JavaScript component(s).
+b) General Restrictions
+
+Software may not be transferred, leased, assigned, or sublicensed, in whole or in part.
+
+c) Disclaimer of Warranty
+
+The Software is provided "AS IS," without a warranty of any kind.
+
+ALL EXPRESS OR IMPLIED REPRESENTATIONS AND WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY EXCLUDED.
+
+d) Limitation of Liability
+
+IN NO EVENT WILL JGRAPGUI BE LIABLE FOR ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES HOWEVER CAUSED AND REGARDLESS OF THEORY OF LIABILITY ARISING FROM THE USE OF, THE INABILITY TO USE, OR DOWNLOADING OF THE SOFTWARE, EVEN IF JGRAPHUI HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+2. COPYRIGHT
+
+JGRAPHUI retain all ownership rights to the Software and related documentation. Use of the Software and related documentation is governed by the license agreement accompanying the Software and applicable copyright law.
+
+The documentation of the Software must always follow the Software. Making unauthorized copies, adaptations, or compilation works is prohibited. JGRAPHUI may revise this documentation from time to time without notice.
+
+THIS DOCUMENTATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. IN NO EVENT SHALL JGRAPHUI BE LIABLE FOR ANY LOSS OF PROFITS, LOSS OF BUSINESS, LOSS OF USE OR DATA, INTERRUPTION OF BUSINESS, OR FOR INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY KIND, ARISING FROM ANY ERROR IN THIS DOCUMENTATION.

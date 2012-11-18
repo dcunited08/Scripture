@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8'?>
+        <rss version='2.0'><channel>
+        <title>Events | scripture.sourceforge.net</title>
+        <link>http://scripture.sourceforge.net</link>
+        <description>scripture.sourceforge.net Feeds</description>
+        <language>en-us</language><item>
+            <title>Project plan notes (Updated)</title>
+            <link>http://scripture.sourceforge.net?forum&amp;nid=129</link>
+            <description><![CDATA[<p>
+	List of current development (- = not completed) (+- party completed) (+completed)</p>
+<p>
+	+Hide bibles<br />
+	+Tri vers database<br />
+	+-Topical Bibles<br />
+	&nbsp; +-simple create form in user-features for user private(or shared) library<br />
+	+-Database security http://php.net/manual/en/function.mysql-query.php check suggested alternatives(minimal completetion)<br />
+	+Colored bookmarks..(selecting all)<br />
+	+-color bible link for forum topics..<br />
+	+colored comments and topics in bible content<br />
+	+php edit/list files in main&amp;inc for admin<br />
+	+headline coloring in bibles<br />
+	+-search through biblemaps<br />
+	+table column for themes generated<br />
+	+bibles grouped together by language for selecting all<br />
+	+fixed forum menu(now appearing throughout the forum).<br />
+	+-, to include multiple verses(Currently works with a single selected chapter).<br />
+	+fixed &quot;search highlight color&quot; missing<br />
+	+fixed *search all bibles* (also limited to selected bibles)<br />
+	+fixed &quot;search highlight&quot; replacing withing html tags. and added css coloring.<br />
+	+fixed &quot;multiverse&quot;; sql syntaxt &quot;where&quot; went missing.</p>
+<p>
+	<br />
+	-Login profile<br />
+	-flasher<br />
+	-users online<br />
+	-bookmark and favorite notes<br />
+	-link super like crossref<br />
+	-redefine forum threads that two or more may prophecy together.(wiki-style)<br />
+	-link forum to verse-highlight<br />
+	&nbsp; .-include ranges for verses, (and several verse positions^EASY).<br />
+	-text highlight tool/javascript popup?<br />
+	-messaging system with javascript &quot;new message check&quot;.<br />
+	-ranges for colors,notes,favorites. (using v2)<br />
+	-redefine categories for multi categorical system/updating to number forks.<br />
+	.-Numeric category system for multi category forum<br />
+	-Link graphical map<br />
+	-note,favorite,bookmark categories; editor and lister<br />
+	-fix translation features to include multi-editing and clear view<br />
+	-advances search results included while searching the bible (various optional results, separated by most likely logic).<br />
+	-daily verses, and one random.<br />
+	-verse ranges in bookmarks, favorites, notes, and crossreferences. (different color for ranges?)<br />
+	-indicate if favorite.. is added in userfeatures<br />
+	-include html file content: <!--#include file="path to file/include-file.html"--><br />
+	-highlights for lookups<br />
+	-colored highlights for auto-suggest.<br />
+	-show which bid when doing search of multiple bibles<br />
+	-copy paste/link topic map items/rearrange. (new kind of editor?)<br />
+	-highlights inside ajax suggest<br />
+	-group features<br />
+	<br />
+	Ekklesia<br />
+	-Gift listings and sharable capabilities<br />
+	-Gathering after the manner of the scriptures<br />
+	&nbsp;</p>
+<p>
+	If you have other ideas, <a href="/chat">suggest</a>.</p>
+<p></p>By uid[1]]]></description>
+            <pubDate>Wed, 10 Oct 2012 21:12:00 +0000</pubDate>
+            <category>ev</category>
+            </item><item>
+            <title>Major Changes</title>
+            <link>http://scripture.sourceforge.net?forum&amp;nid=127</link>
+            <description><![CDATA[<p>
+	I&#39;m rearranging allot of code; please notify me if you notice anything not working for 20 seconds (after retrying).</p>
+<p>
+	Thank you</p>
+<p></p>By uid[1]]]></description>
+            <pubDate>Sat, 06 Oct 2012 19:09:00 +0000</pubDate>
+            <category>ev</category>
+            </item><item>
+            <title>$300 Dollar Pull</title>
+            <link>http://scripture.sourceforge.net?forum&amp;nid=124</link>
+            <description><![CDATA[<p>
+	After 3 efforted contributions by 3 different people I&#39;ll draw one winner of 300$ dollars.</p>
+<p>
+	The payment will be sent on paypal, so make sure you have a paypal account.</p>
+<p>
+	<a href="/chat">Come to the chat and speak about your contribution.</a></p>
+<p></p>By uid[1]]]></description>
+            <pubDate>Sun, 30 Sep 2012 08:44:00 +0000</pubDate>
+            <category>ev</category>
+            </item><item>
+            <title>Biblestudy Online</title>
+            <link>http://scripture.sourceforge.net?forum&amp;nid=121</link>
+            <description><![CDATA[<p>
+	Are you interested in studying the bible online together with someone?</p>
+<p>
+	Do you follow the Lord Jesus?</p>
+<p>
+	Then you are welcome.</p>
+<p>
+	Click on <a href="/chat">&quot;Forum&rarr;Chat&quot;</a></p>
+<p></p>By uid[1]]]></description>
+            <pubDate>Mon, 24 Sep 2012 19:39:00 +0000</pubDate>
+            <category>ev</category>
+            </item><item>
+            <title>Breakthrough development</title>
+            <link>http://scripture.sourceforge.net?forum&amp;nid=117</link>
+            <description><![CDATA[<p>
+	I&#39;m experimenting with some new ways of searching, and I believe I can with some assistance make some highly advanced ways to search the bible.</p>
+<p>
+	This new way of searching will be a &quot;most preferable feature&quot;.<br />
+	One might even be asking &quot;why didn&#39;t someone make this before&quot;.</p>
+<p>
+	I seek assistance by someone who knows a little javascripting.<br />
+	<br />
+	Look at <a href="http://scripture.sourceforge.net/?shoot">http://scripture.sourceforge.net/?shoot</a><br />
+	&nbsp;</p>
+<p></p>By uid[1]]]></description>
+            <pubDate>Sun, 09 Sep 2012 21:53:00 +0000</pubDate>
+            <category>ev</category>
+            </item><item>
+            <title>Visitors count hit the roof</title>
+            <link>http://scripture.sourceforge.net?forum&amp;nid=110</link>
+            <description><![CDATA[<p>
+	These last two weeks we have around 300 unique visitors every day.</p>
+<p>
+	About 2000 new and unique visitors in two week time.</p>
+<p>
+	Kriss</p>
+<p></p>By uid[1]]]></description>
+            <pubDate>Tue, 28 Aug 2012 19:47:00 +0000</pubDate>
+            <category>ev</category>
+            </item></channel></rss>

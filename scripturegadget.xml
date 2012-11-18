@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Module>
+    <ModulePrefs title="Scripture" title_url="http://scripture.sf.net" height="150" author="krizoek" author_email="krizoek@gmail.com"
+               screenshot="https://scripture.sourceforge.net/img/icon_gold.png" thumbnail="https://scripture.sourceforge.net/img/icon_gold.png"
+               description="Search strongs or words in the bible; Either english, greek, german or norwegian" author_location="Norway" author_affiliation="scripture.sf.net"
+               author_link="http://scripture.sf.net" category="religion" category2="lifestyle" />
+   <Content type="html">
+     <![CDATA[ 
+<div class="moduleContent">
+<form onsubmit="return handleSubmit()" target=_blank method="get" name="moduleForm" id="moduleForm">
+<div> <font size=2 face = verdana color= #0000ff > <b>Search </b></font> <select name="allSelect" id="allSelect">
+<optgroup label="English">
+<option value="http://scripture.sourceforge.net/index.php?b=1&s=" selected="selected">KJaV</option>
+<option value="http://scripture.sourceforge.net/index.php?b=3&s=">Tyndale</option>
+<option value="http://scripture.sourceforge.net/index.php?b=5&s=">Septuagint(LXE)</option>
+<option value="http://scripture.sourceforge.net/index.php?b=3&s=">KJV wStrongs</option>
+<option value="http://scripture.sourceforge.net/index.php?b=12&s=">KJV wGeneva</option>
+</optgroup> <optgroup label="German">
+<option value="http://scripture.sourceforge.net/index.php?b=15&s=">Luther 1912</option>
+<option value="http://scripture.sourceforge.net/index.php?b=14&s=">Luther 1545</option>
+<option value="http://scripture.sourceforge.net/index.php?b=7&s=">Luther 1912 wStrongs</option>
+</optgroup> <optgroup label="Norwegian">
+<option value="http://scripture.sourceforge.net/index.php?b=6&s=">BF97</option>
+</optgroup>
+</optgroup> <optgroup label="Greek">
+<option value="http://scripture.sourceforge.net/index.php?b=96&s=">TR Scrivener</option>
+<option value="http://scripture.sourceforge.net/index.php?b=10&s=">TR Stephanus</option>
+<option value="http://scripture.sourceforge.net/index.php?b=2&s=">Robinson</option>
+</optgroup>
+</select> <font size="1"></font> <br> <input type="text" name="allQuery" id="allQuery" size="22" />
+<input type="submit" value=" Go " />
+</div>
+</form>
+</div>
+]]>
+</Content></Module>

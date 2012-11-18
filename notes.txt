@@ -1,0 +1,286 @@
+global|function iff($tst,$cmp,$bad) { return(($tst == $cmp)?$cmp:$bad); } //might be useful in the future
+
+init|$shortdrupal = 'GEN EXO LEV NUM DEU JOS JUG RUT 1SM 2SM 1KG 2KG 1CH 2CH EZR NEH EST JOB PS PRO ECC SON ISA JER LAM EZE DAN HOS JOE AMO OBA JON MIC NAH HAB ZEP HAG ZEC MAL MAT MAK LUK JHN ACT ROM 1CO 2CO GAL EPH PHL COL 1TS 2TS 1TM 2TM TIT PHM HEB JAM 1PE 2PE 1JN 2JN 3JN JUD REV 1ES JDT TOB 1MA 2MA 3MA 4MA ODE WIS SIP SIR PSS BAR EPJ SUS BEL PRA DNG PRM PSX LAO 4ES ESG JSA JDA TBS SUT DAT BET WCF WLC WSC 1Cl 2Cl';
+init|$books = 'Gen Exo Lev Num Deu Jos Jud Rut 1Sa 2Sa 1Ki 2Ki 1Ch 2Ch Ezr Neh Est Job Psa Pro Ecc Son Isa Jer Lam Eze Dan Hos Joe Amo Oba Jon Mic Nah Hab Zep Hag Zec Mal Mat Mar Luk Joh Act Rom 1Co 2Co Gal Eph Phili Col 1Th 2Th 1Ti 2Ti Tit Phile Heb Jam 1Pe 2Pe 1Jo 2Jo 3Jo Jud Rev';
+
+init|/*// would this reduce server load ?
+init|$lastModified = filemtime (__FILE__);$etagFile = md5_file (__FILE__);
+init|$ifModifiedSince = isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? $_SERVER['HTTP_IF_MODIFIED_SINCE'] : FALSE;
+init|$etagHeader = isset($_SERVER['HTTP_IF_NONE_MATCH']) ? trim($_SERVER['HTTP_IF_NONE_MATCH']) : FALSE;
+init|header("Last-Modified: " . gmdate("D, d M Y H:i:s", $lastModified) . " GMT"); header("Etag: $etagFile"); header('Cache-Control: public');
+init| if (@strtotime ($ifModifiedSince) == $lastModified || $etagHeader == $etagFile) { header ("HTTP/1.1 304 Not Modified"); exit; } //check if page has changed. If not, send 304 and exit
+init|//note for later $cachefile = basename($_SERVER['SCRIPT_URI']); if ($_SERVER['QUERY_STRING']!='') {$cachefile .= '_'.base64_encode($_SERVER['QUERY_STRING']);}
+init|//*/
+
+init|//echo'<head><link REL="SHORTCUT ICON" HREF="../favicon.ico">'.$htmllang.'</head>';
+init|/* //might be useful some other time
+init|echo'<head>'.$htmllang.'<meta http-equiv="Content-Script-Type" content="text/javascript">
+init|<script language="JavaScript" type="text/JavaScript">
+init|function goA(s){
+init| if(s.selectedIndex>0){ var a=s.options[s.selectedIndex].text; location.href=\'index.php\'+\'#\'+a; }
+init|} </script></head>'; */
+
+init|//$dbbooksorg = 'Genesis Exodus Leviticus Numbers Deuteronomy Joshua Judges Ruth 1Samuel 2Samuel 1Kings 2Kings 1Chronicles 2Chronicles Ezra Nehemiah Esther Job Psalm Proverbs Ecclesiastes Songofsolomon Isaiah Jeremiah Lamentations Ezekiel Daniel Hosea Joel Amos Obadiah Jonah Micah Nahum Habakkuk Zephaniah Haggai Zechariah Mal Matthew Mark Luke John Acts Romans 1Corinthians 2Corinthians Galatians Ephesians Philippians Colossians 1Thessalonians 2Thessalonians 1Timothy 2Timothy Titus Philemon Hebrews James 1Peter 2Peter 1John 2John 3John Jude Revelation';
+init|//$boker = '1Mosebok 2Mosebok 3Mosebok 4Mosebok 5Mosebok Josva Dommerne Rut 1Samuelsbok 2Samuelsbok 1Kongebok 2Kongebok 1Krønikebok 2Krønikebok Esra Nehemja Ester Job Salmenesbok Salomosordspråk Forkynneren Høysangen Jesaja Jeremia Klagesangene Esekiel Daniel Hosea Joel Amos Obadja Jona Mika Nahum Habakkuk Sefanja Haggai Sakarja Malaki Matteus Markus Lukas Johannes Apostelgjerningene Romerne 1Korinterbrev 2Korinterbrev Galaterne Efeserne Filipperne Kolosserne 1Tessaloniker 2Tessaloniker 1Timoteus 2Timoteus Titus Filemon Hebreerne Jakob 1Peters 2Peters 1Johannes 2Johannes 3Johannes Judas Åpenbaringen';
+init|//$a_boker = explode(' ', strtolower($boker);
+init|//$a_dbbooksorg = explode(' ', strtolower($dbbooksorg));
+
+init|//function iif($tst,$cmp,$bad) { return(($tst == $cmp)?$cmp:$bad); }
+
+init|//if (!empty($u)) { $multiusercheck .= $uid.":"; } //checks for multi_names(just a future plan for similar usernames)
+
+init|else { $bl = '&b='.$b; } //$ismultib = array();$ismultib = $b;
+init|
+//$editor='<script type="text/javascript" src="tiny_mce/jquery-1.6.1.min.js"></script>'; //used without combination of gz files
+  //plugins : "style,layer,table,save,advhr,advimage,advlink,emotions,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras",
+    // plugins : "style,layer,table,save,advhr,advimage,advlink,emotions,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras",
+    
+//$editor='<script type="text/javascript" src="http://www.google.com/jsapi"></script><script type="text/javascript">google.load("jquery", "1");</script>';
+//$editor.='<script type="text/javascript" src="tiny_mce/tiny_mce_gzip.js"></script> // no comb.
+//$editor.='<script type="text/javascript" src="tiny_mce/tiny_mce.js"></script>'; //uncombined
+//$editor.='<script type="text/javascript" src="tiny_mce/jquery.tinymce.js"></script>';
+
+init|/*minify project
+$minify='ccSimpleUploader,emotions,autolink,lists,pagebreak,style,layer,table,save,advhr,advimage,advlink,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,advlist';
+$minify=explode(',',$minify);
+$minified='min/?f=';
+foreach($minify as $mini) {
+  $minified.='m/tiny_mce/plugins/'.$mini.'/editor_plugin.js,';
+}
+$minified.='&debug=1';
+echo $minified.'<br>';
+//minify project*/
+
+init|77|near //global settings| //$glang=mysql_result($result16,'0','lang'); //will be used to set default bible in the future by language
+  //$gsettings=mysql_result($result16,'0','settings');
+ // if (!empty($gsettings)){$gsettings=explode('|',$gsettings);}
+ 
+index|htmlbiblelist|/*if ($uid=='1'){$s1='SELECT * FROM bible_list order by bid ASC';}
+elseif($u!=='demo') {$s1="SELECT * FROM bible_list WHERE (uids IS NULL OR uids REGEXP '/(^$uid\s)|(\s$uid\s)|(\s$uid$)/') order by bid ASC";}
+else {$s1='SELECT * FROM bible_list WHERE (uids IS NULL) order by bid ASC';}
+ */
+index|52| //$lang=mysql_result($result,$i,"lang");
+index|52| //$serialversion=mysql_result($result,$i,"serialversion");
+
+index|130|if(!file_exists($cachefile)) {|//cache system for content
+index|130|if(!file_exists($cachefile)) {|    //if (!empty($u)) { } else { $parse_mode ="2" }
+index|130|if(!file_exists($cachefile)) {|    //if (!empty($ismultib)) { $parse_mode2='1';} else { $bdir = $b; }
+index|130|if(!file_exists($cachefile)) {|    //if (!empty($parse_strongb)) {  }
+
+index|144|foreach($strongblist as $strongbsearch) { if(array_search($strongbsearch,$ismultib,TRUE)) { $parse_strongb = '1'; } }|//else { if(array_search($strongbsearch,$ismultib,TRUE)) { $parse_strongb = '1'; } }
+index|144|foreach($strongblist as $strongbsearch) { if(array_search($strongbsearch,$ismultib,TRUE)) { $parse_strongb = '1'; } }|      //if (preg_match("/(^".preg_quote($b,"/")."\s)|(\s".preg_quote($b,"/")."\s)|(\s".preg_quote($b,"/")."$)/",$strongblist)) { $parse_strongb = '1'; }
+index|144|foreach($strongblist as $strongbsearch) { if(array_search($strongbsearch,$ismultib,TRUE)) { $parse_strongb = '1'; } }|      //if(preg_grep('/strong/i', $ismultib)) { stripos($b'strong') }
+
+index|190|// <- strong links|// Most browsers seems to do good by opening up in a popup. Then less data is also required, and one may simply go back with the browser(and the site would still be cached,)
+index|190|// <- strong links|    //if (empty($bsecount) && empty($iframe1) && ($i >= ($num5 / 2))) { echo "<iframe name='middleframe' src='test.php' width='100%' height='".$frameheight."' frameborder='0'></iframe>";$iframe1 = '1'; }
+
+index|html bible list(after $b_name2 = $sqbook;)|
+/*//$token2 = array_search(strtolower($sqbook),array_map('strtolower',$a_shortdrupal));
+    //if ($token2 !== FALSE) { $b_name2 = $a_books[$token2]; } //+39 to make it the nt books
+   //else { $b_name2 = $sqbook; } // function for doublechecking the booknames
+    if (is_numeric (substr($b_name2,0,1))) { // function that makes the first letterchar capital
+    $b_name2=substr($b_name2,0,1).ucfirst(substr($b_name2,1,9)); //futurenote: add settings for viewing capital, lower, or with ucfirst
+  } else { $b_name2=ucfirst($b_name2); } */
+
+parse filter|84|//echo'book:'.$book.' chap:'.$chap.' search:'.$se.' b:'.$b;
+parse filter|84|//echo "chap ".$chap." book ".$book." bible ".$b." searchonly ".$seonly;
+
+parsefilter|36|elseif (empty($b_name)) { $token = array_search($t_book,$a_shortbibleworks); }
+	if (empty($b_name) && ($token !== FALSE)) { $b_name = $a_shortdrupal[$token]; }
+
+parsestrongs|end|
+  /* Translator function
+			  i cannot make this function yet, because much research is needed. (which to trust? for example)
+			  Need to do some research on the matter, and i do understand there can be aberitions, and variations in the language.
+			  Trouble is that I'm no expert in greek, hebrew, or latin. So i would require some help on finding databases. and also the making of the translator functions.
+			  This could take some time to figure out (i certainly hope it wouldn't take years, and for me to learn all these languages)
+			  The whole point of this function was to make it so that i didn't have to learn other languages(i'm not gifted with the understanding of languages).
+		    
+		  }	 note: how to get browsers to load and cache html files with increase in performance? (would it be good for mobile storage having a database of 1GB?) */
+
+mydata|70(before if (!empty($updatesfound)) { echo'<br>)|	/* old update call style
+	if (($a_updatecheck_index[0] == $a_updatecheck[0]) && ($a_updatecheck_index[1] != $a_updatecheck[1])) { $do_update .= "update=".$a_updatecheck_index[0]; }
+	elseif (($a_updatecheck_database[0] == $a_updatecheck[0]) && ($a_updatecheck_database[1] != $a_updatecheck[1])) {
+	  if (!empty($do_update)) { $do_update .= "&"; }
+	  $do_update .= "update2=".$a_updatecheck_database[0];
+	}
+	*/
+      //}
+
+userfeatures|37(before echo $strongdefinition."<br>";)|/* might be useful in the future
+		$regex1 = "/[^\s]\w{1,20}\s\d{1,3}\:\d{1,4}/i";
+		$strongsearcher = preg_match_all($regex1,$strongdefinition,$getstrongi,PREG_OFFSET_CAPTURE);
+		foreach($getstrongi[0] as $getstrongdb) {
+		  $fli_basis2 = preg_replace('/\s/','+',$getstrongdb[0]);
+		  $strongdefinition2 = "<a href=\"index.php?s=".$fli_basis2."\>".$getstrongdb[0]."</a> ";
+		  $strongdefinition = str_replace('<'.$getstrongdb[0].'>',$strongdefinition2,$strongdefinition);
+		}
+		*/
+
+users|
+/*
+    $a = session_id();
+    if(empty($a)) session_start();
+    echo "SID: ".SID." ".md5("sdf".session_id())."<br>COOKIE: ".$_COOKIE["PHPSESSID"]."<br>";
+*/
+
+database.php|
+$sql=mysql_query("SELECT user FROM bible_xrefs"); // bible_xrefs 
+if (!empty($sql)){
+    mysql_query("ALTER TABLE bible_xrefs ADD verse VARCHAR(20) AFTER id");
+    mysql_query("ALTER TABLE bible_xrefs ADD xrid int(10), AFTER verse");
+    mysql_query("ALTER TABLE bible_xrefs ENGINE = MyISAM;");
+     echo "Database Table bible_xrefs Altered<br>";
+} else {
+mysql_query("CREATE TABLE bible_xrefs(
+id INT NOT NULL AUTO_INCREMENT,
+PRIMARY KEY(id),
+verse VARCHAR(20) NOT NULL,
+xrid int(10),
+`group` VARCHAR(20),
+mode VARCHAR(3),
+user VARCHAR(20),
+datetime TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+refs TEXT) CHARACTER SET = utf8 COLLATE = utf8_general_ci ENGINE = MyISAM;") or die(mysql_error());
+ echo "Database Table bible_xrefs Created<br>";
+}*/
+
+lookups:/*echo
+'<form action="index.php?b='.$b.'&bk='.$book.'%c='.$chap.'" method="post" enctype="multipart/form-data">
+<select style="width:65" name="lookup">
+<option selected="selected" value="">Where do i find</option>
+<option value="1Jo 5:2-3">To Love</option>
+<option value="2Mos 20:17">The ten commandments</option>
+<option value="4Mos 6:24-26">Blessing</option>
+<option value="psa 23">&quot;Lord is my shepherd&quot;</option>
+<option value="isa 53">Lords suffering servant</option>
+<option value="Luk 2:1-21">Birth of Jesus</option>
+<option value="Luk 22:1-24">Easter story</option>
+<option value="act 2:1-47">Pentecostal story</option>
+<option value="Mat 22:36-40">The double Love commandments</option>
+<option value="Mat 7:12">The golden law</option>
+<option value="1co 13">Loves hymn</option>
+<option value="Mat 5">The sermon on the Mount</option>
+<option value="Mat 6:7-15">The Lord\'s Prayer</option>
+<option value="Luk 15:11-32">The lost son</option>
+<option value="Luk 10:25-37">The good samaritan</option>
+<option value="Mat 28:16-20">Order of Baptism </option>
+<option value="rev 21:1-4">A new heaven and earth</option>
+<option value="pro 25">Words of joy</option>
+<option value="pro 27">Words of hope</option>
+<option value="pro 24">Words of love</option>
+<option value="pro 26">Words of comfort</option>
+<option value="pro 22">Words of wisdom</option>
+</select><input type="submit" value="Go"></form>';
+*/
+
+lookups:if (empty($_GET['stse'])) {
+echo'<p><form action="index.php?b='.$b.'&bk='.$book.'&c='.$chap.'" method="post" enctype="multipart/form-data">
+<u>References found in current book</u><br><select style="width:195" name="lookup">';
+if (!empty($_GET['b'])) { $bspecific=" AND book='$book' ";$bspecific2=" WHERE book='$book' ";}
+elseif ($uid=='1') {ini_set('max_execution_time', '600');$lister='1';$listerdata="";$bspecific="";} // "AND bid='9'"
+$fsql='SELECT * FROM bible_headlines'." $bspecific2".' ORDER BY hid ASC';
+//echo $fsql;
+$fsqlq=mysql_query($fsql);
+$check=mysql_result($fsqlq,7,'verse');
+if (empty($check)) {
+  //if($uid!=='1'){$nohldb='1';}
+  $fsqlmain='SELECT * FROM bible_context WHERE context REGEXP binary'." '^[\[][A-Z][A-Z ][^\]]*\]' $bspecific ORDER BY vsid ASC";
+  $fsqlq=mysql_query($fsqlmain);
+} else {$nonew='1';}
+  $n=mysql_numrows($fsqlq);
+  echo "\r\n".$check."\r\n".'_'.$nohldb.'_'.$n.' '.$fsql."\r\n";
+  for($i=0;$i<=$n; ++$i) {
+    $sverse=mysql_result($fsqlq,$i,'verse');
+    if (empty($nohldb)) {
+      $schap=mysql_result($fsqlq,$i,'chap');
+      $sbook=mysql_result($fsqlq,$i,'book');
+      $stit=mysql_result($fsqlq,$i,'title');
+      if(!empty($nonew)){
+        $scontext=substr(mysql_result($fsqlq,$i,'context'),0,100);
+        $scontext=explode(']',$scontext);
+        $scontext=str_replace('[','',$scontext[0]);
+      }
+      if(!empty($scontext) && !preg_match('/(\d)|(KJV\:)|([a-z])/',$scontext)) {
+        $schap=mysql_result($fsqlq,$i,'chapter');
+        
+        //echo '<option value="'.$book.' '.$schap.':'.$sverse.'">'.$scontext.'</option>';d
+        if (!empty($lister)) {
+            //$sbook=mysql_result($fsqlq,$i,'book');
+            if (($i<='1')&&!empty($scontext)) {
+                $dosql='SELECT * FROM bible_headlines WHERE title='."'$scontext' AND book='$sbook' AND chap='$schap' AND verse='$sverse';";
+                $fsqlqt=mysql_query($dosql);
+                $dosql=mysql_result($fsqlqt,0,'title');
+                if (!empty($dosql)){$nonew='1';}
+            }
+            //if (strlen($scontext) > $listerdata) { $listerdata=strlen($scontext);}
+            if(!empty($scontext)){
+              $dosql="INSERT INTO $database".'.bible_headlines (hid,title,book,chap,verse) values (NULL,'."'$scontext','$sbook','$schap','$sverse');";
+              if(empty($nonew)) { $fsqlqt=mysql_query($dosql); }
+              }
+            //$listerdata.=$scontext.' '.$sbook.' '.$schap.':'.$sverse.'<br>';
+        }
+        $stit=$scontext;
+      }
+    }
+    if(!empty($stit)){
+      echo '<option value="'.$sbook.' '.$schap.':'.$sverse.'">'.$stit.'</option>';
+    }
+    unset($scontext,$stit);
+  }
+echo'</select><input type="submit" value="Go"></form></p>';
+}
+
+inc/biblecontent_parser|bottom|//if (!isset($bsecount)) { echo "<a href='http://google.com' target='middleframe'>IframeLinkTest</a>";} // old middleframe style for userfeatures
+
+importers.php||//if (preg_match('/^http\:\/\//i',$tmpfilename)) {$tmpfile = file_get_contents($tmpfilename); } //if curl is disabled; you might want to try this
+frontpage||/*
+echo '<table><tr><td>
+<a href="'.$subd.'?mypage=1'.$bl.$bookli.'">(MyPage)</a> 
+<a href="'.$subd.'?mydata=1'.$bl.$bookli.'">(MyData)</a> 
+<a href="'.$subd.'?mydata=settings'.$bl.$bookli.'">(Settings)</a> 
+<a href="'.$subd.'?groups=1'.$bl.$bookli.'">(Groups)</a>
+</td></tr><tr><td>
+<a href="'.$subd.'/bible_dial.php?bd'.$bl.'">(Bible Dial)</a> 
+<a href="'.$subd.'/bible_dial.php?bd'.$bl.'&hl">(Headline Dial)</a> 
+<a href="superdial.php?forum'.$bl.'">(Super Dial)</a>
+</td></tr><tr><td>
+<a href="users.php">(Login)</a> 
+<a href="'.$subd.'?lookups=1'.$bl.$bookli.'">(Lookup)</a> 
+<a href="'.$subd.'?forum'.$bl.$bookli.'">(Forum)</a> 
+<a href="http://79.143.177.152/chat">(Chat)</a>
+</td></tr><tr><td>';
+*/
+
+init.php|before head|if(!empty($fp)or!empty($forum)or!empty($groups)){
+  $r=mysql_query('SELECT * FROM bible_node_icons');
+  $n=mysql_numrows($r);$imgs="";
+  for($i=0;$i<$n; ++$i) {
+    $sna=mysql_result($r,$i,'name');$simg=mysql_result($r,$i,'img');
+    $imgs.=' .im'.$sna.' { background:url(data:image/png;base64,'.$simg.') top left no-repeat;} '; //transparent; // top left;
+  }
+}
+
+audiobible.php||        /*echo N.'<object type="application/x-shockwave-flash" data="inc/player_mp3_maxi.swf" width="200" height="20">
+    <param name="movie" value="inc/player_mp3_maxi.swf">
+    <param name="bgcolor" value="#1E4A56">
+    <param name="FlashVars" value="mp3='.urlencode($slink).'&amp;volume=40&amp;autoplay=0&amp;showvolume=1"></object>'; //<a href="'.$slink.'">[File]</a> //&amp;bgcolor1=f56900&amp;bgcolor2=610000
+        */
+        
+generators.php|bibleworks|a few performance experiments
+/*'<
+             //$t_linec=preg_replace(array('/\((\d{3})\)/','/\((\d{4})\)/','/\((\d{5})\)/','/<(\d{1})>/','/<(\d{2})>/','/<(\d{3})>/','/<(\d{4})>/'),array('<00'."$1".'>','<'."$1".'>','<'."$1".'>','<0000'."$1".'>','<000'."$1".'>','<00'."$1".'>','<0'."$1".'>'),$t_linec);
+
+            $t_linec=preg_replace('/<(\d{3,5})>/e',"str_repeat('0',(5-strlen('$1'))).'.$1'", $t_linec);
+            $t_linec=preg_replace('/<(\d{1,4})>/e',"str_repeat('0',(5-strlen('$1'))).'.$1'", $t_linec);
+            *//*
+            $t_linec=preg_replace('/\((\d{3})\)/','<00'."$1".'>',$t_linec);
+            $t_linec=preg_replace('/\((\d{4})\)/','<0'."$1".'>',$t_linec);
+            $t_linec=preg_replace('/\((\d{5})\)/','<'."$1".'>',$t_linec);
+            $t_linec=preg_replace('/<(\d{1})>/','<0000'."$1".'>',$t_linec);
+            $t_linec=preg_replace('/<(\d{2})>/','<000'."$1".'>',$t_linec);
+            $t_linec=preg_replace('/<(\d{3})>/','<00'."$1".'>',$t_linec);
+            $t_linec=preg_replace('/<(\d{4})>/','<0'."$1".'>',$t_linec);*/
+            
+            
+new_node.php|content|//$content=preg_replace('/(?:[^\/a>])(\w{1,20}\s\d{1,3}\:\d{1,3}[\-\d{1,3}]?)/i','<a href="/?s='.urlencode('\\1').'">\1</a>',$content);

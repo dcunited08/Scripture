@@ -1,0 +1,34 @@
+<html>
+<head></head>
+<body>
+<div class='main_content'>
+
+        <div id="tvu-satellite-player" style="display:none;">
+            <script type="text/javascript" src="http://dl.tvunetworks.com/webplayer/myTVU.js?c=5566&w=400&h=300&autoplay=1&style=1"></script>
+            <div style="font-size:10px; margin-top:5px; color:#777;">If your browser and/or operating system is not supported by the TVUNetworks plug-in, you can install a desktop application (TVUPlayer) for Windows or Mac OS X and watch the channel directly there: <a href="http://pages.tvunetworks.com/downloads/player.html" rel="nofollow" target="_blank">http://pages.tvunetworks.com/downloads/player.html</a><br/>For Android devces visit:<br/><a href="https://market.android.com/search?q=tvuplayer&so=1&c=apps">https://market.android.com/search?q=tvuplayer</a></div>
+            <div style="padding-top:20px;">Switch to <span onclick="jQuery('#tvu-satellite-player').hide(0); jQuery('#flash-satellite-player').show(0);" style="color:aa0000 important!; cursor:pointer; text-decoration:underline;">Flash Player</span></div>
+        </div>
+            <object id="player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" name="player" width="512" height="384">
+	            <param name="movie" value="http://tv.tulix.com/player.swf" />
+	            <param name="allowfullscreen" value="true" />
+	            <param name="allowscriptaccess" value="always" />
+	            <param name='flashvars' value='file=mystream2&start=yes&backcolor=111111&frontcolor=dddddd&streamer=rtmp://stream.iphonewebtown.com/amazingdiscoveries&autostart=true&stretching=bestfit&image=http://amazingdiscoveries.tv/images/adtv_logo_auto_play.jpg&controlbar=over&dock=false'>
+                    <embed
+			            type="application/x-shockwave-flash"
+			            id="player2"
+			            name="player2"
+			            src="http://tv.tulix.com/player.swf"
+			            width="512"
+			            height="384"
+			            allowscriptaccess="always"
+			            allowfullscreen="true" flashvars="file=mystream2&start=yes&backcolor=111111&frontcolor=dddddd&streamer=rtmp://amazingdrtmp.tulix.tv/amazingdiscoveries&autostart=true&stretching=bestfit&image=http://amazingdiscoveries.tv/images/adtv_logo_auto_play.jpg&controlbar=over&dock=false" name="flashvars"
+		            />
+            </object>
+
+            <br>You can also watch the channel on:<br/>
+<a href="rtsp://stream.iphonewebtown.com/amazingdiscoveries/mystream2"><img alt="Android" src="http://amazingdiscoveries.tv/images/icons/android_logo.jpg" /></a> <a href="http://stream.iphonewebtown.com/amazingdiscoveries/mystream2/playlist.m3u8"><img alt="iPhone" src="http://amazingdiscoveries.tv/images/icons/iphone_logo.jpg" /></a> <a href="rtsp://stream.iphonewebtown.com/amazingdiscoveries/mystream2"><img alt="BlackBerry" src="http://amazingdiscoveries.tv/images/icons/blackberry_logo.jpg" /></a><br>
+            <div style="padding-top:20px;">Switch to <span onclick="jQuery('#flash-satellite-player').hide(0); jQuery('#tvu-satellite-player').show(0);" style="color:aa0000 important!; cursor:pointer; text-decoration:underline;">TVU Player</span></div>
+	<br>To watch the satellite channel you will need <a href="http://get.adobe.com/flashplayer/">Adobe Flash Player.</a><br>
+            
+</body>
+</html>

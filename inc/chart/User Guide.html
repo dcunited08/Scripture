@@ -1,0 +1,444 @@
+<p>
+<b>jgraphUI</b> is a rich feature and highly customizable yet easy to use diagram tool, this manual will list few samples and a detailed parameter list for graph and node elements.
+</p>
+
+
+
+
+
+<p><b>Baisc example</b></p>
+<p>The output of this sample code will be a diagram area with 1000px width and 600px height, positioned at 20px, 30px. </p>
+<table width=90% style="background-color:#dadaaa;border:1px dotted brown;">
+<tr>
+	<td>
+		<p style="font-family:monospace;padding:10px;">
+			var diagram = new Diagram({<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'xPosition':20,<br> 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'yPosition':30, <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'width':1000, <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'height':600,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'imagesPath': 'images/',<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'connectionColor': '#AA0000'<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+		</p>
+	</td>
+</tr>
+</table>
+
+
+
+
+
+
+
+<p>
+<b>Override save method</b>
+</p>
+<p>The output of this sample code will be the same as the previous sample, added override to onSave event. </p>
+<table width=90% style="background-color:#dadaaa;border:1px dotted brown;">
+<tr>
+	<td>
+		<p style="font-family:monospace;padding:10px;">
+			var diagram = new Diagram({<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'xPosition':20, <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'yPosition':30, <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'width':1000, <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'height':600,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'imagesPath': 'images/',<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'connectionColor': '#AA0000',<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onSave: function(data){<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('from on save event \n' +data);<bR>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+		</p>
+	</td>
+</tr>
+</table>
+
+
+<p>
+<b>Customize toolbar buttons</b>
+</p>
+<p>The output of this sample code will be the same as the previous sample, but the toolbar will show only three buttons (Add, Save and Delete). </p>
+
+<table width=90% style="background-color:#dadaaa;border:1px dotted brown;">
+<tr>
+	<td>
+		<p style="font-family:monospace;padding:10px;">
+			var diagram = new Diagram({<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'xPosition':20, <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'yPosition':30, <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'width':1000, <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'height':600,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'toolbar_add_button' : true,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'toolbar_save_button' : true,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'toolbar_delete_button' : true,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'toolbar_background_color_button' : false,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'toolbar_border_color_button' : false,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'toolbar_font_color_button' : false,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'toolbar_font_size_button' : false,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'toolbar_font_family_button' : false,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'toolbar_border_width_button' : false,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'connectionColor': '#AA0000',<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'imagesPath': 'images/',<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onSave: function(data){<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('from on save event \n' +data);<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+		</p>
+	</td>
+</tr>
+</table>
+
+
+<br>
+
+<p><b>Parameter list for graph object</b></p>
+
+<table width="80%" style="border:1px dotted #AAAAAA;border-radius: 5px;-moz-border-radius: 5px;-webkit-border-radius: 5px;	-moz-box-shadow: 1px 1px 0px #999;-webkit-box-shadow: 1px 1px 0px #999;box-shadow: 1px 1px 0px #999;">
+	<tr>
+		<th width="20%" style="background: -moz-linear-gradient(top,#fbfbfb,#f5f5f5);background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#f5f5f5));text-transform:uppercase;font-size:10px;font-weight:bold;border-bottom:1px solid #ccc;text-shadow:-1px -1px #fff;padding:5px 15px;text-align:left;" align="left">Parameter</th>
+		<th width="60%" style="background: -moz-linear-gradient(top,#fbfbfb,#f5f5f5);background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#f5f5f5));text-transform:uppercase;font-size:10px;font-weight:bold;border-bottom:1px solid #ccc;text-shadow:-1px -1px #fff;padding:5px 15px;text-align:left;" align="left">Description</th>
+		<th width="20%" style="background: -moz-linear-gradient(top,#fbfbfb,#f5f5f5);background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#f5f5f5));text-transform:uppercase;font-size:10px;font-weight:bold;border-bottom:1px solid #ccc;text-shadow:-1px -1px #fff;padding:5px 15px;text-align:left;" align="left">Default Value</th>
+	</tr>
+	<tr>
+		<td>id</td>
+		<td>unique id for usage in code</td>
+		<td>if not provided, unique value will be auto generated</td>
+	</tr>
+	<tr>
+		<td>xPosition</td>
+		<td>left graph position</td>
+		<td>20</td>
+	</tr>
+	<tr>
+		<td>yPosition</td>
+		<td>top graph position</td>
+		<td>30</td>
+	</tr>
+	<tr>
+		<td>width</td>
+		<td>graph width</td>
+		<td>1000</td>
+	</tr>
+	<tr>
+		<td>height</td>
+		<td>graph height</td>
+		<td>500</td>
+	</tr>
+	<tr>
+		<td>connectionWidth</td>
+		<td>thickness of the connection line</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>connectionColor</td>
+		<td>color of the connection line</td>
+		<td>#888888</td>
+	</tr>
+	<tr>
+		<td>imagesPath</td>
+		<td>where to find graph images</td>
+		<td>images/</td>
+	</tr>
+	<tr>
+		<td>noToolbar</td>
+		<td>if set to true, the graph will have no toolbar</td>
+		<td>false</td>
+	</tr>
+	<tr>
+		<td>toolbar_add_button</td>
+		<td>if set to false, no "Add Node" button will appear on the toolbar</td>
+		<td>true</td>
+	</tr>
+	<tr>
+		<td>toolbar_save_button</td>
+		<td>if set to false, no "Save" button will appear on the toolbar</td>
+		<td>true</td>
+	</tr>
+	<tr>
+		<td>toolbar_delete_button</td>
+		<td>if set to false, no "Delete" button will appear on the toolbar</td>
+		<td>true</td>
+	</tr>
+	<tr>
+		<td>toolbar_background_color_button</td>
+		<td>if set to false, no "Background Color" button will appear on the toolbar</td>
+		<td>true</td>
+	</tr>
+	<tr>
+		<td>toolbar_border_color_button</td>
+		<td>if set to false, no "Border Color" button will appear on the toolbar</td>
+		<td>true</td>
+	</tr>
+	<tr>
+		<td>toolbar_font_color_button</td>
+		<td>if set to false, no "Font Color" button will appear on the toolbar</td>
+		<td>true</td>
+	</tr>
+	<tr>
+		<td>toolbar_font_size_button</td>
+		<td>if set to false, no "Font Size" button will appear on the toolbar</td>
+		<td>true</td>
+	</tr>
+	<tr>
+		<td>toolbar_font_family_button</td>
+		<td>if set to false, no "Font Family" button will appear on the toolbar</td>
+		<td>true</td>
+	</tr>
+	<tr>
+		<td>toolbar_border_width_button</td>
+		<td>if set to false, no "Border Width" button will appear on the toolbar</td>
+		<td>true</td>
+	</tr>
+	<tr>
+		<td>onSave</td>
+		<td>function decleration to define what to do when "Save" button is clicked, you can show save indicator here</td>
+		<td>do Nothing</td>
+	</tr>
+</table>
+
+<br><br>
+
+
+<p><b>Adding nodes to the diagram using code</b> is simple, following code sample will add a node element to the diagram object created in the previous three samples, in this sample, all the node parameters are provided, but you may not provide all of them at real time project, you can customize the code upon requirements.</p>
+
+
+<table width=90% style="background-color:#dadaaa;border:1px dotted brown;">
+<tr>
+	<td>
+		<p style="font-family:monospace;padding:10px;">
+
+
+			diagram.addNode(new Node({<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'nodeId': '1',<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'nodeType':'NODE',<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'nodeContent': 'Node Content',<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'xPosition':406,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'yPosition':250,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'width': '120',<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'height' : '70',<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'bgColor':'#FFFFFF',<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'borderColor':'#AAAAAA',<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'borderWidth':'1',<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'fontColor':'#000000',<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'fontSize':'',<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'fontType':'',<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'minHeight':50,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'maxHeight':200,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'minWidth':100,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'maxWidth':200,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'nPort':true,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'ePort':true,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'sPort':true,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'wPort':true,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'image':'',<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'draggable':true,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'resizable':true,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'editable':true,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'selectable':true,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'deletable':true,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'nPortMakeConnection': true,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'ePortMakeConnection': true,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'sPortMakeConnection': true,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'wPortMakeConnection': true,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'nPortAcceptConnection': true,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'ePortAcceptConnection': true,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'sPortAcceptConnection': true,<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'wPortAcceptConnection': true<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}));
+		</p>
+	</td>
+</tr>
+</table>
+
+
+<p><b>Parameter list for node element</b></p>
+
+
+<table width="80%" style="border:1px dotted #AAAAAA;border-radius: 5px;-moz-border-radius: 5px;-webkit-border-radius: 5px;	-moz-box-shadow: 1px 1px 0px #999;-webkit-box-shadow: 1px 1px 0px #999;box-shadow: 1px 1px 0px #999;">
+	<tr>
+		<th width="20%" style="background: -moz-linear-gradient(top,#fbfbfb,#f5f5f5);background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#f5f5f5));text-transform:uppercase;font-size:10px;font-weight:bold;border-bottom:1px solid #ccc;text-shadow:-1px -1px #fff;padding:5px 15px;text-align:left;" align="left">Parameter</th>
+		<th width="80%" style="background: -moz-linear-gradient(top,#fbfbfb,#f5f5f5);background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#f5f5f5));text-transform:uppercase;font-size:10px;font-weight:bold;border-bottom:1px solid #ccc;text-shadow:-1px -1px #fff;padding:5px 15px;text-align:left;" align="left">Description</th>
+	</tr>
+	<tr>
+		<td>nodeId</td>
+		<td>unique id for usage in code, if not provided, unique value will be auto generated</td>
+	</tr>
+	<tr>
+		<td>nodeType</td>
+		<td>NODE, TEXT or IMAGE</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td>nodeContent</td>
+		<td>text inside node</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td>xPosition</td>
+		<td>left node position</td>
+	</tr>
+	<tr>
+		<td>yPosition</td>
+		<td>top node position</td>
+	</tr>
+	<tr>
+		<td>width</td>
+		<td>node width</td>
+	</tr>
+	<tr>
+		<td>height</td>
+		<td>node height</td>
+	</tr>
+	<tr>
+		<td>bgColor</td>
+		<td>node background color</td>
+	</tr>
+	<tr>
+		<td>borderColor</td>
+		<td>node border color</td>
+	</tr>
+	<tr>
+		<td>borderWidth</td>
+		<td>node border thickness</td>
+	</tr>
+	<tr>
+		<td>fontColor</td>
+		<td>node content font color</td>
+	</tr>
+	<tr>
+		<td>fontSize</td>
+		<td>node content font size</td>
+	</tr>
+	<tr>
+		<td>fontType</td>
+		<td>node content font type</td>
+	</tr>
+	<tr>
+		<td>minHeight</td>
+		<td>minimum node height when resize</td>
+	</tr>
+	<tr>
+		<td>maxHeight</td>
+		<td>maximum node height when resize</td>
+	</tr>
+	<tr>
+		<td>minWidth</td>
+		<td>minimum node width when resize</td>
+	</tr>
+	<tr>
+		<td>maxWidth</td>
+		<td>minimum node width when resize</td>
+	</tr>
+	<tr>
+		<td>nPort</td>
+		<td>does the node have north port (true, false)</td>
+	</tr>
+	<tr>
+		<td>ePort</td>
+		<td>does the node have east port (true, false)</td>
+	</tr>
+	<tr>
+		<td>sPort</td>
+		<td>does the node have south port (true, false)</td>
+	</tr>
+	<tr>
+		<td>wPort</td>
+		<td>does the node have west port (true, false)</td>
+	</tr>
+	<tr>
+		<td>nPortMakeConnection</td>
+		<td>does the node make connections from the north port (true, false)</td>
+	</tr>
+	<tr>
+		<td>ePortMakeConnection</td>
+		<td>does the node make connections from the east port (true, false)</td>
+	</tr>
+	<tr>
+		<td>sPortMakeConnection</td>
+		<td>does the node make connections from the south port (true, false)</td>
+	</tr>
+	<tr>
+		<td>wPortMakeConnection</td>
+		<td>does the node make connections from the west port (true, false)</td>
+	</tr>
+	<tr>
+		<td>nPortAcceptConnection</td>
+		<td>does the node accept connections to the north port (true, false)</td>
+	</tr>
+	<tr>
+		<td>ePortAcceptConnection</td>
+		<td>does the node accept connections to the east port (true, false)</td>
+	</tr>
+	<tr>
+		<td>sPortAcceptConnection</td>
+		<td>does the node accept connections to the south port (true, false)</td>
+	</tr>
+	<tr>
+		<td>wPortAcceptConnection</td>
+		<td>does the node accept connections to the west port (true, false)</td>
+	</tr>
+	<tr>
+		<td>image</td>
+		<td>image file name and path, required if node type is IMAGE</td>
+	</tr>
+	<tr>
+		<td>imageWidth</td>
+		<td>image width, required if node type is IMAGE</td>
+	</tr>
+	<tr>
+		<td>imageHeight</td>
+		<td>image height, required if node type is IMAGE</td>
+	</tr>
+	<tr>
+		<td>draggable</td>
+		<td>is node draggable (true, false)</td>
+	</tr>
+	<tr>
+		<td>resizable</td>
+		<td>is node resizable (true, false)</td>
+	</tr>
+	<tr>
+		<td>editable</td>
+		<td>is node content editable (true, false)</td>
+	</tr>
+	<tr>
+		<td>selectable</td>
+		<td>is node draggable (true, false)</td>
+	</tr>
+	<tr>
+		<td>deletable</td>
+		<td>is node draggable (true, false)</td>
+	</tr>
+</table>
+<br><br>
+
+
+
+<p><b>Adding a connection line between node elements</b> can be done using one line of code, the following sample will draw a connection line from the south port on source node to the north port of the target node, connection line will be dark red with 3px width, the method declaration is: <br> <font color="#AA0000">diagram-object</font>.addConnection(new Connection('<font color="#AA0000">source node id</font>', '<font color="#AA0000">source node port [n,e,s,w]</font>', '<font color="#AA0000">target node id</font>', '<font color="#AA0000">target node port [n,e,s,w]</font>', '<font color="#AA0000">color</font>', '<font color="#AA0000">width</font>'))</p>
+
+
+<table width=90% style="background-color:#dadaaa;border:1px dotted brown;">
+<tr>
+	<td>
+		<p style="font-family:monospace;padding:10px;">
+			<br>
+			diagram.addConnection(new Connection('1','s','2','n','#AA0000','3'));
+			<br>
+		</p>
+	</td>
+</tr>
+</table>
+
+<br>
+
+
+<table width=90% style="background-color:#FA7777;border:1px dotted red;">
+<tr>
+	<td style="padding:10px;">
+		<p style="font-weight: bold;"><font color="#FFFFFF">Important Note</font></p>
+		<p><font color="#FFFFFF">if you are using downloaded jqueryui library other than the included library, you will need to comment bug fix for ticket number 1729</font></p>
+	</td>
+</tr>
+</table>
