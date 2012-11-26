@@ -5,11 +5,11 @@ if ($uid == '1')  {
       //error_reporting(E_ALL);
       error_reporting(E_ERROR | E_PARSE); // | E_WARNING
 }
-$bkn=$_GET['bkn'];$bkl=$_GET['bkl'];$advsn=$_GET['advsn'];
+$bkn=stripslashes($_GET['bkn']);$bkl=stripslashes($_GET['bkl']);$advsn=stripslashes($_GET['advsn']);
 $largelist='2';
-if(empty($sv)){$sv=strtolower($_GET['sv']);}
-if(!empty($_GET['advs'])){$advs=$_GET['advs'];}
-if(isset($_GET['advsb'])){$advsb=$_GET['advsb'];}
+if(empty($sv)){$sv=strtolower(stripslashes($_GET['sv']));}
+if(!empty($_GET['advs'])){$advs=stripslashes($_GET['advs']);}
+if(isset($_GET['advsb'])){$advsb=stripslashes($_GET['advsb']);}
 //else{$advsb=$sr;} //function for future boolean searches
 echo '<div><u>Simplified Search</u><form action="index.php" method="get" enctype="multipart/form-data">
 <select name="m">

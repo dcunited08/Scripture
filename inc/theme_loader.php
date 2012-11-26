@@ -129,6 +129,22 @@ ul.autosuggest{position: absolute;list-style: none;margin: 0;padding: 0;}
 		color: #fff;
 		background-color: #f30;
 	}
+
+#progress {
+    -webkit-border-radius: 10px;
+    background-color: rgba(0,0,0,.7);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    height: 80px;
+    left: 60px;
+    line-height: 80px;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    top: 120px;
+    width: 200px;
+}
 ');}
 #fwrite($fh2,'</style>');
 fclose($fh2);

@@ -3,7 +3,7 @@ $notype=1;
 require('init.php');
 $subdomain=strstr($_SERVER['PHP_SELF']);
 if($subdomain>=2){$subd=preg_match('(\/.*/)',$subd);}
-$server=$_SERVER['HTTP_HOST'].$subd;
+$server=stripslashes($_SERVER['HTTP_HOST']).$subd;
 //header("Content-type: text/xml");
 if($link!==false){
 if(!file_exists('rss')){

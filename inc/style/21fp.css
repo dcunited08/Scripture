@@ -2,7 +2,7 @@ zx{color:#0031D4;}
        @font-face {font-family: "Proto-Semitic";src: local("Proto-Semitic");unicode-range: U+05D0-05EC;}
        zxx{font-family:"Proto-Semitic";}
        body{position:relative;background-color:#EBE1E1;font-size:110%;}
-       select.ss{width:10px;}a:link,a:visited{text-decoration:none;display:inline;border:1px solid#3B5233;background-color:#DED6C1;font-weight:bold;color:#212016;padding:0px;padding-right:1px;padding-left:1px;}input,select,.tme,textarea{font-weight:bold;display:inline;background-color:#EBE1E1;color:#272B20;margin-left:2px;padding-right:1px;border:1px solid;padding-left:1px;}a:hover,input:hover,select:hover{background-color:#A6BD7E;}u{font-weight:bold;color:#24291F;background-color: #A6B893;}hr{border:1px solid #5E5A5A;}.go{background-color:#9DBA63;text-decoration:none;}sup{color:#21301E;}div{background-color: #EBD7D1; 
+       select.ss{width:10px;}a:link,a:visited{text-decoration:none;display:inline;border:1px solid#3B5233;background-color:#E1D9C9;font-weight:bold;color:#212016;padding:0px;padding-right:1px;padding-left:1px;}input,select,.tme,textarea{font-weight:bold;display:inline;background-color:#EBE1E1;color:#272B20;margin-left:2px;padding-right:1px;border:1px solid;padding-left:1px;}a:hover,input:hover,select:hover{background-color:#A6BD7E;}u{font-weight:bold;color:#24291F;background-color: #CCCFB8;}hr{border:1px solid #5E5A5A;}.go{background-color:#C9CFB0;text-decoration:none;}sup{color:#21301E;}div{background-color: #E0D7CC; 
   border: solid 1px #3B5233; }
 .ui-menu { border:1px solid #999; background:#FFF; cursor:default; text-align:left; max-height:550px; overflow:auto; margin:-0px 0px 0px -0px; /* IE6 specific: */ _height:350px;  _margin:0; _overflow-x:hidden; }
 ul.autosuggest{position: absolute;list-style: none;margin: 0;padding: 0;}
@@ -20,3 +20,19 @@ ul.autosuggest{position: absolute;list-style: none;margin: 0;padding: 0;}
 		color: #fff;
 		background-color: #f30;
 	}
+
+#progress {
+    -webkit-border-radius: 10px;
+    background-color: rgba(0,0,0,.7);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    height: 80px;
+    left: 60px;
+    line-height: 80px;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    top: 120px;
+    width: 200px;
+}

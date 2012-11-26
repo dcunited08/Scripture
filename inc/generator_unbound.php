@@ -1,7 +1,7 @@
 <?php // licence: gpl-signature.txt
     require('Languages/Filter_drupal.php');
-    if(isset($_GET['f'])){$tmpfile=$_GET['f'];}
-    if(isset($_GET['m'])){$mode=$_GET['m'];}
+    if(isset($_GET['f'])){$tmpfile=stripslashes($_GET['f']);}
+    if(isset($_GET['m'])){$mode=stripslashes($_GET['m']);}
     $fh = fopen($tmpfile.'2','a+');
     //ini_set ("display_errors", "1");
     //error_reporting(E_ALL);

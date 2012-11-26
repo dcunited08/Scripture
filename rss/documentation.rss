@@ -4,6 +4,23 @@
         <link>http://scripture.sourceforge.net</link>
         <description>scripture.sourceforge.net Feeds</description>
         <language>en-us</language><item>
+            <title>Git repository</title>
+            <link>http://scripture.sourceforge.net?forum&amp;nid=140</link>
+            <description><![CDATA[<p>
+	<a href="https://github.com/krizoek/Scripture">https://github.com/krizoek/Scripture</a></p>
+<p>
+	Some of you might have noticed that the cvs repository on sourceforge hasn&#39;t been updated for quite some time.<br />
+	I found it a little efforting having to update small modifications all the time and to add recursivly with cvs.</p>
+<p>
+	Now I&#39;ve found git a little more efficient, and I also like the idea of using another project hosting site in case this one falls down.<br />
+	Github have a very good application for windows which im using mostly.</p>
+<p>
+	I will try to update changes and write some notes sometimes, and if you make changes or add features that you wish to participate with; github will be the place that we will be using for now.<br />
+	&nbsp;</p>
+<p></p>By uid[1]]]></description>
+            <pubDate>Sun, 18 Nov 2012 01:25:00 +0000</pubDate>
+            <category>do</category>
+            </item><item>
             <title>Why is this project free?</title>
             <link>http://scripture.sourceforge.net?forum&amp;nid=139</link>
             <description><![CDATA[<p>
@@ -86,7 +103,7 @@
 	<br />
 	Then if it was a time this site died; someone else would have the source and be able to host it.</p>
 <p></p>By uid[1]]]></description>
-            <pubDate>Sun, 07 Oct 2012 08:06:16 +0000</pubDate>
+            <pubDate>Sun, 07 Oct 2012 08:06:00 +0000</pubDate>
             <category>do</category>
             </item><item>
             <title>Creating Bible Maps Part 1</title>

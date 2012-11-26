@@ -7,8 +7,8 @@ if ($uid == '1')  {
       //error_reporting(E_ALL);
       error_reporting(E_ERROR | E_PARSE); // | E_WARNING
 }
-$dial=$_GET['dial'];
-$book=urldecode($_GET['bk']);
+$dial=stripslashes($_GET['dial']);
+$book=urldecode(stripslashes($_GET['bk']));
 //echo '<body  bgcolor="'.$fontbackground.'"><font size="'.$fontsize.'" color="'.$fontcolor.'" face="'.$fontface.'">';
     if ($uid!=='1'){$sql='SELECT * FROM bible_super_dial WHERE global=1 or uid=\''.$uid.'\';';}
     else {$sql='SELECT * FROM bible_super_dial';}
@@ -33,15 +33,15 @@ $book=urldecode($_GET['bk']);
     if(($superuser==$uid)or($uid=='1')){$dosuperuser='1';}
      
 if(isset($_GET['setsettings'])) {
-    if (!empty($_GET['dial'])){$dial=$_GET['dial'];}else{$dial="";}
-    if (!empty($_POST['title'])){$utitle=$_POST['title'];$utitle_ =" ,title='$utitle' ";}
-    if (!empty($_POST['levels'])){$ulevels=$_POST['levels'];$ulevels_ =" ,levels='$ulevels' ";}
+    if (!empty($_GET['dial'])){$dial=stripslashes($_GET['dial']);}else{$dial="";}
+    if (!empty($_POST['title'])){$utitle=stripslashes($_POST['title']);$utitle_ =" ,title='$utitle' ";}
+    if (!empty($_POST['levels'])){$ulevels=stripslashes($_POST['levels']);$ulevels_ =" ,levels='$ulevels' ";}
     else{$ulevels_ =" ,levels='' ";}
-    if (!empty($_POST['global'])){$uglobal=$_POST['global'];$uglobal_ =" ,`global`='$uglobal' ";}
-    if (!empty($_POST['shared'])){$ushared=$_POST['shared'];$ushared_ =" ,shared='$ushared' ";}
-    if (!empty($_POST['readwrite'])){$ureadwrite=$_POST['readwrite'];$ureadwrite_ =" ,readwrite='$ureadwrite' ";}
-    if (!empty($_POST['mapto'])){$umapto=$_POST['mapto'];$umapto_ =" ,midc='$umapto' ";}
-    if (!empty($_POST['owner'])){$uowner=$_POST['owner'];$uowner_ =" ,uid='$uowner' ";}
+    if (!empty($_POST['global'])){$uglobal=stripslashes($_POST['global']);$uglobal_ =" ,`global`='$uglobal' ";}
+    if (!empty($_POST['shared'])){$ushared=stripslashes($_POST['shared']);$ushared_ =" ,shared='$ushared' ";}
+    if (!empty($_POST['readwrite'])){$ureadwrite=stripslashes($_POST['readwrite']);$ureadwrite_ =" ,readwrite='$ureadwrite' ";}
+    if (!empty($_POST['mapto'])){$umapto=stripslashes($_POST['mapto']);$umapto_ =" ,midc='$umapto' ";}
+    if (!empty($_POST['owner'])){$uowner=stripslashes($_POST['owner']);$uowner_ =" ,uid='$uowner' ";}
     echo$_POST['title'].N;
     $setsettings="";
     if (($u !== 'demo')and((($uid==$suid[$dial])or($uid=='1')))or(empty($dial))) {

@@ -5,4 +5,5 @@ echo'<img src="http://sflogo.sourceforge.net/sflogo.php?group_id=522543&amp;type
 ++$i;
 }
 echo'</body></html>';
+print_r($_SERVER);
 ?>

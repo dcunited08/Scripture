@@ -32,9 +32,25 @@ if (empty($_POST['addnode'])) {
         $sgmape=mysql_result($fsqlqe,0,'gmap');
         if (strlen($sgmape) < 16) {unset($sgmape);}
         $slinke=mysql_result($fsqlqe,0,'link');
+        $slinkavie=mysql_result($fsqlqe,0,'linkavi');
+        $slinkflae=mysql_result($fsqlqe,0,'linkflv');
+
         $ssnde=mysql_result($fsqlqe,0,'snd');
         $sdatae=stripslashes(mysql_result($fsqlqe,0,'data'));
         $uuide=mysql_result($fsqlqe,0,'uid');
+        
+        $sbook1=mysql_result($fsqlqe,0,'nodeb1');
+        $schapter1=mysql_result($fsqlqe,0,'nodec1');
+        $sverse1=mysql_result($fsqlqe,0,'nodev1');
+        
+        $sbook2=mysql_result($fsqlqe,0,'nodeb2');
+        $schapter2=mysql_result($fsqlqe,0,'nodec2');
+        $sverse2=mysql_result($fsqlqe,0,'nodev2');
+        
+        $sbook3=mysql_result($fsqlqe,0,'nodeb3');
+        $schapter3=mysql_result($fsqlqe,0,'nodec3');
+        $sverse3=mysql_result($fsqlqe,0,'nodev3');
+        
         $cat=$suppercate;$uc=$scat;
         if($uid==1){$uuide='1';}
         if (empty($getcomm) and ($uid !== $uuide) and (preg_match('/(^'.$uid.'\s)|(\s'.$uid.'\s)|(\s'.$uid.'$)/',$suidse) !== TRUE)) { die('Access denied.'); }
@@ -113,7 +129,48 @@ if (empty($_POST['addnode'])) {
     <textarea name="content2" id="content2" '.$lim_size.'>'.$sqlnote.$sdatae.'</textarea>'.$jedit.N.
     '<input type="hidden" name="nid" value="'.$nid.'"><input type="hidden" name="uppercatup" value="'.$scat.$suppercate.'">';
   if (empty($getcomm)) {
-    echo'Link: <input type="text" value="'.$slinke.'" name="link">'.N.
+    echo'Link to verses<br>
+    <select name="nodeb1" style="width:54">';//49firefox
+if(strstr($b,',')){$bks=' IN(';$bks2=')';}else{$bks='=';}
+if($l=='ru'){$bla=52;}
+elseif($l=='n'){$bla=6;}
+else{$bla=$b;}
+$rbk=mysql_query_s('SELECT DISTINCT book,sname FROM bible_book_name WHERE bid'."$bks$bla$bks2");
+//if($uid==1){echo'<option value="'.$a_shortdrupal[1].'"></option>';}
+$numrbk=mysql_numrows($rbk);
+$i=0;while($i<$numrbk){
+  $sqbook=mysql_result($rbk,$i,'sname');
+  if(!empty($sqbook)){
+   $bk2=mysql_result($rbk,$i,'book');
+   if(empty($b_name4)and(strtolower($sqbook)===strtolower($sbook1))){$b_name4=$sqbook;$ssbible2=' selected';}elseif(isset($ssbible2)){$ssbible2="";}
+   //$b_name2=$sqbook; olduse before </option>
+   echo"<option value='$sqbook'$ssbible2>".mysql_result($rbk,$i,'book')."</option>";
+  }++$i;
+}echo'</select>Chapter:<input type="text" value="'.$schapter1.'" name="nodec1">Verse:<input type="text" value="'.$sverse1.'" name="nodev1"><br>
+    <select name="nodeb2" style="width:54">';
+    $i=0;while($i<$numrbk){
+  $sqbook=mysql_result($rbk,$i,'sname');
+  if(!empty($sqbook)){
+   $bk2=mysql_result($rbk,$i,'book');
+   if(empty($b_name4)and(strtolower($sqbook)===strtolower($sbook2))){$b_name4=$sqbook;$ssbible2=' selected';}elseif(isset($ssbible2)){$ssbible2="";}
+   //$b_name2=$sqbook; olduse before </option>
+   echo"<option value='$sqbook'$ssbible2>".mysql_result($rbk,$i,'book')."</option>";
+  }++$i;
+}echo'</select>Chapter:<input type="text" value="'.$schapter2.'" name="nodec2">Verse:<input type="text" value="'.$sverse2.'" name="nodev2"><br>
+    <select name="nodeb3" style="width:54">';
+    $i=0;while($i<$numrbk){
+  $sqbook=mysql_result($rbk,$i,'sname');
+  if(!empty($sqbook)){
+   $bk2=mysql_result($rbk,$i,'book');
+   if(empty($b_name4)and(strtolower($sqbook)===strtolower($sbook3))){$b_name4=$sqbook;$ssbible2=' selected';}elseif(isset($ssbible2)){$ssbible2="";}
+   //$b_name2=$sqbook; olduse before </option>
+   echo"<option value='$sqbook'$ssbible2>".mysql_result($rbk,$i,'book')."</option>";
+  }++$i;
+}echo'</select>Chapter:<input type="text" value="'.$schapter3.'" name="nodec3">Verse:<input type="text" value="'.$sverse3.'" name="nodev3"><br>
+    '.N.'
+    Link(url): <input type="text" value="'.$slinke.'" name="link">'.N.'
+    Link(avi): <input type="text" value="'.$slinkavie.'" name="linkavi">'.N.'
+    Link(flv): <input type="text" value="'.$slinkflae.'" name="linkflv">'.N.
     $echopub.$echocom.$echosti.$echofro.$echolan.
     'Edit Users(uids): <input type="text" value="'.$suidse.'" name="editusers"><br>
     Map Link: <input type="text" value="'.$sgmape.'" name="gmap"><br>
@@ -139,7 +196,7 @@ if(!isset($tag_filter)){require('inc/tag_filter.php');}
 $titleup=str_replace('\'','&#39',urldecode(stripslashes($_POST['addnode'])));$titleup=preg_replace($tag_filter,'',$titleup); //$titleup=htmlentities($titleup);$titleup=utfencoder(stripslashes($_POST['addnode']));
 $linkup=str_replace('\'','&#39',urldecode(stripslashes($_POST['link'])));$linkup=preg_replace($tag_filter,'',$linkup); //$linkup=htmlentities($linkup);$linkup=utfencoder(stripslashes($_POST['link']));
 $content=str_replace('\'','&#39',stripslashes($_POST['content2']));$content=preg_replace($tag_filter,'',$content); //$content=str_replace('\'','"',$content); //$content=htmlentities($content); //$content=utfencoder(stripslashes($_POST['content']));
-if(empty($jedit)and(!strstr($content,'<br>'))){$content=preg_replace('(\r?\n?)','<br>',$content);}// 'href="http://'.$host.'?url='.urlencode($match[1]).'"';
+if(empty($jedit)and!strstr($content,'<br>')and(strstr($content,"\r")or strstr($content,"\n"))){$content=preg_replace('/(\r\n?)|(\n)/i','<br>',$content);}// 'href="http://'.$host.'?url='.urlencode($match[1]).'"';
 $callback = function ($match) use ($host) {
     if(strstr($match[0],'/a') == FALSE){
         $match[2]=str_replace(',',':',$match[0]);
@@ -156,6 +213,11 @@ $editgroupsup=stripslashes($_POST['editgroups']);$sendnotup=stripslashes($_POST[
 if (!empty($_POST['pdate'])) { $pdup=strtotime(stripslashes($_POST['pdate'])); $pdup2=", created='".$pdup."'";} else { $pdup = time(); }
 if (!empty($_POST['sdate'])) { $sdateup=strtotime(stripslashes($_POST['sdate'])); }
 if (!empty($_POST['edate'])) { $edateup=strtotime(stripslashes($_POST['edate'])); }
+if (!empty($_POST['nodev1'])) { $nodeb1up=stripslashes($_POST['nodeb1']);$nodec1up=stripslashes($_POST['nodec1']);$nodev1up=stripslashes($_POST['nodev1']); }
+if (!empty($_POST['nodev2'])) { $nodeb2up=stripslashes($_POST['nodeb2']);$nodec2up=stripslashes($_POST['nodec2']);$nodev2up=stripslashes($_POST['nodev2']); }
+if (!empty($_POST['nodev3'])) { $nodeb3up=stripslashes($_POST['nodeb3']);$nodec3up=stripslashes($_POST['nodec3']);$nodev3up=stripslashes($_POST['nodev3']); }
+if (!empty($_POST['linkavi'])) { $slinkaviup=stripslashes($_POST['linkavi']);}
+if (!empty($_POST['linkflv'])) { $slinkflvup=stripslashes($_POST['linkflv']); }
 if (!empty($_POST['comment'])) { $cat=stripslashes($_POST['comment']);$uc=$cat; }
 elseif (!empty($_POST['uppercatup'])) { $uc=stripslashes($_POST['uppercatup']); }
 else {
@@ -165,21 +227,22 @@ else {
 } //check if exists(if not being comment)
 if ((empty($_POST['comment']) && empty($_POST['edit']) && ($ndoublecheck < '1'))or(!empty($_POST['new']))or(!empty($_GET['createcontent'])and!isset($_GET['nonew']))) {
 $uuid=$uid;
-if(!empty($typeup)and(strlen($titleup)>2)and(strlen($content)>3)){$upsql="INSERT INTO bible_nodes (nid,vid,type,language,title,category,uppercat,uid,status,created,changed,sdate,edate,comment,subnode,promote,moderate,rating,visitors,sticky,tnid,translate,editgroups,sendnot,uids,settings,gmap,link,data) VALUES
-                                            ('','','$typeup','$languageup','".urldecode($titleup)."','$cat','$uc','$uuid','$publishedup','$pdup', '".time()."','$sdateup','$edateup','$commentsup','$sndup','$frontup','$noremup','','','$stickup','','','$editgroupsup','$sendnotup','$editusersup','','$gmapup','$linkup','$content')";
+if(!empty($typeup)and(strlen($titleup)>2)and(strlen($content)>3)){$upsql="INSERT INTO bible_nodes (nid,vid,type,language,title,category,uppercat,uid,status,created,changed,sdate,edate,comment,subnode,promote,moderate,rating,visitors,sticky,tnid,translate,editgroups,sendnot,uids,settings,gmap,link,linkavi,linkflv,data,nodeb1,nodec1,nodev1,nodeb2,nodec2,nodev2,nodeb3,nodec3,nodev3) VALUES
+                                            ('','','$typeup','$languageup','".urldecode($titleup)."','$cat','$uc','$uuid','$publishedup','$pdup', '".time()."','$sdateup','$edateup','$commentsup','$sndup','$frontup','$noremup','','','$stickup','','','$editgroupsup','$sendnotup','$editusersup','','$gmapup','$linkup','$slinkaviup','$slinkflvup','$content','$nodeb1up','$nodec1up','$nodev1up','$nodeb2up','$nodec2up','$nodev2up','$nodeb3up','$nodec3up','$nodev3up')";
 }
 
 if ($typeup=='bl'){unset ($uc,$cat);}
 if ($typeup =='ct') { echo'<a href ="?forum&b='.$b.'&nid='.$cat.'">Back to viewer</a><p></p>'; }
 else { echo'<a href ="?forum&b='.$b.'&uc='.urlencode($uc).'&cy='.urlencode($cat).'&ti='.urlencode($ti).'">Back to viewer</a><p></p>'; }
 } else {
-    if (!empty($_POST['edit'])) { $uuid=$_POST['edit']; } // , uppercat='$uc'
+    if (!empty($_POST['edit'])) { $uuid=stripslashes($_POST['edit']); } // , uppercat='$uc'
     if($uid!=='1'){$checkuid="AND uid='$uid'";}
     
     if($uc!==$cat){$upextra=",category='$cat'";}
     if($uid==1){echo'do up'.N;}
     $upsql="UPDATE bible_nodes SET vid='',type='$typeup',language='$languageup',title='$titleup'$upextra,status='$publishedup'$pdup2,changed='".time()."',sdate='$sdateup',edate='$edateup',comment='$commentsup',subnode='$sndup',promote='$frontup',
-        moderate='$noremup',sticky='$stickup',tnid='',translate='',editgroups='$editgroupsup',sendnot='$sendnotup',uids='$editusersup',settings='',gmap = '$gmapup',link = '$linkup',data='$content' WHERE bible_nodes.nid='$nid'$checkuid;";
+        moderate='$noremup',sticky='$stickup',tnid='',translate='',editgroups='$editgroupsup',sendnot='$sendnotup',uids='$editusersup',settings='',gmap = '$gmapup',link = '$linkup',linkavi = '$slinkaviup',linkflv = '$slinkflvup',data='$content'
+        ,nodeb1 = '$nodeb1up',nodec1 = '$nodec1up',nodev1 = '$nodev1up',nodeb2 = '$nodeb2up',nodec2 = '$nodec2up',nodev2 = '$nodev2up',nodeb3 = '$nodeb3up',nodec3 = '$nodec3up',nodev3 = '$nodev3up' WHERE bible_nodes.nid='$nid'$checkuid;";
     echo'<a href ="?forum&ti=1&b='.$b.'&uc='.urlencode($uc).'&cy='.urlencode($cat).'&nid='.$nid.'">Click here to see the changes</a><p></p>';
 }
 if(!empty($upsql)){if($uid==1){echo htmlentities($upsql);}$upupsql=mysql_query($upsql,$link) or die('A MySQL error has occurred.<br>Your Query: '.$upsql.N.' Error: ('.mysql_errno().') '.mysql_error());echo'Content saved.'.N;}

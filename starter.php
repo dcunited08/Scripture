@@ -1,10 +1,10 @@
 <?php // licence: gpl-signature.txt
 if (isset($_POST['reconfiguredatabase'])) {
-  $username=$_POST['username'];$password=$_POST['password'];$database=$_POST['database'];$database_host=$_POST['$database_host'];$sqlconnect = "1";
+  $username=stripslashes($_POST['username']);$password=stripslashes($_POST['password']);$database=stripslashes($_POST['database']);$database_host=stripslashes($_POST['$database_host']);$sqlconnect = "1";
   require('updater.php');
 }
-if(isset($_GET['reconfiguredatabase'])) { $reconfiguredatabase=urldecode($_GET['reconfiguredatabase']); }
-  elseif(isset($_POST['reconfiguredatabase'])) { $reconfiguredatabase=urldecode($_POST['reconfiguredatabase']); }
+if(isset($_GET['reconfiguredatabase'])) { $reconfiguredatabase=urldecode(stripslashes($_GET['reconfiguredatabase'])); }
+  elseif(isset($_POST['reconfiguredatabase'])) { $reconfiguredatabase=urldecode(stripslashes($_POST['reconfiguredatabase'])); }
 if (empty($_POST['reconfiguredatabase']) && ($username == 'databaseusername')) {
 	    echo "Welcome to Scripture4PHP. Enter your database settings to continue, and click install.<br>
 		<form action='index.php' method='post'><input type='hidden' name='tools' value='1'><input type='hidden' name='mydata' value='4'><input type='hidden' name='reconfiguredatabase' value='1'><input type='hidden' name='install' value='1'>

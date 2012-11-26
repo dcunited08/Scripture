@@ -4,6 +4,46 @@
         <link>http://scripture.sourceforge.net</link>
         <description>scripture.sourceforge.net Feeds</description>
         <language>en-us</language><item>
+            <title>Type writer</title>
+            <link>http://scripture.sourceforge.net?forum&amp;nid=149</link>
+            <description><![CDATA[<p>
+	You can now get your devices to type the bible. It&#39;s a efficient and fun way to read the bible.</p>
+<p>
+	You can change the speed of the typing, and also the speed of change between the verses.</p>
+<p>
+	Simply choose Typer in the menubar and hit go.</p>
+<p></p>By uid[1]]]></description>
+            <pubDate>Sun, 25 Nov 2012 11:26:00 +0000</pubDate>
+            <category>ne</category>
+            </item><item>
+            <title>Major Security Update</title>
+            <link>http://scripture.sourceforge.net?forum&amp;nid=146</link>
+            <description><![CDATA[<p>
+	I&#39;ve done allot of code changes, please tell if you notice anything odd.</p>
+<p>
+	Thank you</p>
+<p></p>By uid[1]]]></description>
+            <pubDate>Wed, 21 Nov 2012 22:24:35 +0000</pubDate>
+            <category>ne</category>
+            </item><item>
+            <title>The wind bloweth</title>
+            <link>http://scripture.sourceforge.net?forum&amp;nid=142</link>
+            <description><![CDATA[<p>
+	Just a few days after releasing the android app in samsung app store, thousands of users install it.</p>
+<p>
+	I&#39;m looking forward to release apps for other devices(which is not very far from a reality), apple products firstly.</p>
+<p>
+	Now is the time where I will say &quot;Its a good time to support this project&quot;; by developing content and cooperating in order to get the whole world educated in the bible.</p>
+<p>
+	We are not far from getting a million user.</p>
+<p>
+	&nbsp;</p>
+<p>
+	Gods peace.</p>
+<p></p>By uid[1]]]></description>
+            <pubDate>Sun, 18 Nov 2012 16:17:00 +0000</pubDate>
+            <category>ne</category>
+            </item><item>
             <title>Mindmaps</title>
             <link>http://scripture.sourceforge.net?forum&amp;nid=137</link>
             <description><![CDATA[<p>
@@ -41,12 +81,11 @@
             <title>Ancient Hebrew Strongs</title>
             <link>http://scripture.sourceforge.net?forum&amp;nid=135</link>
             <description><![CDATA[<p>
-	Dig into the root language of ancient hebrew.<br />
-	Now you can find ancient hebrew strongs and fonts.</p>
+	Dig into the root language of ancient hebrew with strongs and fonts.</p>
 <p>
-	To view the ancient hebrew fonts; download and install the fontfile given in <a href="http://dl.dropbox.com/u/5638259/shared/Proto-Semitic.zip">http://dl.dropbox.com/u/5638259/shared/Proto-Semitic.zip</a><br />
-	Or install this file: <a href="inc/style/Proto-Semitic.ttf">http://scripture.sf.net/inc/style/Proto-Semitic.ttf</a><br />
-	After installing browse for example: <a href="?b=63,65&amp;bk=GEN&amp;c=7">http://scripture.sf.net/?b=63,65&amp;bk=GEN&amp;c=7</a></p>
+	Install font: <a href="http://dl.dropbox.com/u/5638259/shared/Proto-Semitic.zip">http://dl.dropbox.com/u/5638259/shared/Proto-Semitic.zip</a><br />
+	Or: <a href="inc/style/Proto-Semitic.ttf">http://scripture.sf.net/inc/style/Proto-Semitic.ttf </a><br />
+	Then Browse: <a href="?b=63,65&amp;bk=GEN&amp;c=7">http://scripture.sf.net/?b=63,65&amp;bk=GEN&amp;c=7</a></p>
 <p>
 	<br />
 	<img alt="" src="img/ahfontexp1.jpg" style="height: 111px; width: 300px;" /></p>
@@ -85,7 +124,7 @@
 <p>
 	And much more.</p>
 <p></p>By uid[1]]]></description>
-            <pubDate>Fri, 02 Nov 2012 10:18:44 +0000</pubDate>
+            <pubDate>Fri, 02 Nov 2012 10:18:00 +0000</pubDate>
             <category>ne</category>
             </item><item>
             <title>On the verge of breakthrough</title>
@@ -141,9 +180,9 @@
 <p>
 	If your a registred users, you may exclude bibles from the biblelist.</p>
 <p>
-	As a norwegian, i have excluded the <a href="/?s=following%3A+34%2C19">following: 34,19</a>,18,35,37,36,20,39,38,40,13,42,43,44,45,46,47,48,49,51,50,52,53,54,55,56,58,41,14,15,29,32,33,30,31,62</p>
+	As a norwegian, i have excluded the <a href="/?s=following%3A+34%2C19">following: 34, 19</a>, 18, 35,37,36,20,39,38,40,13<a href="/?s=%2C42%2C+43%2C44">,42, 43,44</a>,45<a href="/?s=%2C46%2C+47%2C48">,46, 47,48</a>,49,51<a href="/?s=%2C50%2C+52%2C53">,50, 52,53</a>,54,55,56<a href="/?s=%2C58%2C+41%2C14">,58, 41,14</a>,15,29,32,33,30,31,62</p>
 <p></p>By uid[1]]]></description>
-            <pubDate>Sat, 29 Sep 2012 20:27:01 +0000</pubDate>
+            <pubDate>Sat, 29 Sep 2012 20:27:00 +0000</pubDate>
             <category>ne</category>
             </item><item>
             <title>Android App</title>
@@ -160,13 +199,13 @@
             <description><![CDATA[<p>
 	The site is now made better viewable for mobile devices. Enjoy</p>
 <p></p>By uid[1]]]></description>
-            <pubDate>Mon, 24 Sep 2012 17:01:32 +0000</pubDate>
+            <pubDate>Mon, 24 Sep 2012 17:01:00 +0000</pubDate>
             <category>ne</category>
             </item><item>
             <title>Next Generation Search Method Part 1</title>
             <link>http://scripture.sourceforge.net?forum&amp;nid=118</link>
             <description><![CDATA[<p>
-	&lt; p &gt; N o w I h a v e d e v e l o p e d w h a t m i g h t b e a g r e a t b r e a k t h r o u g h f o r b i b l e r e s e a r c h e r s o u t t h e r e . &lt; / p &gt; &lt; p &gt; T h e n e w t o o l i s c a l l e d &amp; q u o t ; s h o o t e r &amp; q u o t ; . &lt; / p &gt; &lt; p &gt; I t a l l o w s y o u t o l i t e r a r y &amp; q u o t ; s h o o t a f t e r v e r s e s &amp; q u o t ; i n m a n y w a y s . Y o u c a n d o i t b e t w e e n v e r s e s , a n d i n m a n y f o r m s . l i k e u n o r d e r e d &amp; q u o t ; t h e s e w o r d s &amp; q u o t ; . &amp; q u o t ; t h i s o r d e r &amp; q u o t ; , &amp; q u o t ; e x a c t p h r a s e &amp; q u o t ; , &amp; q u o t ; b e g i n s w i t h &amp; q u o t ; a n d &amp; q u o t ; e n d s w i t h &amp; q u o t ; . &lt; / p &gt; &lt; p &gt; H i t t h e s h o o t e r l i n k a t t o p a n d t r y i t o u t f o r y o u r s e l f . &lt; / p &gt; &lt; p &gt; A p a r t f r o m t h i s i &amp; # 3 9 ; v e n o w i n t e g r a t e d a a j a x a u t o c o m p l e t e r / s e a r c h s t a n d a r d i z e d w i t h i n t h e s e a r c h b a r . &lt; / p &gt; &lt; p &gt; S u g g e s t i o n s a n d i d e a s i s w e l c o m e d . &lt; / p &gt; &lt; p &gt; T h a n k y o u &lt; / p &gt; &nbsp;</p>
+	&lt;p&gt;Now I have developed what might be a great breakthrough for bible researchers out there.&lt;/p&gt;&lt;p&gt;The new tool is called&amp;quot;shooter&amp;quot;.&lt;/p&gt;&lt;p&gt;It allows you to literary&amp;quot;shoot after verses&amp;quot;in many ways.You can do it between verses,and in many forms. like unordered&amp;quot;these words&amp;quot;.&amp;quot;this order&amp;quot;,&amp;quot;exact phrase&amp;quot;,&amp;quot;begins with&amp;quot;and&amp;quot;ends with&amp;quot;.&lt;/p&gt;&lt;p&gt;Hit the shooter link at top and try it out for yourself.&lt;/p&gt;&lt;p&gt;Apart from this i &amp;#39;ve now integrated a ajax autocompleter/search standardized within the searchbar.&lt;/p&gt;&lt;p&gt;Suggestions and ideas is welcomed.&lt;/p&gt;&lt;p&gt;Thank you&lt;/p&gt;&nbsp;</p>
 <p></p>By uid[1]]]></description>
             <pubDate>Sat, 15 Sep 2012 21:39:00 +0000</pubDate>
             <category>ne</category>
@@ -248,7 +287,7 @@
 <p>
 	<a href="http://ekklesia.mobi">http://ekklesia.mobi</a></p>
 <p></p>By uid[1]]]></description>
-            <pubDate>Mon, 23 Apr 2012 11:47:31 +0000</pubDate>
+            <pubDate>Mon, 23 Apr 2012 11:47:00 +0000</pubDate>
             <category>ne</category>
             </item><item>
             <title>Mechanical Translation</title>
@@ -272,17 +311,16 @@
             </item><item>
             <title>Hebrew Texts</title>
             <link>http://scripture.sourceforge.net?forum&amp;nid=92</link>
-            <description><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
-</head>
-<body>
-<p>We now got Leningrad Codex With Ketib &amp; Qere; vowels and constants. <br />Aleppo codex, and <br />Westminster Leningrad Codex; vowels and constants.</p>
-<p>Thanks to unbound bible. These were made a little simpler available.</p>
-<p>Would some of you like to help me and find and make a digitalized version of Ginsburg-benChayim-Aivazian text ?</p>
-</body>
-</html><p></p>By uid[1]]]></description>
-            <pubDate>Tue, 13 Mar 2012 22:37:24 +0000</pubDate>
+            <description><![CDATA[<p>
+	We now got Leningrad Codex With Ketib &amp; Qere; vowels and constants.<br />
+	Aleppo codex, and<br />
+	Westminster Leningrad Codex; vowels and constants.</p>
+<p>
+	Thanks to unbound bible. These were made a little simpler available.</p>
+<p>
+	Would some of you like to help me and find and make a digitalized version of Ginsburg-benChayim-Aivazian text ?</p>
+<p></p>By uid[1]]]></description>
+            <pubDate>Tue, 13 Mar 2012 22:37:00 +0000</pubDate>
             <category>ne</category>
             </item><item>
             <title>New French Translation</title>
@@ -417,44 +455,5 @@
             <link>http://scripture.sourceforge.net?forum&amp;nid=59</link>
             <description><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><br><html><br><head><br></head><br><body><br><p>A experiment at attempting to accelerate the project using adverticements have begun(only anonymous users)<br /><br />Now using ads on the site as a experiment to see if not the ads can be paid with other ads. This way things might accelerate much faster.<br /><br />Thank you for your understanding</p><br></body><br></html><p></p>By uid[1]]]></description>
             <pubDate>Sat, 08 Oct 2011 04:38:00 +0000</pubDate>
-            <category>ne</category>
-            </item><item>
-            <title>Google Gadget</title>
-            <link>http://scripture.sourceforge.net?forum&amp;nid=54</link>
-            <description><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
-</head>
-<body>
-<p>Gadget for igoogle <a href="http://www.google.com/ig/directory?url=http://scripture.sourceforge.net/scripturegadget.xml">http://www.google.com/ig/directory?url=http://scripture.sourceforge.net/scripturegadget.xml</a></p>
-</body>
-</html><p></p>By uid[1]]]></description>
-            <pubDate>Tue, 04 Oct 2011 20:00:00 +0000</pubDate>
-            <category>ne</category>
-            </item><item>
-            <title>New Version [1.9]</title>
-            <link>http://scripture.sourceforge.net?forum&amp;nid=43</link>
-            <description><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
-</head>
-<body>
-<p>This Major update contains fixes, tweaks, and many new features. Try it out!.</p>
-</body>
-</html><p></p>By uid[1]]]></description>
-            <pubDate>Thu, 29 Sep 2011 12:46:00 +0000</pubDate>
-            <category>ne</category>
-            </item><item>
-            <title>Shared content</title>
-            <link>http://scripture.sourceforge.net?forum&amp;nid=41</link>
-            <description><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
-</head>
-<body>
-<p>Users may now share and view notes, xrefs, and favorites.</p>
-</body>
-</html><p></p>By uid[1]]]></description>
-            <pubDate>Sun, 25 Sep 2011 13:06:00 +0000</pubDate>
             <category>ne</category>
             </item></channel></rss>

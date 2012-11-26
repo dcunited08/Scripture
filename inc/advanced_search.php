@@ -1,6 +1,6 @@
 <?php // licence: gpl-signature.txt
 if(!empty($_GET['advsn'])){
-   $advsn=$_GET['advsn'];
+   $advsn=stripslashes($_GET['advsn']);
    $advsn=preg_replace('/\s{2,6}/',' ',$advsn);
    preg_match('/(^[\.]?([bseropmwt])\:)/i', $se4,$match);
    //egne produserte lister for ord-alternativer/or
@@ -13,15 +13,15 @@ if(!empty($_GET['advsn'])){
   $mode_enabled=$simplified_mode.': ';$reg_ena=urlencode($simplified_mode.':');
   if($simplified_mode=='m'){$simplified_mode='p';}
   if($simplified_mode=='s'){$simplified_mode='b';}
-  $optword=$_GET['o'];
+  $optword=stripslashes($_GET['o']);
   if(!empty($optword)){$optw='&o='.$optword;$optword='(?:\s?[\S]*\s?){0,'.$optword.'}';
    $doop='&o='.$_GET['o'];
   }
-  if(!empty($_GET['w'])){$wildcard=$_GET['w'];}
+  if(!empty($_GET['w'])){$wildcard=stripslashes($_GET['w']);}
   else{$wildcard='w1';}
    if(($simplified_mode!=='r')and($wildcard!=='w4')){
     $wcu='&w='.$wildcard;
-    if(!empty($_GET['wl'])){$wl=$_GET['wl'];$dowl='&wl='.$_GET['wl'];}
+    if(!empty($_GET['wl'])){$wl=stripslashes($_GET['wl']);$dowl='&wl='.$_GET['wl'];}
     else{$wl=9;}
     $wc='[\S]{0,'.$wl.'}';
     //$wc='[\S^$]{0,9}'; //use this?

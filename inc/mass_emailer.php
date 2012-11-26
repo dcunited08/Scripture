@@ -5,8 +5,8 @@ if($uid==1){
         Subject<br><input type="text" name="subject" size="24" value="'. $_POST['subject'].'"><br>
         Body<br><textarea rows="14" id="body" name="body"></textarea><br>
         <input type="submit" value="mail"></form>';
-    $mail_body =$_POST['subject']; //mail body
-    $subject =$_POST['subject']; //subject
+    $mail_body =stripslashes($_POST['subject']); //mail body
+    $subject =stripslashes($_POST['subject']); //subject
     $header = "From: $mailer_name <$website_email>\r\n"; //optional headerfields
      //recipient
 if(!empty($mail_body)){

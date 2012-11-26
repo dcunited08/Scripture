@@ -13,6 +13,7 @@ $r2=mysql_query_s('SELECT * FROM '.$database.'.bible_list'.$nosuper.' ORDER BY b
         <input type="hidden" name="tools" value="1">
         <input type="hidden" name="mydata" value="settings">
         <input type="hidden" name="formcall" value="1">';
+        if($uid==0){echo'You must login in order to change settings<br>';}
     $r=mysql_query_s('SELECT theme,tid FROM '.$database.'.bible_themes where (uid=1 AND mode=2)or(uid='.$uid.')');
     $num2=mysql_numrows($r);
     echo '<form action="index.php" method="post" enctype="multipart/form-data">'.$doed.
@@ -136,33 +137,33 @@ $r=mysql_query('SELECT name FROM bible_fonts where type=\'general\' ORDER BY nam
             np_g MyNotes | dp_xrefs MyXrefs | dp_favs MyFavs */
   }
     if (isset($_POST['formcall'])){
-        if (!empty($_POST['theme'])){$utheme=$_POST['theme'];$uthemes=" ,theme=$utheme ";}
+        if (!empty($_POST['theme'])){$utheme=stripslashes($_POST['theme']);$uthemes=" ,theme=$utheme ";}
         //modes
         $p_modes=array();
-        if (!empty($_POST['v_verse'])){$p_modes[1]=$_POST['v_verse'];}       //1 v_verse 1 Mat 28:20 2 28:20 3 * 4 Default(20)
-        if (!empty($_POST['v_dmode'])){$p_modes[2]=$_POST['v_dmode'];}       //2 Verse Modes v_dmode 1 Compact 2 Extra Spaced 3 Default(Spaced)
-        if (!empty($_POST['d_strongs'])){$p_modes[3]=$_POST['d_strongs'];}   //3 Strong display d_strongs 1 List boxes 2 Tooltip 3 Default(as link)
-        if (!empty($_POST['d_xrefs'])){$p_modes[4]=$_POST['d_xrefs'];}       //4 Xref Sources d_xrefs 1 Groups,Server,Public  2 Groups,Server  3 default(Server)
-        if (!empty($_POST['d_notes'])){$p_modes[5]=$_POST['d_notes'];}       //5 Note Sources d_notes 1 Groups,Server,Public  2 Groups,Server  3 default(Server)
-        if (!empty($_POST['ds_strongs'])){$p_modes[6]=$_POST['ds_strongs'];} //6 Strong a=all
-        if (!empty($_POST['dp_notes'])){$p_modes[7]=$_POST['dp_notes'];}     //7 MyNotes dp_notes 1 Everyone 2 Groups  3 default(none)
-        if (!empty($_POST['dp_xrefs'])){$p_modes[8]=$_POST['dp_xrefs'];}     //8 MyXrefs dp_xrefs 1 Everyone 2 Groups  3 default(none)
-        if (!empty($_POST['dp_favs'])){$p_modes[9]=$_POST['dp_favs'];}       //9 MyFavs dp_favs 1 Everyone 2 Groups  3 default(none)
-        if (!empty($_POST['ed'])){$p_modes[10]=$_POST['ed'];}               //10 Editor 1 None 2 Java editor
-        if (!empty($_POST['fp'])){$p_modes[11]=$_POST['fp'];}               //11 Frontpage 1 Mobile navigation 2 Latest threads 3 combination
-        if (!empty($_POST['dsd'])){$p_modes[12]=$_POST['dsd'];}             //12 Default Super Dial
-        if (!empty($_POST['defscript'])){$p_modes[13]=$_POST['defscript'];} //13 Default Bible
-        if (!empty($_POST['ab'])){$p_modes[14]=$_POST['ab'];}               //14 Audio bible <2 on, 2=off
-        if (!empty($_POST['d_favs'])){$p_modes[15]=$_POST['d_favs'];}       //15 Favs Sources d_favs 1 Groups,Own,Public  2 Groups,Own  3 default(Own)
-        if (!empty($_POST['eb'])){$p_modes[16]=$_POST['eb'];}               //16 Edit Bible(If owner or added as edit-user).
-        if (!empty($_POST['dialhl'])){$p_modes[17]=$_POST['dialhl'];}       //17 Headline dial bible base
-        if (!empty($_POST['menty'])){$p_modes[18]=$_POST['menty'];}         //18 Menu type 1 table,2 css,3 plain
-        if (!empty($_POST['d_para'])){$p_modes[19]=$_POST['d_para'];}       //19 Paraphrase Sources 1 Groups,Own,Public,Server 2 Groups,Own,Server 3 Default(Own),Server
-        if (!empty($_POST['dp_para'])){$p_modes[20]=$_POST['dp_para'];}     //20 Paraphrase Shares 1 Everyone 2 Groups 3 Default(None)
-        if (!empty($_POST['paramode'])){$p_modes[21]=$_POST['paramode'];}   //21 Paraphrase Level 1, 2, 3
+        if (!empty($_POST['v_verse'])){$p_modes[1]=stripslashes($_POST['v_verse']);}       //1 v_verse 1 Mat 28:20 2 28:20 3 * 4 Default(20)
+        if (!empty($_POST['v_dmode'])){$p_modes[2]=stripslashes($_POST['v_dmode']);}       //2 Verse Modes v_dmode 1 Compact 2 Extra Spaced 3 Default(Spaced)
+        if (!empty($_POST['d_strongs'])){$p_modes[3]=stripslashes($_POST['d_strongs']);}   //3 Strong display d_strongs 1 List boxes 2 Tooltip 3 Default(as link)
+        if (!empty($_POST['d_xrefs'])){$p_modes[4]=stripslashes($_POST['d_xrefs']);}       //4 Xref Sources d_xrefs 1 Groups,Server,Public  2 Groups,Server  3 default(Server)
+        if (!empty($_POST['d_notes'])){$p_modes[5]=stripslashes($_POST['d_notes']);}       //5 Note Sources d_notes 1 Groups,Server,Public  2 Groups,Server  3 default(Server)
+        if (!empty($_POST['ds_strongs'])){$p_modes[6]=stripslashes($_POST['ds_strongs']);} //6 Strong a=all
+        if (!empty($_POST['dp_notes'])){$p_modes[7]=stripslashes($_POST['dp_notes']);}     //7 MyNotes dp_notes 1 Everyone 2 Groups  3 default(none)
+        if (!empty($_POST['dp_xrefs'])){$p_modes[8]=stripslashes($_POST['dp_xrefs']);}     //8 MyXrefs dp_xrefs 1 Everyone 2 Groups  3 default(none)
+        if (!empty($_POST['dp_favs'])){$p_modes[9]=stripslashes($_POST['dp_favs']);}       //9 MyFavs dp_favs 1 Everyone 2 Groups  3 default(none)
+        if (!empty($_POST['ed'])){$p_modes[10]=stripslashes($_POST['ed']);}               //10 Editor 1 None 2 Java editor
+        if (!empty($_POST['fp'])){$p_modes[11]=stripslashes($_POST['fp']);}               //11 Frontpage 1 Mobile navigation 2 Latest threads 3 combination
+        if (!empty($_POST['dsd'])){$p_modes[12]=stripslashes($_POST['dsd']);}             //12 Default Super Dial
+        if (!empty($_POST['defscript'])){$p_modes[13]=stripslashes($_POST['defscript']);} //13 Default Bible
+        if (!empty($_POST['ab'])){$p_modes[14]=stripslashes($_POST['ab']);}               //14 Audio bible <2 on, 2=off
+        if (!empty($_POST['d_favs'])){$p_modes[15]=stripslashes($_POST['d_favs']);}       //15 Favs Sources d_favs 1 Groups,Own,Public  2 Groups,Own  3 default(Own)
+        if (!empty($_POST['eb'])){$p_modes[16]=stripslashes($_POST['eb']);}               //16 Edit Bible(If owner or added as edit-user).
+        if (!empty($_POST['dialhl'])){$p_modes[17]=stripslashes($_POST['dialhl']);}       //17 Headline dial bible base
+        if (!empty($_POST['menty'])){$p_modes[18]=stripslashes($_POST['menty']);}         //18 Menu type 1 table,2 css,3 plain
+        if (!empty($_POST['d_para'])){$p_modes[19]=stripslashes($_POST['d_para']);}       //19 Paraphrase Sources 1 Groups,Own,Public,Server 2 Groups,Own,Server 3 Default(Own),Server
+        if (!empty($_POST['dp_para'])){$p_modes[20]=stripslashes($_POST['dp_para']);}     //20 Paraphrase Shares 1 Everyone 2 Groups 3 Default(None)
+        if (!empty($_POST['paramode'])){$p_modes[21]=stripslashes($_POST['paramode']);}   //21 Paraphrase Level 1, 2, 3
         if (!empty($_POST['hide'])){$p_modes[22]=str_replace(' ',"",$_POST['hide']);} //22 Hide Bibles
-        if (!empty($_POST['dp_topic'])){$p_modes[23]=$_POST['dp_topic'];}   //22 MyTopicMaps dp_topic 1 Everyone(Default), 2 Groups, 3 None
-        if (!empty($_POST['d_topic'])){$p_modes[24]=$_POST['d_topic'];}     //23 Topic Sources 1 Groups,Own,Public,Server 2 Groups,Own,Server 3 Default(Own),Server
+        if (!empty($_POST['dp_topic'])){$p_modes[23]=stripslashes($_POST['dp_topic']);}   //22 MyTopicMaps dp_topic 1 Everyone(Default), 2 Groups, 3 None
+        if (!empty($_POST['d_topic'])){$p_modes[24]=stripslashes($_POST['d_topic']);}     //23 Topic Sources 1 Groups,Own,Public,Server 2 Groups,Own,Server 3 Default(Own),Server
 
         if (!empty($_POST['v_phfont'])){$sethebfont=',hebfont=\''.$_POST['v_phfont'].'\'';}
         $setsettings="";
@@ -203,11 +204,11 @@ $r=mysql_query('SELECT name FROM bible_fonts where type=\'general\' ORDER BY nam
             $sqcheck=mysql_result($r,0,'strong');
             if (empty($sqcheck)){$sqcheck2='1';} else {$sqcheck2=$sqcheck;}
             $sqcheck2="strong='$sqcheck2'";
-            if (!empty($_POST['defstrong'])){$defstrong=$_POST['defstrong'];$defstrongs="strong='$defstrong' ";}
+            if (!empty($_POST['defstrong'])){$defstrong=stripslashes($_POST['defstrong']);$defstrongs="strong='$defstrong' ";}
             else {$defstrongs=$sqcheck2;$defstrong=$sqcheck;}
-            if (!empty($_POST['defscript'])){$defscript=$_POST['defscript'];$defscripts=" ,bible='$defscript' ";}
-            if (!empty($_POST['dsd'])){$defdsd=$_POST['dsd'];$defdsds=" ,defaultsuper='$defdsd' ";}
-            if (!empty($_POST['glth'])){$glth=$_POST['glth'];$glths=" ,theme='$glth' ";}
+            if (!empty($_POST['defscript'])){$defscript=stripslashes($_POST['defscript']);$defscripts=" ,bible='$defscript' ";}
+            if (!empty($_POST['dsd'])){$defdsd=stripslashes($_POST['dsd']);$defdsds=" ,defaultsuper='$defdsd' ";}
+            if (!empty($_POST['glth'])){$glth=stripslashes($_POST['glth']);$glths=" ,theme='$glth' ";}
             // unused by mysqldo_update: setting = '2',
             $mysqldo='INSERT INTO '.$database.".bible_settings (setting,strong,bible,defaultsuper,theme) VALUES ('','$defstrong','$defscript','$defdsd',$glth)";
             $mysqldo_update = 'UPDATE '.$database.".bible_settings SET $defstrongs$defscripts$v_pfcols$v_pfcolbs$v_pfszs$v_pfcolhs$v_pfonts$defdsds$glths WHERE bible_settings.setting = '1';";
@@ -225,7 +226,7 @@ $r=mysql_query('SELECT name FROM bible_fonts where type=\'general\' ORDER BY nam
           if(!empty($_POST['headgen'])){
             echo'...headgen...';
             $r4=mysql_query_s('SELECT * FROM '.$database.'.bible_headlines where bid='.$_POST['headgen']);
-            $dotb=$_POST['cb'];
+            $dotb=stripslashes($_POST['cb']);
              $n4=mysql_numrows($r4);
              for($i=0;$i<$n4;++$i){
               $shv=mysql_result($r4,$i,'verse');

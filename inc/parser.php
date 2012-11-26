@@ -63,9 +63,9 @@ if(!empty($mysettings[3])and empty($seonly)and empty($highlightv)and empty($book
   if(preg_match('/\d{2}/',$b)){$multihelp2='1';}
   if(empty($lann)and($clg>4)){$lann='1';}
   if(empty($geneva)and($clg>1)and($clg<5)){$geneva='1';}
-  
-  if(($mysettings[2]=='3')or(empty($mysettings[2]))){$spacer=N;} //2 Verse Modes v_dmode 1 Compact 2 Extra Spaced 3 Default(Spaced)
-  elseif($mysettings[2]=='2'){$dosspaced='1';}
+  if($uid==0){$dosspaced='1';}
+  elseif(($mysettings[2]=='3')or empty($mysettings[2])){$spacer=N;} //2 Verse Modes v_dmode 1 Compact 2 Extra Spaced 3 Default(Spaced)
+  else{$dosspaced='1';}//elseif($mysettings[2]=='2'){$dosspaced='1';}
   //echo htmlentities(htmlentities('>'));
   //if(isset($regex_enabled)){$reg_ena=urlencode('r:');}//regexp disabled
   if(!empty($parse_strongb)and!empty($parse_mode)){unset($highlightv);$nohighlight='1';}//used when caches
@@ -92,8 +92,8 @@ if(!empty($mysettings[3])and empty($seonly)and empty($highlightv)and empty($book
     if(isset($simplified_mode)){
       if(empty($results_regex[$s_bk.'_'.$schap.'_'.$v])){++$i;continue;}
     }
-    if(!empty($ismultib)){
-      if(isset($multihelp2)and($v>1)){$multihelp2=str_repeat('_',(2-strlen($sqlbid)));}
+    if(!empty($ismultib)or isset($extraver)){
+      if(isset($multihelp2)and($v>1)){$multihelp2=str_repeat('&nbsp;',(2-strlen($sqlbid)));}
       $multihelp='|'.$sqlbid.$multihelp2;
     }
     $l=$v.$multihelp;
@@ -194,30 +194,8 @@ if(!empty($mysettings[3])and empty($seonly)and empty($highlightv)and empty($book
  if(isset($getstrongi)){unset($x,$strdef2,$getstrongi3,$getstrongi);}//to save memory
  elseif(!empty($x)){unset($x);}
   if(!empty($dotranslate)){echo'<input type="hidden" name="tools" value="1"><input type="hidden" name="mydata" value="5"><input type="submit" value="Save Settings"></form>'.N;} //for the translator function
-  if(empty($s_bk)and empty($firsttime)){if(!empty($book)){$s_bk=$book;} else{$s_bk="";} if(!isset($_GET['b']) or !empty($fp)){require('frontpage.php');}
-  else{echo'No more chapters, try next book by hitting >> below:)';}
-    $s_bk=mysql_result($rbk,($b_num3+1),'book');$chap='1';$mover="";
-  }else{$mover='&ch=&#62;&#62;';}
-  if(!isset($_GET['b'])and empty($_GET['bookmark'])and empty($_GET['favorite'])and empty($_GET['note'])){} // echo'<br>&#62;&#62;<br>';
-  elseif(!isset($_GET['fp'])and empty($se1)){echo NN.'<a href="?bk='.$s_bk.$mover.$bl.$scrolll.'&c='.$chap.'">→</a> ';
-  if(isset($mapspecific)){
-      require('Languages/Filter_openbible.php');
-      require('Languages/Filter_drupal.php');
-      #$token=array_search(strtolower($book),$a_shortdrupal);
-      $bkts=strtolower($book);$ia=0;foreach($a_shortdrupal as $key=>$ki){if($ki==$bkts){$token=$ia;break;}++$ia;}
-      if(!strstr($a_shortopenbible[$token],'_')){
-        $maplink='http://maps.google.com/maps?q=http%3A%2F%2Fa.openbible.info%2Fgeo%2Fkmls%2F';
-        $maplink2=$a_shortopenbible[$token].'.'.$chap.'.kml&t=k';
-	$maplink3=$a_shortopenbible[$token].'.kml&t=k';
-      }
-    }
-  }
-  if(!empty($num5)){
-    if($num5 == '1'){echo N.$eddone.'<u>1 Verse</u>'.N;}else{echo N.$eddone.'<u>'.$num5.' Verses</u>'.N;}
-    if(empty($nohighlight)and($mysettings[14] !== '2')and(empty($se1)or!preg_match('/(\()|(^\w*$)/i',$se1))){require('audiobible.php');}
-    if(isset($maplink)){echo' <a href="'.$maplink.$maplink2.'">Chapter GeoMap</a> <a href="'.$maplink.$maplink3.'">Book GeoMap</a>';}
-    $donate='1';
-  }
+ 
+  require('parsemapaudio.php');
   if(!empty($parse_mode)&&!empty($parse_strongb)){
      $ob_content=ob_get_contents();$obgetlenght=count_chars($ob_content);//for the cache function
      if($obgetlenght > 4){$fp=fopen($cachefile,'w');fwrite($fp,'<meta http-equiv="Content-Type"content="text/html;charset=utf-8">'.$ob_content);fclose($fp);}//ob_end_flush();

@@ -1,6 +1,6 @@
 <?php // licence: gpl-signature.txt
-    $channel=$_GET['chan'];$remotetype='tv';
-    if(isset($_GET['rl'])){$channel=$_GET['rl'];$remotetype='websites';}
+    $channel=stripslashes($_GET['chan']);$remotetype='tv';
+    if(isset($_GET['rl'])){$channel=stripslashes($_GET['rl']);$remotetype='websites';}
     if(!empty($channel)and($remotetype=='tv')){
         echo'<iframe WIDTH="100%" HEIGHT=600 SRC="http://'.$_SERVER['HTTP_HOST'].'/inc/'.$remotetype.'/'.$channel.'.html">'.NN;
     }

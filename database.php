@@ -493,8 +493,20 @@ echo 'Database Table bible_groups <b>Created</b><br>';
 */
 unset($sql);$i=0;while($i<$rcount){if(mysql_tablename($result,$i)=='bible_nodes'){$sql=1;}++$i;}// bible_nodes 
 if (!empty($sql)) {
-    mysql_query('ALTER TABLE bible_nodes ADD lastvisitor INT(10) DEFAULT NULL AFTER visitors;');
-    mysql_query('ALTER TABLE bible_nodes ADD lasteditor INT(3) DEFAULT NULL AFTER settings;');
+    mysql_query('ALTER TABLE bible_nodes ADD lastvisitor INT(10) DEFAULT NULL AFTER visitors;
+                ALTER TABLE bible_nodes ADD lasteditor INT(3) DEFAULT NULL AFTER settings;
+  ALTER TABLE bible_nodes ADD nodeb1 varchar(5) after link;
+  ALTER TABLE bible_nodes ADD nodec1 int(4) after nodeb1;
+  ALTER TABLE bible_nodes ADD nodev1 int(4) after nodec1;
+  ALTER TABLE bible_nodes ADD nodeb2 varchar(5) after nodev1;
+  ALTER TABLE bible_nodes ADD nodec2 int(4) after nodeb2;
+  ALTER TABLE bible_nodes ADD nodev2 int(4) after nodec2;
+  ALTER TABLE bible_nodes ADD nodeb3 varchar(5) after nodev2;
+  ALTER TABLE bible_nodes ADD nodec3 int(4) after nodeb3;
+  ALTER TABLE bible_nodes ADD nodev3 int(4) after nodec3;
+  ALTER TABLE bible_nodes ADD linkavi varchar(100) after link;
+  ALTER TABLE bible_nodes ADD linkflv varchar(100) after linkavi;
+                ');
      echo 'Database Table bible_nodes Altered<br>';
 } else {
 mysql_query('CREATE TABLE IF NOT EXISTS bible_nodes (
@@ -528,6 +540,15 @@ mysql_query('CREATE TABLE IF NOT EXISTS bible_nodes (
   lasteditor INT(3) DEFAULT NULL,
   gmap varchar(255),
   link varchar(255) DEFAULT NULL,
+  nodeb1 varchar(5),
+  nodec1 int(4),
+  nodev1 int(4),
+  nodeb2 varchar(5),
+  nodec2 int(4),
+  nodev2 int(4),
+  nodeb3 varchar(5),
+  nodec3 int(4),
+  nodev3 int(4),
   data TEXT,
   PRIMARY KEY (nid),
   KEY `node_changed` (changed),

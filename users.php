@@ -3,8 +3,8 @@ if(empty($u)){require('init.php');}
 $passwd = substr(str_shuffle('qwertyuioasdfghjklzxcvbnm789456123'), mt_rand(0, 34), 7); // random password generator
 echo'<a href="/index.php">Back</a>'.N;
 if(($_POST['log']=='Recover')or(isset($_GET['r']))){
-    $username=$_POST['loguser'].$_GET['u'];$password = base64_encode($_POST['logpass']);
-    if(!empty($_GET['p'])){$password=urldecode($_GET['p']);}
+    $username=stripslashes($_POST['loguser']).$_GET['u'];$password = base64_encode(stripslashes($_POST['logpass']));
+    if(!empty($_GET['p'])){$password=urldecode(stripslashes($_GET['p']));}
     $result_retrieve = mysql_query('SELECT * FROM users WHERE name=\''.$username.'\'',$link) or die();
     $userid=mysql_result($result_retrieve,0,'uid');
     $result_retrieve_t = mysql_query('SELECT * FROM bible_user_recovery WHERE auth=\''.$password.'\' and uid='.$userid,$link) or die();
@@ -23,7 +23,7 @@ if(($_POST['log']=='Recover')or(isset($_GET['r']))){
     else{die('Error sending email; contact the web administrator if the trouble continues.');}
 }
 elseif (!empty($_POST['loguser'])) {
-    $username=$_POST['loguser'];$password = $_POST['logpass'];
+    $username=stripslashes($_POST['loguser']);$password = stripslashes($_POST['logpass']);
     $result_demo = mysql_query("SELECT uid,pass FROM users WHERE name='$username'") or die();
     $row_demo = mysql_fetch_object($result_demo);
     $uid = $row_demo->uid;
@@ -53,20 +53,33 @@ elseif(isset($_GET['admin'])){
     echo'Function under construction(not prioritized.)'.$_GET['u'].NN;   
   }
 }
+elseif(isset($_GET['change'])){
+    if(!empty($_POST['oldp'])and ($_POST['oldp']==stripslashes($_POST['oldpv']))){
+        mysql_query('UPDATE users SET pass=\''.md5(stripslashes($_POST['newp'])).'\' where uid='.$uid.' and pass=\''.md5(stripslashes($_POST['oldp'])).'\'\';');
+    }else{
+    echo'<form action="?change" method="post" enctype="multipart/form-data">
+        Old Password: <input type="password" name="oldp" value="">
+        Verify Old Password: <input type="password" name="oldpv" value="">
+        New Password: <input type="password" name="newp" value="">
+        <input type="submit" value="Set"></form>';
+        if(isset($_POST['oldp'])){echo N.'Password Mismatch'.N;}
+    }
+}
 elseif (!empty($uid)) {
     if($l=='n'){require('inc/Languages/Menu_Norwegian.php');}
     else{require('inc/Languages/Menu_English.php');}
     echo'<b>'.$l_m8.'</b><a href="/?mypage=1'.$bl.$bookli.'">'.$l_m9.'</a>'.NN;
     echo'Logged in as: '.$u.' Your uid: '.$uid.' <a href="users.php?logout">Logout</a>'.NN;
+    if($uid!=='0'){echo'<a href="users.php?change">Change Password</a>'.N;}
     if($uid==='1'){echo'<a href="users.php/?admin">Administer Users</a>'.N;}
 }
 elseif (!empty($_POST['regipass'])) { // registration
     if(empty($_POST['regiuser']) or empty($_POST['regiemail'])){die('All fields needs to be filled');}
-    $username=$_POST['regiuser'];
+    $username=stripslashes($_POST['regiuser']);
     $mail_body = "Your password is: $passwd\r\n"."May Gods peace be with you!\n"; //mail body
     $subject = "Welcome $username to $mailer_name. Here is your password"; //subject
     $header = "From: $mailer_name <$website_email>\r\n"; //optional headerfields
-    $recipient = $_POST['regiemail']; //recipient
+    $recipient = stripslashes($_POST['regiemail']); //recipient
     require('inc/mail.php');
     if(!empty($mailok)){
         mysql_query("INSERT INTO users (uid, name, pass, mail, mode, sort, threshold, theme, signature, signature_format, created, access, login, status, timezone, language, picture, init, data, timezone_name)
@@ -74,7 +87,7 @@ elseif (!empty($_POST['regipass'])) { // registration
         echo'<p>Email sent with your password.</p>';
         $a = session_id();
         if(empty($a)) session_start();
-        $username = $_POST['regiuser'];
+        $username = stripslashes($_POST['regiuser']);
         $result_demo = mysql_query('SELECT uid FROM users WHERE name='."'$username'",$link) or die();
         $row_demo = mysql_fetch_object($result_demo);
         $uid = $row_demo->uid;
@@ -87,8 +100,8 @@ elseif (!empty($_POST['regipass'])) { // registration
        echo '<meta HTTP-EQUIV="REFRESH" content="3; url="">';
     }
 } elseif (!empty($_POST['forgot'])){
-    $username=$_POST['regiuser'];$email=$_POST['regiemail'];
-    if (!empty($email)) {$regiget=$_POST['regiemail'];$regiget2='mail=';} elseif(!empty($username)){$regiget=$_POST['regiuser'];$regiget2='name=';}
+    $username=stripslashes($_POST['regiuser']);$email=stripslashes($_POST['regiemail']);
+    if (!empty($email)) {$regiget=stripslashes($_POST['regiemail']);$regiget2='mail=';} elseif(!empty($username)){$regiget=stripslashes($_POST['regiuser']);$regiget2='name=';}
     $result_retrieve = mysql_query("SELECT * FROM users WHERE $regiget2'$regiget'",$link) or die();
     $num_bk=mysql_numrows($result_retrieve);
     if($num_bk>0) {
@@ -99,7 +112,7 @@ elseif (!empty($_POST['regipass'])) { // registration
         $username=mysql_result($result_retrieve,0,'name');
         $recipient=mysql_result($result_retrieve,0,'mail');
         $ps=base64_encode($passwd);
-        $mail_body='Your recover password is: '.$passwd."\r\n".$_SERVER['SCRIPT_URI'].'/?u='.$username.'&r&p='.urlencode($ps)."\r\n".'May Gods peace be with you.'; //mail body
+        $mail_body='Your recover password is: '.$passwd."\r\n".stripslashes($_SERVER['SCRIPT_URI']).'/?u='.$username.'&r&p='.urlencode($ps)."\r\n".'May Gods peace be with you.'; //mail body
         $subject='Recovery for user '.$username.' at '.$mailer_name.'. Here is your recovery password'; //subject
         $header='From: '.$mailer_name.' <'.$website_email.">\r\n"; //optional headerfields
         require('inc/mail.php');
@@ -115,8 +128,8 @@ elseif(empty($u)or($u=='demo')) {
 }
 
 if (!empty($_POST['extrapuser'])) { //extra security
-    $extrap = $_POST['extrapass'];
-    $extrapuser = $_POST['extrapuser'];
+    $extrap = stripslashes($_POST['extrapass']);
+    $extrapuser = stripslashes($_POST['extrapuser']);
     //echo$extratologin;
     echo'Password checked; Navigate back to frontpage.'.N;
     if (!empty($extrap)) {
@@ -144,4 +157,5 @@ elseif(!empty($extrasecf)){
     <input type="hidden" name="extrapuser" value="'.$u.'">
     <input type="submit" value="Login"></form>';
 }
+if(!empty($referer)and!isset($fp)and!isset($didback)){$didback=1;echo'<p><a href="'.$referer.'">Back</a></p>';}
 // licence: gpl-signature.txt?>

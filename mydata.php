@@ -65,7 +65,7 @@ if (($mydata !== '1')and($mydata !== 'settings')) {
   elseif ($mydata == '5') {
    if($uid==1) {
     if(!empty($_POST['removebible'])) {
-     $delbib=$_POST['removebible'];
+     $delbib=stripslashes($_POST['removebible']);
      mysql_query_s("DELETE FROM $database.bible_list WHERE bid=$delbib;");
      mysql_query_s("DELETE FROM $database.bible_context WHERE bid=$delbib;");
      mysql_query_s("DELETE FROM $database.bible_book_name WHERE bid=$delbib;");

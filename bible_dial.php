@@ -67,6 +67,7 @@ else {
     echo'</td></table>';
 }
 if($uid==='1'){require('inc/benchmark.php');}
+if(!empty($referer)and!isset($fp)and!isset($didback)){$didback=1;echo'<p><a href="'.$referer.'">Back</a> <a href="index.php?fp=1'.$bl.'">Menu</a></p>';}
 //if(isset($_GET['largelist'])){$largelist=1;require('inc/bible_list.php');}
 //elseif(!isset($_GET['hl'])and!isset($_GET['bk'])){echo NN.'<a href="?'.$_SERVER['QUERY_STRING'].'&largelist">List all bibles by language</a>';}
 ?>

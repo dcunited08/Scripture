@@ -13,5 +13,7 @@ echo'<a href="index.php?fp=1'.$bl.'">Menu</a><p></p>
 require('inc/user_tools.php');
 echo'<br><input type="submit" value="'.$l_m3.'"></form><p></p>
 <a href="http://Ekklesia.mobi">Ekklesia</a>';
-if($uid==1){echo NN.'<a href="/?alv'.$bl.$bookli.'">Latest Visitors</a>';}
+
+if(!empty($referer)and!isset($fp)and!isset($didback)){$didback=1;echo'<p><a href="'.$referer.'">Back</a></p>';}
+if($uid==1){echo NN.NN.'<a href="/?alv'.$bl.$bookli.'">Latest Visitors</a>';}
 ?>

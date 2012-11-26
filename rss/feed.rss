@@ -4,6 +4,63 @@
         <link>http://scripture.sourceforge.net</link>
         <description>scripture.sourceforge.net Feeds</description>
         <language>en-us</language><item>
+            <title>Type writer</title>
+            <link>http://scripture.sourceforge.net?forum&amp;nid=149</link>
+            <description><![CDATA[<p>
+	You can now get your devices to type the bible. It&#39;s a efficient and fun way to read the bible.</p>
+<p>
+	You can change the speed of the typing, and also the speed of change between the verses.</p>
+<p>
+	Simply choose Typer in the menubar and hit go.</p>
+<p></p>By uid[1]]]></description>
+            <pubDate>Sun, 25 Nov 2012 11:26:00 +0000</pubDate>
+            <category>ne</category>
+            </item><item>
+            <title>Major Security Update</title>
+            <link>http://scripture.sourceforge.net?forum&amp;nid=146</link>
+            <description><![CDATA[<p>
+	I&#39;ve done allot of code changes, please tell if you notice anything odd.</p>
+<p>
+	Thank you</p>
+<p></p>By uid[1]]]></description>
+            <pubDate>Wed, 21 Nov 2012 22:24:35 +0000</pubDate>
+            <category>ne</category>
+            </item><item>
+            <title>The wind bloweth</title>
+            <link>http://scripture.sourceforge.net?forum&amp;nid=142</link>
+            <description><![CDATA[<p>
+	Just a few days after releasing the android app in samsung app store, thousands of users install it.</p>
+<p>
+	I&#39;m looking forward to release apps for other devices(which is not very far from a reality), apple products firstly.</p>
+<p>
+	Now is the time where I will say &quot;Its a good time to support this project&quot;; by developing content and cooperating in order to get the whole world educated in the bible.</p>
+<p>
+	We are not far from getting a million user.</p>
+<p>
+	&nbsp;</p>
+<p>
+	Gods peace.</p>
+<p></p>By uid[1]]]></description>
+            <pubDate>Sun, 18 Nov 2012 16:17:00 +0000</pubDate>
+            <category>ne</category>
+            </item><item>
+            <title>Git repository</title>
+            <link>http://scripture.sourceforge.net?forum&amp;nid=140</link>
+            <description><![CDATA[<p>
+	<a href="https://github.com/krizoek/Scripture">https://github.com/krizoek/Scripture</a></p>
+<p>
+	Some of you might have noticed that the cvs repository on sourceforge hasn&#39;t been updated for quite some time.<br />
+	I found it a little efforting having to update small modifications all the time and to add recursivly with cvs.</p>
+<p>
+	Now I&#39;ve found git a little more efficient, and I also like the idea of using another project hosting site in case this one falls down.<br />
+	Github have a very good application for windows which im using mostly.</p>
+<p>
+	I will try to update changes and write some notes sometimes, and if you make changes or add features that you wish to participate with; github will be the place that we will be using for now.<br />
+	&nbsp;</p>
+<p></p>By uid[1]]]></description>
+            <pubDate>Sun, 18 Nov 2012 01:25:00 +0000</pubDate>
+            <category>do</category>
+            </item><item>
             <title>Why is this project free?</title>
             <link>http://scripture.sourceforge.net?forum&amp;nid=139</link>
             <description><![CDATA[<p>
@@ -109,12 +166,11 @@
             <title>Ancient Hebrew Strongs</title>
             <link>http://scripture.sourceforge.net?forum&amp;nid=135</link>
             <description><![CDATA[<p>
-	Dig into the root language of ancient hebrew.<br />
-	Now you can find ancient hebrew strongs and fonts.</p>
+	Dig into the root language of ancient hebrew with strongs and fonts.</p>
 <p>
-	To view the ancient hebrew fonts; download and install the fontfile given in <a href="http://dl.dropbox.com/u/5638259/shared/Proto-Semitic.zip">http://dl.dropbox.com/u/5638259/shared/Proto-Semitic.zip</a><br />
-	Or install this file: <a href="inc/style/Proto-Semitic.ttf">http://scripture.sf.net/inc/style/Proto-Semitic.ttf</a><br />
-	After installing browse for example: <a href="?b=63,65&amp;bk=GEN&amp;c=7">http://scripture.sf.net/?b=63,65&amp;bk=GEN&amp;c=7</a></p>
+	Install font: <a href="http://dl.dropbox.com/u/5638259/shared/Proto-Semitic.zip">http://dl.dropbox.com/u/5638259/shared/Proto-Semitic.zip</a><br />
+	Or: <a href="inc/style/Proto-Semitic.ttf">http://scripture.sf.net/inc/style/Proto-Semitic.ttf </a><br />
+	Then Browse: <a href="?b=63,65&amp;bk=GEN&amp;c=7">http://scripture.sf.net/?b=63,65&amp;bk=GEN&amp;c=7</a></p>
 <p>
 	<br />
 	<img alt="" src="img/ahfontexp1.jpg" style="height: 111px; width: 300px;" /></p>
@@ -161,7 +217,7 @@
 <p>
 	And much more.</p>
 <p></p>By uid[1]]]></description>
-            <pubDate>Fri, 02 Nov 2012 10:18:44 +0000</pubDate>
+            <pubDate>Fri, 02 Nov 2012 10:18:00 +0000</pubDate>
             <category>ne</category>
             </item><item>
             <title>On the verge of breakthrough</title>
@@ -258,7 +314,7 @@
 	<br />
 	Then if it was a time this site died; someone else would have the source and be able to host it.</p>
 <p></p>By uid[1]]]></description>
-            <pubDate>Sun, 07 Oct 2012 08:06:16 +0000</pubDate>
+            <pubDate>Sun, 07 Oct 2012 08:06:00 +0000</pubDate>
             <category>do</category>
             </item><item>
             <title>Major Changes</title>
@@ -320,9 +376,9 @@
 <p>
 	If your a registred users, you may exclude bibles from the biblelist.</p>
 <p>
-	As a norwegian, i have excluded the <a href="/?s=following%3A+34%2C19">following: 34,19</a>,18,35,37,36,20,39,38,40,13,42,43,44,45,46,47,48,49,51,50,52,53,54,55,56,58,41,14,15,29,32,33,30,31,62</p>
+	As a norwegian, i have excluded the <a href="/?s=following%3A+34%2C19">following: 34, 19</a>, 18, 35,37,36,20,39,38,40,13<a href="/?s=%2C42%2C+43%2C44">,42, 43,44</a>,45<a href="/?s=%2C46%2C+47%2C48">,46, 47,48</a>,49,51<a href="/?s=%2C50%2C+52%2C53">,50, 52,53</a>,54,55,56<a href="/?s=%2C58%2C+41%2C14">,58, 41,14</a>,15,29,32,33,30,31,62</p>
 <p></p>By uid[1]]]></description>
-            <pubDate>Sat, 29 Sep 2012 20:27:01 +0000</pubDate>
+            <pubDate>Sat, 29 Sep 2012 20:27:00 +0000</pubDate>
             <category>ne</category>
             </item><item>
             <title>Android App</title>
@@ -353,13 +409,13 @@
             <description><![CDATA[<p>
 	The site is now made better viewable for mobile devices. Enjoy</p>
 <p></p>By uid[1]]]></description>
-            <pubDate>Mon, 24 Sep 2012 17:01:32 +0000</pubDate>
+            <pubDate>Mon, 24 Sep 2012 17:01:00 +0000</pubDate>
             <category>ne</category>
             </item><item>
             <title>Next Generation Search Method Part 1</title>
             <link>http://scripture.sourceforge.net?forum&amp;nid=118</link>
             <description><![CDATA[<p>
-	&lt; p &gt; N o w I h a v e d e v e l o p e d w h a t m i g h t b e a g r e a t b r e a k t h r o u g h f o r b i b l e r e s e a r c h e r s o u t t h e r e . &lt; / p &gt; &lt; p &gt; T h e n e w t o o l i s c a l l e d &amp; q u o t ; s h o o t e r &amp; q u o t ; . &lt; / p &gt; &lt; p &gt; I t a l l o w s y o u t o l i t e r a r y &amp; q u o t ; s h o o t a f t e r v e r s e s &amp; q u o t ; i n m a n y w a y s . Y o u c a n d o i t b e t w e e n v e r s e s , a n d i n m a n y f o r m s . l i k e u n o r d e r e d &amp; q u o t ; t h e s e w o r d s &amp; q u o t ; . &amp; q u o t ; t h i s o r d e r &amp; q u o t ; , &amp; q u o t ; e x a c t p h r a s e &amp; q u o t ; , &amp; q u o t ; b e g i n s w i t h &amp; q u o t ; a n d &amp; q u o t ; e n d s w i t h &amp; q u o t ; . &lt; / p &gt; &lt; p &gt; H i t t h e s h o o t e r l i n k a t t o p a n d t r y i t o u t f o r y o u r s e l f . &lt; / p &gt; &lt; p &gt; A p a r t f r o m t h i s i &amp; # 3 9 ; v e n o w i n t e g r a t e d a a j a x a u t o c o m p l e t e r / s e a r c h s t a n d a r d i z e d w i t h i n t h e s e a r c h b a r . &lt; / p &gt; &lt; p &gt; S u g g e s t i o n s a n d i d e a s i s w e l c o m e d . &lt; / p &gt; &lt; p &gt; T h a n k y o u &lt; / p &gt; &nbsp;</p>
+	&lt;p&gt;Now I have developed what might be a great breakthrough for bible researchers out there.&lt;/p&gt;&lt;p&gt;The new tool is called&amp;quot;shooter&amp;quot;.&lt;/p&gt;&lt;p&gt;It allows you to literary&amp;quot;shoot after verses&amp;quot;in many ways.You can do it between verses,and in many forms. like unordered&amp;quot;these words&amp;quot;.&amp;quot;this order&amp;quot;,&amp;quot;exact phrase&amp;quot;,&amp;quot;begins with&amp;quot;and&amp;quot;ends with&amp;quot;.&lt;/p&gt;&lt;p&gt;Hit the shooter link at top and try it out for yourself.&lt;/p&gt;&lt;p&gt;Apart from this i &amp;#39;ve now integrated a ajax autocompleter/search standardized within the searchbar.&lt;/p&gt;&lt;p&gt;Suggestions and ideas is welcomed.&lt;/p&gt;&lt;p&gt;Thank you&lt;/p&gt;&nbsp;</p>
 <p></p>By uid[1]]]></description>
             <pubDate>Sat, 15 Sep 2012 21:39:00 +0000</pubDate>
             <category>ne</category>
@@ -506,102 +562,6 @@
 <p>
 	<a href="http://ekklesia.mobi">http://ekklesia.mobi</a></p>
 <p></p>By uid[1]]]></description>
-            <pubDate>Mon, 23 Apr 2012 11:47:31 +0000</pubDate>
+            <pubDate>Mon, 23 Apr 2012 11:47:00 +0000</pubDate>
             <category>ne</category>
-            </item><item>
-            <title>Er jesus gud?</title>
-            <link>http://scripture.sourceforge.net?forum&amp;nid=101</link>
-            <description><![CDATA[<p>
-	<span style="font-size:12px;"><span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">Er jesus gud ?, kan vi tilbe menneske skikkelse som gud ?</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; "><a href="/?s=ROM+1%3A20">ROM 1:20</a> For helt siden verdens skapelse har Hans usynlige egenskaper* v&aelig;rt klart synlige; det gjelder Hans evige kraft og Hans guddommelighet; disse kan kjennes ut fra de gjerninger som er gjort. Slik er de uten unnskyldning. &lt;*eller: Guds vesen.&gt;&nbsp;</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">21 For selv om de kjente Gud, &aelig;ret de Ham ikke som Gud, eller takket, men de ble tomme* i sine tanker, og deres d&aring;raktige hjerte ble form&oslash;rket. &lt;*&oslash;delagt.&gt;&nbsp;</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">22 Mens de gjorde krav p&aring; &aring; v&aelig;re vise, ble de bare d&aring;raktige,* &lt;*t&aring;pelige.&gt;&nbsp;</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">23 og de byttet bort den uforgjengelige Guds herlighet med et bilde gjort lik et forgjengelig menneske, og bilder av fugler, firbeinte dyr og krypdyr.&nbsp;</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">24 Derfor overgav Gud dem ogs&aring; i deres hjerters lyster til urenhet, slik at de van&aelig;rer sine legemer seg imellom.&nbsp;</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">25 De byttet ut Guds sannhet med l&oslash;gnen og tilbad og tjente skapningen i stedet for Skaperen, Han som er velsignet i all evighet. Amen.&nbsp;</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">Legg merke til &quot;et forgjengelig menneske&quot;.</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">Hva menes egentlig med dette?.</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">La oss fors&oslash;ke &aring; dr&oslash;fte dette med bibelske standpunkter.</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">1JN 5:1 Hver den som tror at Jesus er Kristus, er f&oslash;dt av Gud. Og hver den som elsker Faderen, elsker ogs&aring; den som er f&oslash;dt av Ham.&nbsp;</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">2 P&aring; dette kjenner vi at vi elsker Guds barn, n&aring;r vi elsker Gud og holder Hans bud.&nbsp;</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">3 For dette er Guds kj&aelig;rlighet, at vi holder Hans bud. Og Hans bud er ikke tunge &aring; b&aelig;re.&nbsp;</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">4 For alt det som er f&oslash;dt av Gud, seirer over verden. Og dette er den seier som har seiret over verden, v&aring;r* tro. &lt;*F-tekst: deres.&gt;&nbsp;</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">5 Hvem er den som seirer over verden, om ikke den som tror at Jesus er Guds S&oslash;nn?&nbsp;</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">6 [Guds vitnesbyrd om Sin S&oslash;nn] Han er den som kom ved vann og blod - Jesus Kristus. Ikke bare med* vann, men med* vann og blod. Og &Aring;nden er den som vitner, for &Aring;nden er sannheten. &lt;*eller: i.&gt;&nbsp;</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">7 For det er tre som vitner i himmelen: Faderen, Ordet og Den Hellige &Aring;nd. Og disse tre er &Eacute;n.&nbsp;</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">Jeg kunne godt tatt med hele kapittelet.</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">det sanne vitnet p&aring; jorden er nettopp herren(som er en autoritet) jesus er med dem som har han i autoritet/f&oslash;lger hans fotspor. da vandres veien i hans fotspor. om det da er i sannhet, s&aring; vil det jo bli sett. men sannheten kommer f&oslash;rst og fremst av gud. og jesus/om vi vandrer hans veier, vil da v&aelig;re oss; en avglans av hans vesen ettersom han skal v&aelig;re v&aring;res l&aelig;remester. og da n&aring;r vi gj&oslash;r ettersom det, da vil gud ta bolig i oss. (se <a href="/?s=joh+14%3A23-24">joh 14:23-24</a>).</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">&quot;7 For det er tre som vitner i himmelen: Faderen, Ordet og Den Hellige &Aring;nd. Og disse tre er &Eacute;n. &quot; i joh 5-, dette trenger ikke si at dem er et vesen direkte, men at deres vitne skal v&aelig;re samstemt. akkurat som &quot;n&aring;r lyden spilles av mesteren av instrumentet, s&aring; vil det klinge slik som mesteren mente det&quot;.</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">jesus &aelig;rer gud, og vi skal gj&oslash;re det samme. gud er hva som alltid er over alle ting, og han kan ikke bli begrenset; selv med en mennesklig skikkelse. tid og rom kan ikke inneholde han p&aring; noen m&aring;ter?.</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">Hvordan kan paulus da si &quot;hans fylde er fullendt i han&quot;.</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; "><a href="/?s=COL+4%3A12">COL 4:12</a> Epafras, som er en av dere, en Kristi tjener, hilser dere. Han strider alltid med iver for dere i b&oslash;nn, for at dere kan st&aring; fullkomne og fullendte* i all Guds vilje. &lt;*UN: fullt visse.&gt;&nbsp;</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">Det skal vi alle st&aring; en gang; og jesus skal v&aelig;re som v&aring;res hode.</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">skal vi da bli lik gud? definitivt ikke.; for som han er et evig funksjon over alle domener, s&aring; ville vi allerede vert der om det var s&aring; om det skulle. men vi er skapt til &aring; v&aelig;re et avbilde av han. men hvor langt strekker et avbilde. er et bilde noen gang mer enn bare et bilde?</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; "><a href="/?s=EPH+3%3A19">EPH 3:19</a> og &aring; kjenne Kristi kj&aelig;rlighet, som overg&aring;r all kunnskap, for at dere kan bli fylt til* hele Guds fylde. &lt;*med.&gt;&nbsp;</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">Hvordan er da jesus den sanne mediatoren ?</span><br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<br style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; font-size: 11px; line-height: 14px; text-align: left; " />
-	<span style="color: rgb(0, 0, 0); font-family: &#39lucida grande&#39, tahoma, verdana, arial, sans-serif; line-height: 14px; text-align: left; ">Er han da et annet vesen som st&aring;r imellom?, for da gj&oslash;r vi allerede gud todelt. trenger gud en mediator? eller viser det heller til at n&aring;r noen gj&oslash;r lik &quot;jesus&quot; med &aring; gj&oslash;re det rettferdige da, vil bli h&oslash;rt av den m&aring;ten. for gud h&oslash;rer jo allerede alle ting f&oslash;r dem ble ut&oslash;vd.</span></span></p>
-<p></p>By uid[1]]]></description>
-            <pubDate>Mon, 16 Apr 2012 17:53:00 +0000</pubDate>
-            <category>ft</category>
-            </item><item>
-            <title>Mechanical Translation</title>
-            <link>http://scripture.sourceforge.net?forum&amp;nid=98</link>
-            <description><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
-</head>
-<body>
-<p>We now got mechanical translation of the torah; <a href="http://scripture.sf.net/?b=28&amp;bk=GEN&amp;cs=1">http://scripture.sf.net/?b=28&amp;bk=GEN&amp;cs=1</a> -</p>
-<p>Thanks to <a href="http://ancient-hebrew.org">http://ancient-hebrew.org </a>This is now possible.</p>
-<p>This might make it possible for me now to continue doing the same for the rest of the old testament.</p>
-<p>Appart from this I will be working on completeing a complete hebrew bible with dictionary(strongs).</p>
-<p><a href="http://scripture.sf.net/?&amp;b=60&amp;bk=GEN&amp;cs=1">http://scripture.sf.net/?&amp;b=60&amp;bk=GEN&amp;cs=1</a> -</p>
-<p>If some of you know hebrew. Please qualitycheck these.</p>
-<p>Thank you.</p>
-</body>
-</html><p></p>By uid[1]]]></description>
-            <pubDate>Sun, 25 Mar 2012 16:15:00 +0000</pubDate>
-            <category>ne</category>
-            </item><item>
-            <title>Hebrew Alphabet Chart</title>
-            <link>http://scripture.sourceforge.net?forum&amp;nid=97</link>
-            <description><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
-</head>
-<body>
-<p><img src="http://www.ancient-hebrew.org/files/28_alphabetchart.gif" height="994" width="967" /> - <br /><a href="http://www.ancient-hebrew.org/files/28_alphabetchart.gif">http://www.ancient-hebrew.org/files/28_alphabetchart.gif</a> - <br />Provided by <a href="http://www.ancient-hebrew.org">http://www.ancient-hebrew.org</a> -</p>
-</body>
-</html><p></p>By uid[1]]]></description>
-            <pubDate>Sun, 25 Mar 2012 10:52:00 +0000</pubDate>
-            <category>do</category>
-            </item><item>
-            <title>Something to share? Then contribute</title>
-            <link>http://scripture.sourceforge.net?forum&amp;nid=94</link>
-            <description><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
-</head>
-<body>
-<p>This project/site sends a request to you who is out there.</p>
-<p>Join this community.<br />Share your tallents as it might be given with the Lord.</p>
-<p>This project is free; and welcome contributers. We don&#39t require money; but rather we would do better with you. If you are gifted by God.<br />This site will grow, new features will come. You don&#39t need to be a developer in order to contribute.</p>
-<p>This could be your project too!<br />Get content. Share it. Write it. Communicate.</p>
-</body>
-</html><p></p>By uid[1]]]></description>
-            <pubDate>Sun, 18 Mar 2012 23:38:00 +0000</pubDate>
-            <category>do</category>
             </item></channel></rss>

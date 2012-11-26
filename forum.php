@@ -1,10 +1,10 @@
 <?php # licence: gpl-signature.txt
 #testadd
-$nid=$_GET['nid'];$ti=$_GET['ti'];
+$nid=stripslashes($_GET['nid']);$ti=stripslashes($_GET['ti']);
 $thisyear=date('y',time());
-if (empty($nid)) { $nid=$_POST['nid']; }
-if (empty($_POST['category'])) { $cat=$_GET['cy']; } else {$cat=$_POST['category'];$cat2=urldecode($_GET['cy']);} $cat=urldecode($cat);
-if (!empty($_GET['uc'])) { $uc=$_GET['uc']; } else { $uc=$_POST['uc']; } $uc=urldecode($uc);
+if (empty($nid)) { $nid=stripslashes($_POST['nid']); }
+if (empty($_POST['category'])) { $cat=stripslashes($_GET['cy']); } else {$cat=stripslashes($_POST['category']);$cat2=urldecode(stripslashes($_GET['cy']));} $cat=urldecode($cat);
+if (!empty($_GET['uc'])) { $uc=stripslashes($_GET['uc']); } else { $uc=stripslashes($_POST['uc']); } $uc=urldecode($uc);
 if (!empty($cat)) {
     $fsqlqc=mysql_query_s('SELECT uppercat FROM '.$database.'.bible_nodes WHERE type = \'fc\' AND title=\''.urlencode($cat).'\' AND category=\''.urlencode($cat).'\';');
     $scat=mysql_result($fsqlqc,0,'uppercat');
@@ -14,7 +14,7 @@ if (empty($_GET['createcontent']) && empty($_GET['edit'])) {
     #if($uid=1){echo'SELECT * FROM '.$database.'.bible_nodes WHERE type = \'fc\' AND category = \''.urlencode($cat).'\' AND uppercat=\''.urlencode($uc).'\' order by title;';}
     $n=mysql_numrows($fsqlq);
     $stitle=mysql_result($fsqlq,0,'title');
-    if(!isset($no_mobile)){
+    /*if(!isset($no_mobile)){
           echo'<form action="index.php" method="get" enctype="multipart/form-data">
             <input type="hidden" name="b" value="'.$b.'"><input type="hidden" name="forum" value="1">
             <input type="hidden" name="s" value="'.$se.'">
@@ -25,28 +25,31 @@ if (empty($_GET['createcontent']) && empty($_GET['edit'])) {
             echo'<option value="'.urlencode($stitle).'">'.$stitle.'</option>'.N;
           }
           echo'</select><input type="submit" value="Go"></form>';
-        }else{
+        }else{*/
+            echo'<u>Categories</u><br>';
             for($i=0;$i<$n; ++$i) {
               $stitle=mysql_result($fsqlq,$i,'title');
-              echo'<a href="/?forum=1&b='.$b.'&s='.$se.'&uc='.$cat.'&cy='.$stitle.'">'.$stitle.'</a> ';
+              echo'<a href="/?forum=1&b='.$b.'&s='.$se.'&uc='.$cat.'&cy='.$stitle.'">'.$stitle.'</a>|  ';
             }
             echo N;
-        }
-        echo'<form action="index.php" method="get" enctype="multipart/form-data">
+        #}
+        echo'
+        <u>Forum Menu</u><form action="index.php?forum&createcontent=1&uc='.urlencode($uc).'&cy='.urlencode($cat).'&b='.$b.'&s='.urlencode($se).'" method="post">
+        <input type="submit" value="Create Content">  <a href="/rss">RSS</a>|  <a href="rss.php">Update RSS</a>|  <a href="'.$subd.'?tv'.$bl.$bookli.'">TV</a>|  <a href="/chat">'.$l_m15.'</a>|  <a href="'.$subd.'?geo'.$bl.$bookli.'">Stats</a>|</form>
+        <form action="index.php" method="get" enctype="multipart/form-data">
         <input type="hidden" name="b" value="'.$b.'">
         <input type="hidden" name="bk" value="'.$book.'">
         <input type="hidden" name="c" value="'.$chap.'">
         <input type="hidden" name="lookups" value="1">
         <input type="text" name="sf" value="'.$_GET['sf'].'">
         <input type="submit" value="Search Forum"></form>
-        Forum Menu <form action="index.php?forum&createcontent=1&uc='.urlencode($uc).'&cy='.urlencode($cat).'&b='.$b.'&s='.urlencode($se).'" method="post">
-        <input type="submit" value="Create Content">  <a href="/rss">RSS</a>  <a href="rss.php">Update RSS</a>  <a href="'.$subd.'?tv'.$bl.$bookli.'">TV</a>  <a href="/chat">'.$l_m15.'</a>  <a href="'.$subd.'?geo'.$bl.$bookli.'">Stats</a></form><hr width="100%"><div id="forum">';
+        <hr width="100%"><div id="forum">';
         $fdiv2='</div>';
     if (!empty($stitle)) {
         #forum menu was here before
     }
     if (empty($_GET['ti']) && empty($_GET['comments']) && empty($_GET['comment']) && empty($nid)) {
-        if (!empty($_GET['page'])) { $pagenum=$_GET['page'];$p_sel=1+$pagenum;} else { $p_sel='1';$pagenum='0'; }
+        if (!empty($_GET['page'])) { $pagenum=stripslashes($_GET['page']);$p_sel=1+$pagenum;} else { $p_sel='1';$pagenum='0'; }
         $page_low=0 + ($pagenum * 12);$page_high=12 + ($pagenum * 12);
         if (empty($cat)){$fsqldisp=' promote=1 and status=1 AND type NOT IN(\'fc\')';} //NOT IN('container')
         else {$fsqldisp=" status=1 AND category='".urlencode($cat)."' AND type NOT IN('fc') AND uppercat='".urlencode($uc)."'";}

@@ -19,21 +19,21 @@ if(!isset($password)){require('init.php');}
 	  $tmpfile = $_FILES['uploaded_file']['tmp_name'];
 	} else { echo'An error accured while the file was being uploaded. Error code: '. intval($_FILES['uploaded_file']['error']); }
     } elseif (!empty($_POST['filetoupload'])) {
-      $tmpfile = $_POST['filetoupload'];$tmpfilename = $tmpfile;
+      $tmpfile =stripslashes($_POST['filetoupload']);$tmpfilename = $tmpfile;
     } elseif (!empty($_POST['sitetouploadfrom'])) {
-      $tmpfile = $_POST['sitetouploadfrom'];$tmpfilename = $tmpfile;
+      $tmpfile =stripslashes($_POST['sitetouploadfrom']);$tmpfilename = $tmpfile;
     } elseif (!empty($_POST['sitetoupload'])) { // Generator UNDER CONSTRUCTION
       require('generators.php');
-    } elseif (!empty($_GET['file'])){$tmpfilename=$_GET['file'];require('generators.php');}
+    } elseif (!empty($_GET['file'])){$tmpfilename=stripslashes($_GET['file']);require('generators.php');}
       else { echo'Error! No database reference found!'.N.'If you get this error, you might want to try uploading the file to the web directory; and then enter the filename into the url'; }
 	/*  // This function may be used to save data in the future to a upload directory, (note) using .htaccess to secure it.
 	if(move_uploaded_file($_FILES['uploaded_file']['tmp_name'], 'uploads/' . $_FILES['uploaded_file']['name'])) { // Move the file
 	  echo("<p>File uploaded successfully!</p>\r\n");
 	} else { echo("<p>There was an error moving the file.</p>\r\n"); }
 	*/
-	if(!empty($_POST['bid'])){$bidt=$_POST['bid'];}
+	if(!empty($_POST['bid'])){$bidt=stripslashes($_POST['bid']);}
       if ($uid==0) {die('Access denied for demo account.');}
-      if (!empty($_POST['global'])) { $isglobal = ', global';$isglobal2 = ",'".$_POST['global']."'";$global=$_POST['global']; }
+      if (!empty($_POST['global'])) { $isglobal = ', global';$isglobal2 = ",'".$_POST['global']."'";$global=stripslashes($_POST['global']); }
       $tmpfilename=str_replace(' ',"",$tmpfilename);
       //$tmpfile=str_replace(' ','',$tmpfile);
       if (!preg_match('/(\.(bc|sn|txt|bw|bpsd|bmap|btc|hsn)($|\s$))/i',$tmpfilename,$fileextension)) {die($fileextension[0].' is an invalid file type for '.$tmpfilename.'<br>');}
@@ -91,7 +91,7 @@ if(!isset($password)){require('init.php');}
 	    //if ($i=='4'){break;}else{echo htmlentities($fileData).N;} //tmp //str_replace('\'','\\\'',$fileData)
 	    //$fileData=preg_replace('/([^\\])\'/i','\1\\\'',$fileData);
 		$fileData=str_replace('\'','`',$fileData);
-		$fileData=preg_replace('/(\r?\n?)/',"",$fileData);
+		$fileData=preg_replace('/(\r)|(\n)/',"",$fileData);
 	    if ($i == '0') {
 		  if(substr($fileData, 0,3) == pack('CCC',0xef,0xbb,0xbf)) {
 		    $fileData=substr($fileData, 3); //remove byte order marks

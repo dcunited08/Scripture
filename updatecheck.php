@@ -82,8 +82,8 @@ inc/Languages/Filter_drupal.php:38b6b1a3b020d1dbfd46f2451cf64fb65c30d917
 inc/Languages/Filter_norwegian.php:98c40a4396103955382ba51554cd0530409cd572
 inc/Languages/Filter_english.php:986ce2cf63e12b0e356e08da0c37c752748d8df2';
 
-if(!empty($_SERVER['HTTP_X_REMOTE_ADDR'])){$remoteaddr=$_SERVER['HTTP_X_REMOTE_ADDR'];}
-else{$remoteaddr=$_SERVER['REMOTE_ADDR'];}
+if(!empty($_SERVER['HTTP_X_REMOTE_ADDR'])){$remoteaddr=stripslashes($_SERVER['HTTP_X_REMOTE_ADDR']);}
+else{$remoteaddr=stripslashes($_SERVER['REMOTE_ADDR']);}
 $t=date('dMy H:i',time());
 $fh=fopen('rc.txt', 'a+b');
 fwrite($fh,$t.' - '.$remoteaddr."\r\n");

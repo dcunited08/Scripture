@@ -1,8 +1,8 @@
 <?php // licence: gpl-signature.txt
 require('inc/Languages/Filter_english.php');
 require('inc/Languages/Filter_drupal.php');
-if(!empty($_GET['im'])){$import_mode=$_GET['im'];}
-if (empty($whatsite)) { $whatsite = $_GET['sitetoupload']; }
+if(!empty($_GET['im'])){$import_mode=stripslashes($_GET['im']);}
+if (empty($whatsite)) { $whatsite =stripslashes($_GET['sitetoupload']); }
 error_reporting(E_ERROR | E_PARSE);
 if (($whatsite == 'TSK') && ($uid == '1')) {require('inc/generators_tsk.php');}
 elseif ($whatsite == 'bibleworks') {
@@ -10,10 +10,10 @@ elseif ($whatsite == 'bibleworks') {
  ini_set('max_execution_time', '600'); // increase this?
  require('inc/Languages/Filter_bibleworks.php');
  if (empty($import_mode)) { $import_mode = 'bibleworks'; }
- //if (isset($_GET['s'])) { $separator = $_GET['s']; } //used?
- if (isset($_GET['cs'])) { $chaptersep = $_GET['cs']; }
- //$testfile = $_GET['f'];$import_mode = $_GET['m'];
- if(empty($tmpfile)){$tmpfile=$_GET['file'];}
+ //if (isset($_GET['s'])) { $separator =stripslashes($_GET['s']); } //used?
+ if (isset($_GET['cs'])) { $chaptersep =stripslashes($_GET['cs']); }
+ //$testfile =stripslashes($_GET['f']);$import_mode =stripslashes($_GET['m']);
+ if(empty($tmpfile)){$tmpfile=stripslashes($_GET['file']);}
  $testfile = fopen($tmpfile, 'r');
  $f_arr = file($tmpfile);
  $count = count($f_arr);

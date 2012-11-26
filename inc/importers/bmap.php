@@ -29,7 +29,7 @@ while($i<=$countfilel){
   else{$fileData=$lines[$i];}
   if(empty($utf8found)){$fileData=utfencoder($fileData);}
   if($uid!=='1'){$fileData=preg_replace($tag_filter,'',$fileData);}
-  $fileData=preg_replace('/(\r?\n?)/',"",str_replace('\'','`',$fileData));
+  $fileData=preg_replace('/(\r)|(\n)/',"",str_replace('\'','`',$fileData));
   if(substr_count($fileData,'|') >= 10){$data=explode('|',addslashes($fileData));}
   #else{$data=explode(' ',$fileData); } #not in this case.
   if (!empty($data[3])) {

@@ -2,6 +2,7 @@
 		// Bookmark list
 		$r=mysql_query('SELECT bookmark,id FROM bible_bookmarks WHERE (user=\''.$u.'\' or uid='.$uid.') ORDER BY id DESC;');
 		$num_bk=mysql_numrows($r);
+		if($uid==0){if($num_bk>20){$num_bk=20;}}
 		$i2=$num_bk;
 		if($num_bk>0){
 		        $i=0;while($i<=$num_bk){
@@ -21,7 +22,7 @@
 			if (isset($bookmarkset)) { echo'</select><br>'; }
 		}
 		$r=mysql_query('SELECT * FROM bible_favorites WHERE (user=\''.$u.'\' or uid='.$uid.') ORDER BY id DESC'); // Favorite list
-		$num_fav=mysql_numrows($r);
+		$num_fav=mysql_numrows($r);if($uid==0){if($num_fav>20){$num_fav=20;}}
 		$i2=$num_fav;
 		if($num_fav>0){
 		         $i=0;while($i<=$num_fav){
@@ -41,7 +42,7 @@
 			if (isset($favoriteset)){echo'</select><br>';}
 		}
 		$r=mysql_query('SELECT * FROM bible_notes WHERE (user=\''.$u.'\' or uid='.$uid.')'); // Note list
-		$num_note=mysql_numrows($r);
+		$num_note=mysql_numrows($r);if($uid==0){if($num_note>20){$num_note=20;}}
 		$i2=$num_note;
 		if($num_note>0){
 		        $i=0;while($i<=$num_note){
@@ -62,7 +63,7 @@
 		}
 		if($mysettings[15]==='1'){
 		  $r=mysql_query('SELECT distinct favoriteverse, id FROM bible_favorites WHERE (user!=\''.$u.'\' AND mode=3) ORDER BY id'); // Favorite list
-		  $num_fav=mysql_numrows($r);
+		  $num_fav=mysql_numrows($r);if($uid==0){if($num_fav>20){$num_fav=20;}}
 		  $i2=$num_fav;
 		  if($num_fav>0){
 		        $i=0;while($i<=$num_fav){

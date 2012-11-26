@@ -1,5 +1,5 @@
 <?php // licence: gpl-signature.txt
-$ln=$_GET['ln'];echo'"'.$ln.'"';$te="";$lne=explode('-',$ln);
+$ln=stripslashes($_GET['ln']);echo'"'.$ln.'"';$te="";$lne=explode('-',$ln);
 $wb='<a href="http://google.com/search?q=define%3A+';$wb2='">';$wb3='</a>';
 if($lne[0]!='V'){
   if(preg_match('/^(ADV|CONJ|COND|PRT|PREP|INJ|ARAM|HEB|N-PRI|A-NUI|N-LI|N-OI)/i',$ln,$m5)){

@@ -1,5 +1,5 @@
 <?php // licence: gpl-signature.txt
-if(($u==='demo')and(isset($no_mobile))){$dem='1';$dem2='1';
+if($uid==0){$dem='1';$dem2='1';
 $ustyle=' style="text-align:center;display:block;" ';
 echo'<hr><u '.$ustyle.'>Our features</u><hr><table border="1" width="100%">
 <tr align="center"><td><b>Strong<br>
@@ -13,10 +13,11 @@ Paraphrased Search</b> with editor<br>
 Search <b>Between</b> verses, books and chapters<br>
 Book specific: Blessed are -Love mat()<br>
 Regex Search, r: ^love -hatred<br>
-<b>Multiverses</b> example: .mat 5:1-11 .mat 28:20 .1jo 5:1-4<br>
-<b>Opensource PHP</b> <a href="http://sourceforge.net/projects/scripture/files/latest/download">Download for free and join the development</a><br>
-</td><td>
-Search and lookup <b>History</b><br>
+<b>Multiverses</b> example: .mat 5v1-11 .mat 28v20 .1jo 5:1-4<br>
+<b>Opensource PHP</b> <a href="http://sourceforge.net/projects/scripture/files/latest/download">Download and join the development</a>';
+if(isset($no_mobile)){echo'<br></td><td>';}
+else{echo'<br>';}
+echo'Search and lookup <b>History</b><br>
 Multi-categorical <b>Forum, Blogg, Articles, Podcast..</b><br>
 Strongs display modes: listboxes, tooltip and link<br>
 Editors: <b>CKeditor</b> and <b>TinyMCE</b><br>
@@ -36,8 +37,11 @@ if ($mysettings[11] > '1') {
  $s=' promote=1 and status=1 AND type NOT IN(\'fc\',\'ct\')';
  $s=mysql_query('SELECT visitors,nid,title,data,type,uid,created,category,uppercat FROM bible_nodes WHERE '.$s.' ORDER BY field(type,\'ne\'),type,sticky,created DESC LIMIT 0,21;');
  require('inc/forum_view.php');
- $s=mysql_query('SELECT title,data,uid,created,category FROM bible_nodes WHERE type=\'ct\' ORDER BY created DESC LIMIT 0,4;');
+ if(isset($no_mobile)){$comlim=4;}
+ else{$comlim=3;}
+ $s=mysql_query('SELECT title,data,uid,created,category FROM bible_nodes WHERE type=\'ct\' ORDER BY created DESC LIMIT 0,'.$comlim);
  $n=mysql_numrows($s);
+ if($uid==1){echo $_SERVER['HTTP_USER_AGENT'];}
  echo'<u '.$ustyle.'>Latest Comments</u><hr>';
  if($n>0){echo'<table border="1">';}//<td>Title:<br>Thread:<br>Time[U]:</td>';}
  if(isset($no_mobile)){echo'<tr>';}
@@ -51,7 +55,8 @@ if ($mysettings[11] > '1') {
  echo'</table><hr>';
 }
 
-if(!empty($fp)){echo'  <a href="mailto://'.$website_email.'">Contact Us</a> &#169; 2011→2012; General Public Licence; '.'Find us on(<a href="http://sourceforge.net/projects/scripture">Sourceforge</a>,<a href="https://freecode.com/projects/scripture">Freecode</a>,<a href="http://www.hotscripts.com/listing/bible-scripture/?RID=N809529">HotScripts</a>)';}
+if(!empty($fp)){echo'  <a href="mailto://'.$website_email.'">Contact Us</a> &#169; 2011→2012; General Public Licence; '.
+'<br>Find us: <a href="http://sourceforge.net/projects/scripture">Sourceforge</a> <a href="https://github.com/krizoek/Scripture">GitHub</a> <a href="https://freecode.com/projects/scripture">Freecode</a> <a href="http://www.hotscripts.com/listing/bible-scripture/?RID=N809529">HotScripts</a>';}
 
 if(!empty($fp)and($u=='demo')){require('inc/footer.php');}
 ?>

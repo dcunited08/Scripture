@@ -1,7 +1,7 @@
 <?php // licence: gpl-signature.txt
-$edmode=$_GET['edmode'];
+$edmode=stripslashes($_GET['edmode']);
 $checkowner=mysql_result(mysql_query('Select owner from bible_list where bid='.$b),0,'owner');
-if(isset($_GET['newbible'])){$myowntranslation=$_GET['newbible'];}
+if(isset($_GET['newbible'])){$myowntranslation=stripslashes($_GET['newbible']);}
 elseif($checkowner==$uid){$myowntranslation=$b;}
 elseif(!empty($doeditb)){$myowntranslation=$doeditb;}
 else{$myowntranslation=$myowntranslation=mysql_result(mysql_query('Select max(bid) from bible_list where owner='.$uid),0,'bid');}

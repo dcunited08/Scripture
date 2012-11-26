@@ -31,7 +31,7 @@ else{$doejs='input';$textarea='<input type="text" name="s" id="s" tabindex=1>';}
 //if(isset($fp)){$fpwidth=' width="100%"';}
 if(isset($no_mobile)){$dospace3='</td><td>'.N;$dospace2=N;}
 else{$dospace4='</td><tr></tr><td>';}
-echo$menu.'<table'.$fpwidth.'><tr><td>'.$menu2.'<form action="index.php" method="get">'.$textarea.$mode_enabled.$nohighlight.$se.'</textarea>'.$dospace4.
+echo$menu.'<table'.$fpwidth.'><tr><td>'.$menu2.'<form action="index.php" method="get"><input type="submit" value="'.$l_m3.'" class="go">'.$textarea.$mode_enabled.$nohighlight.$se.'</textarea>'.$dospace4.
 '<select name="b[]" MULTIPLE size=6 tabindex=2>';//SIZE=3
 /*if(!empty($tools)or isset($ismultib)){echo'<select name="b[]" MULTIPLE SIZE=3>';}
 else{echo'<select name="b" style="width:104">';}*/
@@ -76,9 +76,10 @@ $i=0;while($i<$num){
   ++$i;
 }
 echo'<option value="all"'.$ssbible2.'>'.$l_m2.'</option></select>'.$dospace3;
+if(isset($_GET['typer'])){$typercheck=' checked';$typerdo='&typer';}
 if(!isset($no_mobile)){echo'</td><tr></tr><td>';}
 echo'<input type="checkbox" name="all" value="1">Show All<br>
-<input type="checkbox" name="scroll"'.$scrollcheck.'>Scroll<br>
+<input type="checkbox" name="scroll"'.$scrollcheck.'>Scroll <input type="checkbox" name="typer"'.$typercheck.'>Typer<br>
 <select name="bk" style="width:54">';//49firefox
 //$rbk=mysql_query_s('SELECT DISTINCT book FROM bible_context WHERE bid=\''.$b.'\' ORDER BY vsid ASC');//HTML Book-list-Selector
 if(strstr($b,',')){$bks=' IN(';$bks2=')';}else{$bks='=';}
@@ -105,6 +106,7 @@ $i=1;while($i<=$sqnum){
   echo"<option value='$i' $ssbible2>$i</option>";
   ++$i;
 }echo'</select><input type="submit" value="'.$l_m3.'" class="go" tabindex=3>';
+if(!empty($referer)and!isset($fp)and isset($iphone)){echo' <a href="'.$referer.'">Back</a>'.N;}
 /*$tlink='Tools';$toolshtml='&tools=1';
 if(!empty($tools)){require('tools.php');$tlink="Back";$toolshtml="";}
 elseif(!empty($_GET['mypage'])){echo' <a href="?mydata=1'.$bl.'">myData</a> <a href="?mydata=settings'.$bl.'">Settings</a>  ';}
@@ -124,9 +126,9 @@ $logo='<img src="img/icon_gold.png">'.$new2.'</td>'.$trmob.'<td><b>'.$mailer_nam
 if(!empty($l_m18)){echo'<br><sup>'.$l_m18.'</sup>';}
 if(isset($no_mobile)){echo'</td><td align="right">'.$logo.'</td>';}
     echo'</tr><tr>';
-    echo'<td colspan="4"><a href="'.$subd.'?searcher&b='.$b.'">'.$l_m13.'</a>  <a href="dialer.php?b='.$b.'">Dialer</a>   
-    <a href="'.$subd.'?shoot&b='.$b.'">Shooter</a>  ';
-    if(!isset($no_mobile)){echo'</td></tr><tr><td>';}
+    echo'<td colspan="4"><a href="'.$subd.'?shoot&b='.$b.'">Shooter</a>  
+    <a href="'.$subd.'?searcher&b='.$b.'">'.$l_m13.'</a>  <a href="dialer.php?b='.$b.'">Dialer</a>  ';
+    if(!isset($no_mobile)){echo'</td></tr><br><tr><td>';}
     if($uid!=='0'){$l_m12=$l_m23;}
     echo'<a href="'.$subd.'?forum'.$bl.$bookli.'">'.$l_m14.'</a>  <a href="'.$subd.'?mydata=settings'.$bl.$bookli.'">'.$l_m11.'</a>'.$new3.' <a href="/users.php">'.$l_m12.'</a>';
     if(!isset($no_mobile)){echo'</td></tr><tr><td>'.$logo.'</tr>';if($uid==0){echo'<tr><td>'.$sc_info.'<br></tr>';}}
@@ -154,6 +156,7 @@ if(!isset($nodiv)){echo'<div id="content">';
 if(($uid==1)and isset($ksjdfkjdsf)){$scontext="kjd'fgk'j";echo htmlentities(mysql_query_s2('insert into bible_topic_link (tid,mid,uid,book,type,title,mode,b,c,v,v2,context,subcontext) values
 		  '."('',$smidt,$suid,'$sbook',$stype,'$sbook3',1,'$sb',$sc,$sv,$sv2,'$scontext','$ssubcontext');"));}}
 if($uid==='1'){$time=explode(' ',microtime());$end_in=$time[1] + $time[0];}
+if(isset($bsecount)){echo'Searching for \''.$reg_ena.$se5.'\''.N;}
 if(!isset($a_b)&&isset($bsecountall)){require('inc/searchall.php');}
 if(isset($bsecount)){require('inc/searchnums.php');}
 if(((empty($seonly)or isset($_GET['all']))and empty($tools)and!isset($forum)and empty($groups)and empty($_GET['lookups'])and
@@ -162,13 +165,19 @@ if(((empty($seonly)or isset($_GET['all']))and empty($tools)and!isset($forum)and 
     !isset($_GET['topic'])and!isset($_GET['tl'])and!isset($_GET['tlg'])and!isset($_GET['edf'])and!isset($_GET['mind']))
  or(!empty($sebookmatched)and($simplified_mode!=='r'))){
   if(isset($scrollstart)){echo$scrollstart.NN;}
- require('inc/parser.php');
-  if(isset($scrollstart)){
+ if(!isset($_GET['typer'])){require('inc/parser.php');}else{
+  if(empty($sspeed)and isset($_GET['typer'])){$sspeed=3300;}
+  require('inc/ajax/typereader.php');
+  }
+  if(isset($scrollstart)or isset($_GET['typer'])){
     echo'<form action="index.php" method="get">'.$scrollstop.'
     <input type="hidden" name="bk" value="'.$book.'">
-    <input type="hidden" name="c" value="'.$chap.'">
-    <input type="hidden" name="scroll">
-    <input type="text" name="sspeed" value="'.$sspeed.'">
+    <input type="hidden" name="b" value="'.$b.'">
+    <input type="hidden" name="c" value="'.$chap.'">';
+    if(isset($_GET['typer'])){echo'Type Speed <input type="text" name="tspeed" value="'.$tspeed.'">
+    <input type="hidden" name="typer">Verse Change ';}
+    else{echo'<input type="hidden" name="scroll">';}
+    echo'<input type="text" name="sspeed" value="'.$sspeed.'">
     <input type="submit" value="Change Speed">[ms]
     </form>';
     }
@@ -221,10 +230,11 @@ if(isset($fp)){ # and isset($dem2)
  echo' </a>
  <a href="https://freecode.com/projects/scripture"><img height="62" src="https://a.fsdn.com/fm/images/fm_logo.png"></a>';*/
  if(isset($dem2)){
-  echo'<br>Project hosting platform provided by<br>
+  echo'<br>Hosting provided by<br>
   <a href="http://sourceforge.net/projects/scripture/files/latest/download"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=522543&amp;type=4">';
  }
 }
 if(empty($mysqldatabasecreate)){mysql_close();}
+if(!empty($referer)and!isset($fp)and!isset($didback)){$didback=1;echo'<p><a href="'.$referer.'">Back</a></p>';}
 echo$footer;
 # licence: gpl-signature.txt?>

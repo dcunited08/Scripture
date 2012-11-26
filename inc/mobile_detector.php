@@ -1,5 +1,5 @@
 <?php // licence: gpl-signature.txt
-$mobl=strtolower($_SERVER['HTTP_USER_AGENT']);
+$mobl=strtolower(stripslashes($_SERVER['HTTP_USER_AGENT']));
 /*
 
 if (preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|android)/i',$mobl)){unset($no_mobile);}

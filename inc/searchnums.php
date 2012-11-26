@@ -41,6 +41,6 @@
     ++$i;
   }}
   echo NN;
-  if(empty($bookspecific)and!isset($_GET['all'])and($simplified_mode!=='r')){echo'<u>Search for this in</u> <a href="?&lookups=1&stse='.$reg_ena.urlencode($se5).'">Strongs</a> <a href="?&lookups=1&sf='.$reg_ena.urlencode($se5).'">Forum</a> <a href="?&lookups=1&st='.$reg_ena.urlencode($se5).'">Topics</a>'.N;}
+  if(empty($bookspecific)and!isset($_GET['all'])and($simplified_mode!=='r')){echo'<u>Search for this in</u><br><a href="?&lookups=1&stse='.$reg_ena.urlencode($se5).'">Strongs</a>| <a href="?&lookups=1&sf='.$reg_ena.urlencode($se5).'">Forum</a>| <a href="?&lookups=1&st='.$reg_ena.urlencode($se5).'">Topics</a>|'.N;}
   if(isset($simplified_mode)){echo'<p><a href="advanced_search.php?advs='.urlencode($sr).'&advsn='.urlencode($advsno).'&s='.$bl.$dowl.$doop.'&bk='.$s_bk.$mover.'&c='.$chap.'">Search for this between Verses, Chapters or Books</a></p>';}
 ?>

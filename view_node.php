@@ -1,7 +1,7 @@
 <?php // licence: gpl-signature.txt
-$ti=urldecode($_GET['ti']);$removeid=$_GET['remove'];
+$ti=urldecode(stripslashes($_GET['ti']));$removeid=stripslashes($_GET['remove']);
 if (empty($_GET['comment'])) {
-  if (!empty($_GET['page'])) { $pagenum=$_GET['page']; } else { $pagenum='0'; }
+  if (!empty($_GET['page'])) { $pagenum=stripslashes($_GET['page']); } else { $pagenum='0'; }
   $page_low=0 + ($pagenum * 12);$page_high=12 + ($pagenum * 12);
   if (empty($cat)){$fsqldisp=" promote=1 and status=1 ";}
   else {$fsqldisp=" status='1' AND category='".urlencode($cat)."' AND uppercat='".urlencode($uc)."' AND title='".urldecode($ti)."'";}

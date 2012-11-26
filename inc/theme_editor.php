@@ -25,7 +25,7 @@ H<input id="hue" size="5">  S<input id="sat" size="5">  V<input id="val" size="5
 	$bmcol=mysql_result($sqe,0,'bmcol');$favcol=mysql_result($sqe,0,'favcol');$notcol=mysql_result($sqe,0,'notcol');
         if($_POST['s']=='Go'){$doed='<input type="hidden" name="doed" value="'.$edti.'">';}
     }
-    if(empty($edti)){$edti=$_POST['edtheme'];}
+    if(empty($edti)){$edti=stripslashes($_POST['edtheme']);}
     echo'<u>Theme editor:</u>';
     $r=mysql_query_s('SELECT theme,tid,uid FROM bible_themes where (uid=1 AND mode=2)or(uid='.$uid.')');
     $num2=mysql_numrows($r);
@@ -78,17 +78,17 @@ H<input id="hue" size="5">  S<input id="sat" size="5">  V<input id="val" size="5
         Bookmark color: <input type="text" class="color{hash:true,required:false}" name="bmcol" value="'.$bmcol.'" size="5"> Favorites: <input type="text" class="color{hash:true,required:false}" name="favcol" value="'.$favcol.'" size="5"> Notes: <input type="text" class="color{hash:true,required:false}" name="notcol" value="'.$notcol.'" size="5"> xRefs: <input type="text" class="color{hash:true,required:false}" name="xrefcol" value="'.$xrefcol.'" size="5"> topics: <input type="text" class="color{hash:true,required:false}" name="tocol" value="'.$tocol.'" size="5"><br>
         <input type="submit" Name="s" value="Save Theme"></form>'; //Example "5" "white" "gold" "yellow" //bmcol favcol notcol
     if(isset($_POST['formcalltheme'])and($_POST['s']!='Go')){
-        $t_name=$_POST['t_name'];$globalmode=$_POST['globalmode'];
-        $v_pfont=$_POST['v_pfont'];$v_pfont=$_POST['v_pfontip'];
-        $v_pfsz=$_POST['v_pfsz'];$v_pfcol=$_POST['v_pfcol'];
-        $v_pfcolb=$_POST['v_pfcolb'];$v_pfcolh=$_POST['v_pfcolh'];
-        $l_col=$_POST['l_col'];$vl_col=$_POST['vl_col'];
-        $al_col=$_POST['al_col'];$doed=$_POST['doed'];$scol=$_POST['scol'];
-        $icol=$_POST['icol'];$idisp=$_POST['idisp'];$iback=$_POST['iback'];$ucol=$_POST['ucol'];$hcol=$_POST['hcol'];$gcol=$_POST['gcol'];
-        $gdec=$_POST['gdec'];$gback=$_POST['gback'];$al_col=$_POST['al_col'];$doed=$_POST['doed']; //
-        $alh_col=$_POST['alh_col'];$al_disp=$_POST['al_disp'];$al_back=$_POST['al_back'];$lfweight=$_POST['lfweight'];
-        $boardcol=$_POST['boardcol']; $divback=$_POST['divback']; $ufp=$_POST['ufp'];$tableback=$_POST['tableback'];$alfp=$_POST['alfp'];
-	$bmcol=$_POST['bmcol']; $favcol=$_POST['favcol']; $notcol=$_POST['notcol']; $xrefcol=$_POST['xrefcol']; $tocol=$_POST['tocol'];
+        $t_name=stripslashes($_POST['t_name']);$globalmode=stripslashes($_POST['globalmode']);
+        $v_pfont=stripslashes($_POST['v_pfont']);$v_pfont=stripslashes($_POST['v_pfontip']);
+        $v_pfsz=stripslashes($_POST['v_pfsz']);$v_pfcol=stripslashes($_POST['v_pfcol']);
+        $v_pfcolb=stripslashes($_POST['v_pfcolb']);$v_pfcolh=stripslashes($_POST['v_pfcolh']);
+        $l_col=stripslashes($_POST['l_col']);$vl_col=stripslashes($_POST['vl_col']);
+        $al_col=stripslashes($_POST['al_col']);$doed=stripslashes($_POST['doed']);$scol=stripslashes($_POST['scol']);
+        $icol=stripslashes($_POST['icol']);$idisp=stripslashes($_POST['idisp']);$iback=stripslashes($_POST['iback']);$ucol=stripslashes($_POST['ucol']);$hcol=stripslashes($_POST['hcol']);$gcol=stripslashes($_POST['gcol']);
+        $gdec=stripslashes($_POST['gdec']);$gback=stripslashes($_POST['gback']);$al_col=stripslashes($_POST['al_col']);$doed=stripslashes($_POST['doed']); //
+        $alh_col=stripslashes($_POST['alh_col']);$al_disp=stripslashes($_POST['al_disp']);$al_back=stripslashes($_POST['al_back']);$lfweight=stripslashes($_POST['lfweight']);
+        $boardcol=stripslashes($_POST['boardcol']); $divback=stripslashes($_POST['divback']); $ufp=stripslashes($_POST['ufp']);$tableback=stripslashes($_POST['tableback']);$alfp=stripslashes($_POST['alfp']);
+	$bmcol=stripslashes($_POST['bmcol']); $favcol=stripslashes($_POST['favcol']); $notcol=stripslashes($_POST['notcol']); $xrefcol=stripslashes($_POST['xrefcol']); $tocol=stripslashes($_POST['tocol']);
         if(!empty($doed)){$sqe=mysql_query_s('SELECT uid FROM bible_themes where tid='.$doed);$edti=mysql_result($sqe,0,'uid');} // icol idisp iback ucol hcol gcol gdec gback
         if(!empty($doed) and (($edti===$uid)or($uid==1))){$sql='UPDATE bible_themes SET gen=0,genfp=0,theme=\''.$t_name.'\',mode=\''.$globalmode.'\',fontcolor=\''.$v_pfcol.'\',fontbackground=\''.$v_pfcolb.'\',fontsize=\''.$v_pfsz.'\',versehighlightcolor=\''.$v_pfcolh.'\',font=\''.$v_pfont.'\',linkcolor=\''.$l_col.'\',visitedlinkcolor=\''.$vl_col.'\',activelinkcolor=\''.$al_colh.'\',lhover=\''.$alh_col.'\',ldisp=\''.$al_disp.'\',lback=\''.$al_back.'\',lfweight=\''.$lfweight.'\',icol=\''.$icol.'\',idisp=\''.$idisp.'\',iback=\''.$iback.'\',ucol=\''.$ucol.'\',hcol=\''.$hcol.'\',gcol=\''.$gcol.'\',gdec=\''.$gdec.'\',gback=\''.$gback.'\',scol=\''.$scol.'\',boardcol=\''.$boardcol.'\',divback=\''.$divback.'\',ufp=\''.$ufp.'\',tableback=\''.$tableback.'\',alfp=\''.$alfp.'\',bmcol=\''.$bmcol.'\',notcol=\''.$notcol.'\',favcol=\''.$favcol.'\',xrefcol=\''.$xrefcol.'\',tocol=\''.$tocol.'\' WHERE bible_themes.tid='.$doed;}
         else{$sql='INSERT INTO bible_themes (tid,theme,mode,uid,fontcolor,fontbackground,fontsize,versehighlightcolor,font,linkcolor,visitedlinkcolor,activelinkcolor,lhover,ldisp,lback,lfweight,icol,idisp,iback,ucol,hcol,gcol,gdec,gback,scol,boardcol,divback,ufp,tableback,alfp,bmcol,favcol,notcol,xrefcol,tocol)

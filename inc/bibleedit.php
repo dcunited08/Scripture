@@ -3,10 +3,10 @@ $ssecurity=mysql_query_s('select * from bible_list where bid='.$doeditb);
 if(($uid==1)or(mysql_result($ssecurity,0,'owner')==$uid)or preg_match('/(^'.$uid.'\s)|(\s'.$uid.'\s)|(\s'.$uid.'$)/i',mysql_result($ssecurity,0,'edituids'))){
     $scontentcheck=mysql_query_s('select max(rev),revuid,revdate,bid,book,chapter,verse,context,vsid,mode from bible_context where book=\''.$book.'\' AND chapter='.$chap.' AND bid='.$doeditb.'  group by bid,book,chapter,verse');
     //echo'select * from bible_context where book=\''.$book.'\' AND chapter='.$chap.' AND bid='.$doeditb.N;
-    $edcount=$_GET['cedits'];
+    $edcount=stripslashes($_GET['cedits']);
     $i2=0;$i=1;while($i<=$edcount){
         $sqtmp=mysql_result($scontentcheck,$i2,'context');
-        $checkchange=$_POST[$book.'_'.$chap.'_'.$i];
+        $checkchange=stripslashes($_POST[$book.'_'.$chap.'_'.$i]);
         $checkchange=str_replace('&lt;','<',$sc);
         $checkchange=str_replace('&gt;','>',$sc);
         $checkchange=strcasecmp(trim($sqtmp,"\r\n"),trim($checkchange,"\r\n"));
@@ -15,7 +15,7 @@ if(($uid==1)or(mysql_result($ssecurity,0,'owner')==$uid)or preg_match('/(^'.$uid
                 $upuptime=time();
                 $toprevs=mysql_query_s('SELECT max(rev) from bible_revision_information where bid='.$doeditb);
                 $toprev==mysql_result($toprevs,0,'rev');
-                $revi=$_POST['revinfo'];
+                $revi=stripslashes($_POST['revinfo']);
                 if(empty($revi)){$revi='No Information';}
                 $sqtmp='INSERT INTO bible_revision_information (rid,bid,rev,revuid,revdate,ip,geodata,uid,description)
                 VALUES(\'\','.$doeditb.','.($toprev +1).','.$uid.','.$upuptime.',\''.$remoteaddr.'\',\''.$geodata.'\','.$uid.',\''.$revi.'\');';

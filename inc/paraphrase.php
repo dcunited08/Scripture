@@ -1,5 +1,5 @@
 <?php
-if(!empty($_POST['p'])and($_POST['p']!=='List All')){$peidg=$_POST['p'];}
+if(!empty($_POST['p'])and($_POST['p']!=='List All')){$peidg=stripslashes($_POST['p']);}
 else{$paselall=' selected';}
 echo'<u>Paraphrase Editor</u><br>
 <form action="?para" method="post" enctype="multipart/form-data">';
@@ -27,7 +27,7 @@ g int(10),h int(10),i int(10),j int(10),
     $w_arr=array();
     $wtcl=mysql_result($r,0,'lang');
         foreach($wtc as $cwo){  
-            $pwtc=$_POST[$cwo.$theN];
+            $pwtc=stripslashes($_POST[$cwo.$theN]);
             if(strstr($pwtc,"'")){$pwtc=str_replace("'","\'",$pwtc);}
             if(strstr($pwtc,';')){$pwtc=str_replace(";","\;",$pwtc);}
             if(strstr($pwtc,')')){$pwtc=str_replace(")","\)",$pwtc);}

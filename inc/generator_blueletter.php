@@ -3,7 +3,7 @@
     require('Languages/Filter_blueletter.php');
     //ini_set('max_execution_time', '6000');
     //$f_arr2 = file($tmpfile.'2');
-    if(isset($_GET['bib'])){$bib=$_GET['bib'];}
+    if(isset($_GET['bib'])){$bib=stripslashes($_GET['bib']);}
     else{$bib='KJV';}
     $tmpfile='blueletter'.$bib.'.txt';
     $fh2 = fopen($tmpfile.'2','a+');

@@ -4,7 +4,7 @@
     //<td>id</td><td>geo</td>
     if(!isset($_GET['alv'])){$notype=1;}
     if(!isset($password)){$nocount=1;require('../../init.php');}
-    if(isset($_GET['lenli'])){$lenli=$_GET['lenli'];}
+    if(isset($_GET['lenli'])){$lenli=stripslashes($_GET['lenli']);}
     else{$lenli=100;}
     $visit1=mysql_result(mysql_query('SELECT max(visitors_id) AS C from bible_visitors'),0,'C');
     $v2=mysql_query('SELECT * from bible_visitors where visitors_id between '.($visit1-340).' AND '.$visit1.' Order by visitors_id DESC');

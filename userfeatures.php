@@ -229,7 +229,7 @@ elseif(isset($_GET['toto1']) && !empty($u)) {
  }
 }
 elseif(isset($_GET['settopic']) && !empty($u)) {
-$userfeatures=$_GET['settopic'];
+$userfeatures=stripslashes($_GET['settopic']);
 echo"<form action='index.php' method='get'><input type='hidden' name='toto' value='$userfeatures'>
 Topic<input type='text' name='toto1' id='toto1'><br>Sub Topic<input type='text' name='tosub' id='tosub'>(optional)<br>Description(optional)
 	<textarea name='topict' rows='11' style=\"width:100%;height:300px;\" >"; // cols='100%' ?

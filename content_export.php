@@ -1,6 +1,6 @@
 <?php // licence: gpl-signature.txt
 if(empty($password)){require('init.php');}if($uid!=='1'){die('Access denied.');}
-$bid=$_GET['bid'];
+$bid=stripslashes($_GET['bid']);
 $sbc='1';
 if(empty($bid)){
   if($uid!=='1'){die('Please choose a bid, example: content_export.php?bid=1');}

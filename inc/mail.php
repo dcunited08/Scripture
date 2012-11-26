@@ -1,10 +1,10 @@
 <?php // licence: gpl-signature.txt
 /*
-    $username=$_POST['regiuser'];
+    $username=stripslashes($_POST['regiuser']);
     $mail_body = "Your password is: $passwd\r\n"."May Gods peace be with you!\n"; //mail body
     $subject = "Welcome $username to $mailer_name. Here is your password"; //subject
     $header = "From: $mailer_name <$website_email>\r\n"; //optional headerfields
-    $recipient = $_POST['regiemail']; //recipient
+    $recipient =stripslashes($_POST['regiemail']); //recipient
 */
 ini_set('sendmail_from', $website_email);
 if(mail($recipient, $subject, $mail_body, $header)) {$mailok='1';}

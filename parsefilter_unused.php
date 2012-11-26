@@ -2,18 +2,18 @@
 $seonly="";$sebookspecific="";$sebookmatched=""; //if html search received
 if(!empty($_GET['s'])or!empty($_GET['s2'])or!empty($_GET['s3'])or!empty($bookmark)or!empty($favorite)or!empty($_POST['lookup'])or!empty($_GET['lookup'])or!empty($cross)or!empty($_GET['advs'])or(empty($setnote)and empty($setnote2)and empty($setxref)and !empty($note))){
  unset($verse,$sqverse);
- if(!empty($_GET['s'])){$se1=urldecode($_GET['s']);}
- elseif(!empty($_GET['s2'])){$se1=urldecode($_GET['s2']);}
- elseif(!empty($_GET['s3'])){$se1=urldecode($_GET['s3']);}
+ if(!empty($_GET['s'])){$se1=urldecode(stripslashes($_GET['s']));}
+ elseif(!empty($_GET['s2'])){$se1=urldecode(stripslashes($_GET['s2']));}
+ elseif(!empty($_GET['s3'])){$se1=urldecode(stripslashes($_GET['s3']));}
  elseif(!empty($bookmark)){$se1=$bookmark;}
  elseif(!empty($cross)){$se1=$cross;}
  elseif(!empty($favorite)){$se1=$favorite;}
  elseif(!empty($note)){$se1=$note;}
- elseif(!empty($_POST['lookup'])){$se1=urldecode($_POST['lookup']);}
- elseif(!empty($_GET['lookup'])){$se1=urldecode($_GET['lookup']);}
+ elseif(!empty($_POST['lookup'])){$se1=urldecode(stripslashes($_POST['lookup']));}
+ elseif(!empty($_GET['lookup'])){$se1=urldecode(stripslashes($_GET['lookup']));}
  elseif(!empty($_GET['advs'])){
-  $se1=urldecode($_GET['advs']);
-  $advm=$_GET['m'];if(!empty($advm)){$se1=$advm.':'.$se1;}
+  $se1=urldecode(stripslashes($_GET['advs']));
+  $advm=stripslashes($_GET['m']);if(!empty($advm)){$se1=$advm.':'.$se1;}
   //elseif($advm == 'en'){$se1='r: ([[:space:]]|^)'.preg_replace('/(\s)/i','[[:space:]]',$se1).'[\.]?([[:space:]]?\{|$)';}
   
   //if(substr(0,1) ==='"'){}

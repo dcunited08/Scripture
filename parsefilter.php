@@ -3,18 +3,18 @@
 $seonly="";$sebookspecific="";$sebookmatched=""; //if html search received
 if(!empty($_GET['s'])or!empty($_GET['s2'])or!empty($_GET['s3'])or!empty($bookmark)or!empty($favorite)or!empty($_POST['lookup'])or!empty($_GET['lookup'])or!empty($cross)or!empty($_GET['advs'])or(empty($setnote)and empty($setnote2)and empty($setxref)and !empty($note))){
  unset($verse,$sqverse);
- if(!empty($_GET['s'])){$se1=urldecode($_GET['s']);}
- elseif(!empty($_GET['s2'])){$se1=urldecode($_GET['s2']);}
- elseif(!empty($_GET['s3'])){$se1=urldecode($_GET['s3']);}
+ if(!empty($_GET['s'])){$se1=urldecode(stripslashes($_GET['s']));}
+ elseif(!empty($_GET['s2'])){$se1=urldecode(stripslashes($_GET['s2']));}
+ elseif(!empty($_GET['s3'])){$se1=urldecode(stripslashes($_GET['s3']));}
  elseif(!empty($bookmark)){$se1=$bookmark;}
  elseif(!empty($cross)){$se1=$cross;}
  elseif(!empty($favorite)){$se1=$favorite;}
  elseif(!empty($note)){$se1=$note;}
- elseif(!empty($_POST['lookup'])){$se1=urldecode($_POST['lookup']);}
- elseif(!empty($_GET['lookup'])){$se1=urldecode($_GET['lookup']);}
+ elseif(!empty($_POST['lookup'])){$se1=urldecode(stripslashes($_POST['lookup']));}
+ elseif(!empty($_GET['lookup'])){$se1=urldecode(stripslashes($_GET['lookup']));}
  elseif(!empty($_GET['advs'])){
-  $se1=urldecode($_GET['advs']);
-  $advm=$_GET['m'];if(!empty($advm)){$se1=$advm.':'.$se1;}
+  $se1=urldecode(stripslashes($_GET['advs']));
+  $advm=stripslashes($_GET['m']);if(!empty($advm)){$se1=$advm.':'.$se1;}
   //elseif($advm == 'en'){$se1='r: ([[:space:]]|^)'.preg_replace('/(\s)/i','[[:space:]]',$se1).'[\.]?([[:space:]]?\{|$)';}
   
   //if(substr(0,1) ==='"'){}
@@ -124,6 +124,8 @@ if(!empty($_GET['s'])or!empty($_GET['s2'])or!empty($_GET['s3'])or!empty($bookmar
   $se1=$sopp2;
   //if($uid==1){echo$se1.'<br>';}
  }
+ if(strstr($se1,'·')){$see=explode('·',$se1);$se1=$see[1];}
+ if(preg_match('/\dv\d/i',$se1)){$se1=preg_replace('/(\d{1,3})v(\d{1,3})/i','\1:\2',$se1);}
  if(substr($se1,0,1) !== '.'){$se4=$se1;$se1='.'.$se1;}
  //else {$multilangcheck='1';} //multilanguages now only for multiple verse lookups.(saves memory) or with settings
  $se3=explode('.',$se1);
@@ -252,8 +254,12 @@ if(isset($_SERVER['HTTP_REFERER']) && empty($chbf)){ if(empty($chap) && empty($c
     }
     $w=preg_replace('/\s/',', ',$w);
   }
-  if(strstr($w,',')){$w=' IN('.$w.')';}else{$w='=\''.$w.'\'';}
-  if(!strstr($w.$b,'all')){$wbid='bid'.$w;}else{$wbid='1';}
+  if(!strstr($w.$b,'all')){
+  if(strstr($w,',')){
+   $w=' IN('.$w.') ';
+   $wbid=' bid '.$w;}else{$wbid='bid='.$w;$w='=\''.$w.'\'';}
+  
+  }else{$wbid='1';$w="";$extraver=1;}
 if(empty($seonly) and empty($nobook)){$w="";$bs="";
   if(!empty($mchap)){$dochap=$mchap;$dovsid='vsid,';}else{$dochap='='.$chap;}
   if(empty($versearray[1])){

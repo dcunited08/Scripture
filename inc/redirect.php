@@ -3,11 +3,11 @@
     //if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";} $pageURL .= "://";
     unset($fp);
     $pageURL = ''.$_SERVER["REQUEST_URI"];
-    if(!empty($_GET['s'])){$checkv=$_GET['s'];}
-    elseif(!empty($_POST['lookup'])){$checkv=$_POST['lookup'];$lookupv='&lookup='.$checkv;}
-    elseif(!empty($_GET['bookmark'])){$checkv=$_GET['bookmark'];}
-    elseif(!empty($_GET['note'])){$checkv=$_GET['note'];}
-    elseif(!empty($_GET['favorite'])){$checkv=$_GET['favorite'];}
+    if(!empty($_GET['s'])){$checkv=stripslashes($_GET['s']);}
+    elseif(!empty($_POST['lookup'])){$checkv=stripslashes($_POST['lookup']);$lookupv='&lookup='.$checkv;}
+    elseif(!empty($_GET['bookmark'])){$checkv=stripslashes($_GET['bookmark']);}
+    elseif(!empty($_GET['note'])){$checkv=stripslashes($_GET['note']);}
+    elseif(!empty($_GET['favorite'])){$checkv=stripslashes($_GET['favorite']);}
     else{$checkv='?b='.$_GET['b'].'&bk='.$_GET['bk'].'&cs='.$_GET['cs'].'&bdial';}
     $se3=explode('.',$checkv);
     if(count($se3)==1){$checkv=str_replace('.',"",$checkv);}
